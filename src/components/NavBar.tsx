@@ -50,24 +50,6 @@ const navData = {
       desc: "Deep technical dives into software architecture, artificial intelligence, and enterprise technology.",
       linkText: "Read the Blog"
     }
-  },
-  About: {
-    purpose: "People buy from people.",
-    items: ["Our Story", "Mission & Vision", "Leadership", "Why Acriotech", "Careers", "Partners", "Contact"],
-    featured: {
-      title: "Our Engineering Philosophy",
-      desc: "Built on precision, absolute trust, and an uncompromising commitment to technical excellence.",
-      linkText: "Meet the Team"
-    }
-  },
-  Contact: {
-    purpose: "Keep this simple.",
-    items: ["Let's Talk", "Book a Discovery Call", "Send an Inquiry", "Office Location", "Email", "Social Links"],
-    featured: {
-      title: "Start a Conversation",
-      desc: "Discuss your technical requirements and architecture goals with our engineering consultants.",
-      linkText: "Get in Touch"
-    }
   }
 };
 
@@ -80,10 +62,11 @@ export default function NavBar() {
   
   const navWidth = useTransform(scrollY, [0, 100], ["100%", "90%"]);
   const navPadding = useTransform(scrollY, [0, 100], ["1.5rem 4rem", "1rem 3rem"]);
-  const navBg = useTransform(scrollY, [0, 100], ["rgba(255, 255, 255, 0)", "rgba(255, 255, 255, 0.7)"]);
-  const navBorder = useTransform(scrollY, [0, 100], ["rgba(255, 255, 255, 0)", "rgba(255, 255, 255, 0.8)"]);
+  // Keep background slightly opaque at all times so dark text is always visible
+  const navBg = useTransform(scrollY, [0, 100], ["rgba(255, 255, 255, 0.85)", "rgba(255, 255, 255, 0.95)"]);
+  const navBorder = useTransform(scrollY, [0, 100], ["rgba(255, 255, 255, 0.2)", "rgba(255, 255, 255, 0.8)"]);
   const navShadow = useTransform(scrollY, [0, 100], ["0 0 0 rgba(0,0,0,0)", "0 10px 40px -10px rgba(15,23,42,0.05)"]);
-  const navBlur = useTransform(scrollY, [0, 100], ["blur(0px)", "blur(18px)"]);
+  const navBlur = useTransform(scrollY, [0, 100], ["blur(12px)", "blur(18px)"]);
   const navRadius = useTransform(scrollY, [0, 100], ["0px", "24px"]);
   const navTop = useTransform(scrollY, [0, 100], ["0px", "20px"]);
 
@@ -145,21 +128,28 @@ export default function NavBar() {
         </a>
 
         <nav style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-          {navItems.map((item) => (
-            <div key={item} style={{ position: 'relative' }} onMouseEnter={() => handleMouseEnter(item)}>
-              {hoveredNav === item && (
-                <motion.div
-                  layoutId="nav-pill"
-                  layout
-                  style={{ position: 'absolute', top: '-6px', bottom: '-6px', left: '-12px', right: '-12px', background: 'rgba(75, 97, 184, 0.05)', borderRadius: '8px', zIndex: -1, border: '1px solid rgba(75, 97, 184, 0.1)' }}
-                  transition={{ type: "spring", bounce: 0, duration: 0.4 }}
-                />
-              )}
-              <a href={`/#${item.toLowerCase()}`} style={{ display: 'block', padding: '0', fontSize: '0.95rem', fontWeight: 600, color: hoveredNav === item ? '#0F172A' : '#5B6472', transition: 'color 0.2s ease', textDecoration: 'none' }}>
-                {item}
-              </a>
-            </div>
-          ))}
+          {navItems.map((item) => {
+            // Special routing for About and Contact to their dedicated pages
+            let linkHref = `/#${item.toLowerCase()}`;
+            if (item === 'About') linkHref = '/about-us';
+            if (item === 'Contact') linkHref = '/contact-us';
+
+            return (
+              <div key={item} style={{ position: 'relative' }} onMouseEnter={() => handleMouseEnter(item)}>
+                {hoveredNav === item && (
+                  <motion.div
+                    layoutId="nav-pill"
+                    layout
+                    style={{ position: 'absolute', top: '-6px', bottom: '-6px', left: '-12px', right: '-12px', background: 'rgba(75, 97, 184, 0.05)', borderRadius: '8px', zIndex: -1, border: '1px solid rgba(75, 97, 184, 0.1)' }}
+                    transition={{ type: "spring", bounce: 0, duration: 0.4 }}
+                  />
+                )}
+                <a href={linkHref} style={{ display: 'block', padding: '0', fontSize: '0.95rem', fontWeight: 600, color: hoveredNav === item ? '#0F172A' : '#5B6472', transition: 'color 0.2s ease', textDecoration: 'none' }}>
+                  {item}
+                </a>
+              </div>
+            );
+          })}
         </nav>
       </motion.div>
 

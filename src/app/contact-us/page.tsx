@@ -2,7 +2,7 @@
 
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
-import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import { Mail, MapPin, ArrowRight, Briefcase, HeartHandshake, MessageSquare, CheckCircle2, Phone, Clock, LifeBuoy } from "lucide-react";
 import { useState } from "react";
 
 export default function ContactUs() {
@@ -53,57 +53,142 @@ export default function ContactUs() {
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: '#FAFAFA' }}>
       <NavBar />
       
-      {/* Hero Section */}
-      <section style={{ background: '#0F172A', paddingTop: '10rem', paddingBottom: '6rem', position: 'relative', overflow: 'hidden' }}>
-        {/* Abstract Background Elements */}
-        <div style={{ position: 'absolute', top: '-20%', right: '-10%', width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(75,97,184,0.15) 0%, rgba(15,23,42,0) 70%)', borderRadius: '50%', filter: 'blur(40px)' }}></div>
-        
-        <div className="container" style={{ maxWidth: '1200px', position: 'relative', zIndex: 10 }}>
-          <h1 style={{ fontSize: '3.5rem', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.03em', marginBottom: '1.5rem' }}>Let's build something <span style={{ color: '#60A5FA' }}>extraordinary.</span></h1>
-          <p style={{ fontSize: '1.25rem', color: '#94A3B8', maxWidth: '600px', lineHeight: 1.6 }}>Our engineering teams are ready to tackle your most complex challenges. Reach out to start the conversation.</p>
+      {/* Classic Support / Contact Hero */}
+      <section style={{ background: '#FFFFFF', paddingTop: '12rem', paddingBottom: '4rem', borderBottom: '1px solid #E2E8F0' }}>
+        <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+          <h1 style={{ fontSize: '3.5rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.03em', marginBottom: '1.5rem' }}>Contact Acriotech</h1>
+          <p style={{ fontSize: '1.25rem', color: '#475569', maxWidth: '600px', lineHeight: 1.6 }}>We're here to help. Route your inquiry to the right department or reach out to our global engineering team directly.</p>
         </div>
       </section>
 
-      {/* Main Content */}
-      <section style={{ padding: '5rem 0', flex: 1 }}>
-        <div className="container" style={{ maxWidth: '1200px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '4rem', alignItems: 'flex-start' }}>
+      {/* Classic Department Routing Row (No boxes, no drop shadows) */}
+      <section style={{ padding: '5rem 0', background: '#FAFAFA', borderBottom: '1px solid #E2E8F0' }}>
+        <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)' }}>
+            
+            {/* Column 1: Careers */}
+            <div style={{ padding: '2rem 3rem 2rem 0' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem' }}>
+                <Briefcase size={22} color="#0F172A" />
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0F172A' }}>Careers</h3>
+              </div>
+              <p style={{ color: '#475569', lineHeight: 1.7, marginBottom: '2rem', minHeight: '110px' }}>Interested in joining our engineering team? We are always looking for talented developers, cloud architects, and QA specialists who take pride in writing clean, reliable code.</p>
+              <a href="mailto:careers@acriotech.com" style={{ color: '#0F172A', fontWeight: 600, textDecoration: 'none', borderBottom: '2px solid #E2E8F0', paddingBottom: '0.25rem', display: 'inline-block' }}>careers@acriotech.com</a>
+            </div>
+
+            {/* Column 2: Social Responsibility */}
+            <div style={{ padding: '2rem 3rem', borderLeft: '1px solid #E2E8F0', borderRight: '1px solid #E2E8F0' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem' }}>
+                <HeartHandshake size={22} color="#0F172A" />
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0F172A' }}>Social Responsibility</h3>
+              </div>
+              <p style={{ color: '#475569', lineHeight: 1.7, marginBottom: '2rem', minHeight: '110px' }}>We believe in giving back. If you represent an NGO, non-profit, or small business working on social causes, reach out to explore how we can support your technical mission.</p>
+              <a href="mailto:responsible@acriotech.com" style={{ color: '#0F172A', fontWeight: 600, textDecoration: 'none', borderBottom: '2px solid #E2E8F0', paddingBottom: '0.25rem', display: 'inline-block' }}>responsible@acriotech.com</a>
+            </div>
+
+            {/* Column 3: Feedback */}
+            <div style={{ padding: '2rem 0 2rem 3rem' }}>
+               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem' }}>
+                <MessageSquare size={22} color="#0F172A" />
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0F172A' }}>Feedback System</h3>
+              </div>
+              <p style={{ color: '#475569', lineHeight: 1.7, marginBottom: '2rem', minHeight: '110px' }}>Your feedback drives our continuous improvement. Whether it's a bug report, a feature request, or general thoughts on our services, we carefully review all submissions.</p>
+              <a href="mailto:feedback@acriotech.com" style={{ color: '#0F172A', fontWeight: 600, textDecoration: 'none', borderBottom: '2px solid #E2E8F0', paddingBottom: '0.25rem', display: 'inline-block' }}>feedback@acriotech.com</a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Classic How we can help Section */}
+      <section style={{ padding: '6rem 0', background: '#FFFFFF', borderBottom: '1px solid #E2E8F0' }}>
+        <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'flex-start' }}>
+            <div>
+              <h2 style={{ fontSize: '2rem', fontWeight: 800, color: '#0F172A', marginBottom: '1rem' }}>Partner with Acriotech.</h2>
+              <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.8, marginBottom: '2rem' }}>
+                We work with growing organisations to find new opportunities, reduce risks, and support long-term growth. Our engineering teams can help with the following:
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                {['Strategic Consultancy', 'Research Solutions', 'Digital Transformation'].map((item, idx) => (
+                  <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem', fontWeight: 600, color: '#0F172A' }}>
+                    <CheckCircle2 color="#2563EB" size={24} /> {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div style={{ paddingLeft: '4rem', borderLeft: '1px solid #E2E8F0' }}>
+              <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>Enterprise Inquiries</h3>
+              <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.6, marginBottom: '2rem' }}>
+                Whether you need a dedicated development team or a complete digital overhaul, our enterprise consultants are available.
+              </p>
+              <a href="#direct-contact" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', padding: '1rem 2rem', background: '#0F172A', color: '#FFFFFF', borderRadius: '4px', fontWeight: 600, fontSize: '1rem', textDecoration: 'none' }}>
+                Contact Sales
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Main Contact Form & Locations */}
+      <section id="direct-contact" style={{ padding: '6rem 0', background: '#FAFAFA' }}>
+        <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+          
+          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+             <h2 style={{ fontSize: '2rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>Direct Inquiries</h2>
+             <p style={{ fontSize: '1.1rem', color: '#475569' }}>Fill out the form below or visit us at our global headquarters.</p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '4rem', alignItems: 'flex-start' }}>
             
             {/* Contact Information */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
-              <div>
-                <h2 style={{ fontSize: '2rem', fontWeight: 700, color: '#0F172A', marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>Get in touch</h2>
-                <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.7 }}>Whether you're looking for enterprise software development, cloud infrastructure design, or AI automation, our specialists are here to help.</p>
+              <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
+                <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: '#EFF6FF', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <Mail size={24} color="#3B82F6" />
+                </div>
+                <div>
+                  <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.25rem' }}>Email Us</h3>
+                  <p style={{ color: '#475569', marginBottom: '0.5rem' }}>Our team will respond soon.</p>
+                  <a href="mailto:info@acriotech.com" style={{ color: '#3B82F6', fontWeight: 600, textDecoration: 'none' }}>info@acriotech.com</a>
+                </div>
               </div>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-                <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
-                  <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: '#EFF6FF', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                    <Mail size={24} color="#3B82F6" />
-                  </div>
-                  <div>
-                    <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.25rem' }}>Email Us</h3>
-                    <p style={{ color: '#475569', marginBottom: '0.5rem' }}>Our team typically responds within 2 hours.</p>
-                    <a href="mailto:hello@acriotech.com" style={{ color: '#3B82F6', fontWeight: 600, textDecoration: 'none' }}>info@acriotech.com</a>
-                  </div>
+              <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
+                <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: '#F8FAFC', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <LifeBuoy size={24} color="#475569" />
                 </div>
+                <div>
+                  <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.25rem' }}>Technical Support</h3>
+                  <p style={{ color: '#475569', marginBottom: '0.5rem' }}>For existing clients requiring assistance.</p>
+                  <a href="mailto:support@acriotech.com" style={{ color: '#475569', fontWeight: 600, textDecoration: 'none' }}>support@acriotech.com</a>
+                </div>
+              </div>
 
-  
-
-                <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
-                  <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: '#FEF2F2', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                    <MapPin size={24} color="#EF4444" />
-                  </div>
-                  <div>
-                    <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.25rem' }}>Global Headquarters</h3>
-                    <p style={{ color: '#475569', lineHeight: 1.6 }}>14, Shiv Narayan Complex, Virani Circle,<br />Kaliyabid, Bhavnagar - 364002<br />Gujarat, India</p>
-                  </div>
+              <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
+                <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: '#FEF2F2', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <MapPin size={24} color="#EF4444" />
+                </div>
+                <div>
+                  <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.25rem' }}>Global Headquarters</h3>
+                  <p style={{ color: '#475569', lineHeight: 1.6 }}>14, Shiv Narayan Complex, Virani Circle,<br />Kaliyabid, Bhavnagar - 364002<br />Gujarat, India</p>
+                </div>
+              </div>
+              
+              <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
+                <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: '#FFF7ED', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <Clock size={24} color="#F97316" />
+                </div>
+                <div>
+                  <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.25rem' }}>Working Hours</h3>
+                  <p style={{ color: '#475569', lineHeight: 1.6 }}>Monday - Friday<br />9:00 AM - 6:30 PM (IST)</p>
                 </div>
               </div>
             </div>
 
             {/* Contact Form */}
-            <div style={{ background: '#FFFFFF', padding: '3rem', borderRadius: '24px', boxShadow: '0 20px 40px rgba(15, 23, 42, 0.05)', border: '1px solid #F1F5F9' }}>
+            <div style={{ background: '#FFFFFF', padding: '3rem', borderRadius: '24px', boxShadow: '0 20px 40px rgba(15, 23, 42, 0.05)', border: '1px solid #E2E8F0' }}>
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>

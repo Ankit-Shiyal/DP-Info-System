@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --primary-blue: #4B61B8;
+  --accent-green: #7BAF35;
+  --background: #F7F9FC;
+  --text-main: #0F172A;
+  --text-secondary: #5B6472;
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.16);
+  --glass-dark-bg: rgba(255, 255, 255, 0.05);
+  --glass-dark-border: rgba(255, 255, 255, 0.1);
+  
+  --shadow-soft: 0 4px 20px -2px rgba(15, 23, 42, 0.04), 0 2px 8px -2px rgba(15, 23, 42, 0.02);
+  --shadow-hover: 0 12px 30px -4px rgba(15, 23, 42, 0.06), 0 4px 12px -2px rgba(15, 23, 42, 0.03);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-main);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Background Engine */
+.bg-engine {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  background-color: var(--background);
+  /* Reduced grid opacity by 30% -> highly subtle */
+  background-image: 
+    linear-gradient(rgba(15, 23, 42, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+.bg-glows {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  background: 
+    radial-gradient(circle at 15% 15%, rgba(75, 97, 184, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 85% 85%, rgba(123, 175, 53, 0.02) 0%, transparent 50%);
+}
+
+@keyframes floatParticles {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  50% { opacity: 0.5; }
+  100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
+}
+
+.bg-particles::before, .bg-particles::after {
+  content: '';
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(75, 97, 184, 0.2);
+  top: 100vh;
+  left: 20vw;
+  animation: floatParticles 20s infinite linear;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.bg-particles::after {
+  left: 70vw;
+  width: 6px;
+  height: 6px;
+  background: rgba(123, 175, 53, 0.15);
+  animation-duration: 25s;
+  animation-delay: 5s;
+}
+
+/* Glassmorphism Classes (Premium Refined) */
+.glass-panel {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 12px; /* Slightly sharper corners, more engineered */
+  box-shadow: var(--shadow-soft);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Diagonal cut / "A" inspired corner detail for panels */
+.glass-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, transparent 50%, rgba(255,255,255,0.4) 50%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.glass-panel:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.glass-panel:hover::before {
+  opacity: 1;
+}
+
+/* Dark Mode Sections (Footer, CTA) */
+.dark-section {
+  background-color: #0A0F1D; /* Deep Navy */
+  color: #FFFFFF;
+}
+
+.glass-panel-dark {
+  background: var(--glass-dark-bg);
+  border: 1px solid var(--glass-dark-border);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 12px;
+}
+
+/* Typography Overrides */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-main);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.dark-section h1, .dark-section h2, .dark-section h3, .dark-section h4 {
+  color: #FFFFFF;
+}
+
+p {
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.dark-section p {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Buttons (Refined) */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.8rem;
+  background: linear-gradient(180deg, var(--primary-blue), #3A4B8F);
+  color: #ffffff;
+  border-radius: 8px; /* More structured, less pill-shaped */
+  font-weight: 500;
+  font-size: 0.95rem;
+  border: 1px solid rgba(0,0,0,0.1);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(75, 97, 184, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(75, 97, 184, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary .arrow {
+  transition: transform 0.3s ease;
+}
+
+.btn-primary:hover .arrow {
+  transform: translateX(4px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.8rem;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  color: var(--text-main);
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(15, 23, 42, 0.2);
+}
+
+/* Layout Utilities */
+.section-padding {
+  padding: 8rem 0;
+}
+
+/* Animations */
+@keyframes drawCircuit {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.circuit-path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawCircuit 4s ease-out forwards;
+}
+
+/* Asymmetric Bento Grid */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+
+.bento-card {
+  border-radius: 12px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Geometric A-Inspired Background Pattern */
+.geometric-bg-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, transparent 48%, rgba(75, 97, 184, 0.02) 48%, rgba(75, 97, 184, 0.02) 52%, transparent 52%);
+  background-size: 40px 40px;
+  opacity: 0.5;
+  pointer-events: none;
+}

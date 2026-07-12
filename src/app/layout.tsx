@@ -12,8 +12,43 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://acriotech.com'),
   title: "Acriotech | Enterprise Software Engineering",
   description: "We build enterprise software, AI systems, automation platforms and cloud infrastructure that help ambitious businesses scale with confidence.",
+  keywords: ["Enterprise Software", "AI Systems", "Cloud Infrastructure", "Automation Platforms", "Acriotech"],
+  authors: [{ name: "Acriotech Pvt. Ltd." }],
+  creator: "Acriotech Pvt. Ltd.",
+  publisher: "Acriotech Pvt. Ltd.",
+  openGraph: {
+    title: "Acriotech | Enterprise Software Engineering",
+    description: "We build enterprise software, AI systems, automation platforms and cloud infrastructure that help ambitious businesses scale with confidence.",
+    url: 'https://acriotech.com',
+    siteName: 'Acriotech',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Acriotech | Enterprise Software Engineering",
+    description: "We build enterprise software, AI systems, automation platforms and cloud infrastructure that help ambitious businesses scale with confidence.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  other: {
+    'geo.region': 'IN-GJ',
+    'geo.placename': 'Bhavnagar',
+    'geo.position': '21.7645;72.1519',
+    'ICBM': '21.7645, 72.1519'
+  }
 };
 
 export default function RootLayout({

@@ -181,6 +181,7 @@ export default function NavBar() {
 
         {/* Mobile Hamburger Button */}
         <button 
+          aria-label="Toggle mobile menu"
           className="mobile-menu-btn"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           style={{ background: 'transparent', border: 'none', cursor: 'pointer', color: '#0F172A', padding: '0.5rem' }}
@@ -248,6 +249,7 @@ export default function NavBar() {
                     </a>
                     {hasSubmenu && (
                       <button 
+                        aria-label="Toggle submenu"
                         onClick={() => setExpandedMobileMenus(prev => 
                           prev.includes(item) ? prev.filter(m => m !== item) : [...prev, item]
                         )}

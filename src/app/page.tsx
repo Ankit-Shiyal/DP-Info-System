@@ -148,8 +148,9 @@ function FAQAccordion() {
                 width: '100%', 
                 padding: '1.5rem 2rem', 
                 display: 'flex', 
+                flexWrap: 'nowrap',
                 justifyContent: 'space-between', 
-                alignItems: 'center', 
+                alignItems: 'flex-start', 
                 background: 'transparent', 
                 border: 'none', 
                 cursor: 'pointer',
@@ -159,7 +160,7 @@ function FAQAccordion() {
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', flex: 1 }}>
 
-                <h3 style={{ fontSize: '1.15rem', fontWeight: 600, color: '#0F172A', margin: 0 }}>
+                <h3 style={{ fontSize: '1.15rem', fontWeight: 600, color: '#0F172A', margin: 0, lineHeight: 1.4 }}>
                   {faq.q}
                 </h3>
               </div>
@@ -170,7 +171,10 @@ function FAQAccordion() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                minWidth: '24px'
+                flexShrink: 0,
+                marginTop: '4px',
+                width: '24px',
+                height: '24px'
               }}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
               </div>
@@ -346,7 +350,7 @@ export default function Home() {
                  <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(135deg, rgba(75, 97, 184, 0.03) 0%, rgba(75, 97, 184, 0) 100%)' }}></div>
                  
                  {/* Real Image representation */}
-                 <img className="mockup-1" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80" alt="Cloud Infrastructure" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)' }} />
+                 <Image className="mockup-1" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80" alt="Cloud Infrastructure" fill style={{ objectFit: 'cover', transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)' }} sizes="(max-width: 768px) 100vw, 50vw" priority={false} />
 
                  {/* Internal Card Info */}
                  <div style={{ position: 'absolute', top: '2rem', left: '2rem' }}>
@@ -391,7 +395,7 @@ export default function Home() {
                  <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(135deg, rgba(123, 175, 53, 0.03) 0%, rgba(123, 175, 53, 0) 100%)' }}></div>
                  
                  {/* Real Image representation */}
-                 <img className="mockup-2" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" alt="Cybersecurity Fabric" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)' }} />
+                 <Image className="mockup-2" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" alt="Cybersecurity Fabric" fill style={{ objectFit: 'cover', transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)' }} sizes="(max-width: 768px) 100vw, 50vw" priority={false} />
 
                  {/* Internal Card Info */}
                  <div style={{ position: 'absolute', top: '2rem', left: '2rem' }}>

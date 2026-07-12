@@ -48,7 +48,7 @@ export default function Footer() {
       <div className="container" style={{ position: 'relative', zIndex: 1, padding: '6rem 2rem 3rem 2rem', maxWidth: '1400px', margin: '0 auto' }}>
         
         {/* Top Section: Brand (Left) and Links (Right) */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 2.5fr', gap: '4rem', marginBottom: '4rem' }}>
+        <div className="footer-top-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 2.5fr', gap: '4rem', marginBottom: '4rem' }}>
           
           {/* Left Column: Brand & Hero */}
           <div>
@@ -181,22 +181,24 @@ export default function Footer() {
             </div>
 
             {/* Newsletter Box */}
-            <div style={{ marginTop: '3rem', padding: '2.5rem 2.5rem', background: '#FFFFFF', borderRadius: '16px', border: '1px solid rgba(15,23,42,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', boxShadow: '0 10px 30px rgba(0,0,0,0.02)', flexWrap: 'wrap', gap: '1.5rem' }}>
+            <div className="newsletter-box" style={{ marginTop: '3rem', padding: '2.5rem 2.5rem', background: '#FFFFFF', borderRadius: '16px', border: '1px solid rgba(15,23,42,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', boxShadow: '0 10px 30px rgba(0,0,0,0.02)', flexWrap: 'wrap', gap: '1.5rem' }}>
                <div>
                   <h4 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#0F172A', margin: 0, marginBottom: '0.4rem' }}>Subscribe to Insights</h4>
                   <p style={{ fontSize: '0.95rem', color: '#64748B', margin: 0 }}>Latest engineering trends and company updates.</p>
                </div>
-               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
-                 <div style={{ display: 'flex', gap: '0.5rem' }}>
+               <div className="newsletter-form-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
+                 <div className="newsletter-form" style={{ display: 'flex', gap: '0.5rem' }}>
                     <input 
                       type="email" 
                       placeholder="Email address" 
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       disabled={status === 'loading'}
+                      className="newsletter-input"
                       style={{ padding: '0.85rem 1.2rem', borderRadius: '8px', border: '1px solid #E2E8F0', outline: 'none', width: '260px', fontSize: '0.95rem', background: '#F8FAFC' }} 
                     />
                     <button 
+                      className="newsletter-btn"
                       onClick={handleSubscribe}
                       disabled={status === 'loading'}
                       style={{ padding: '0.85rem 1.8rem', borderRadius: '8px', background: '#0F172A', color: '#FFFFFF', border: 'none', fontWeight: 600, cursor: status === 'loading' ? 'not-allowed' : 'pointer', fontSize: '0.95rem', transition: 'background 0.2s', opacity: status === 'loading' ? 0.7 : 1 }} 

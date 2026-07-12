@@ -562,3 +562,70 @@ p {
 .mobile-menu-btn {
   display: none;
 }
+
+@media (max-width: 900px) {
+  .bento-grid {
+    display: flex;
+    flex-direction: column;
+  }
+  .bento-card {
+    min-height: auto !important;
+  }
+  
+  .footer-top-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  
+  .newsletter-box {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 1.5rem !important;
+  }
+  
+  .newsletter-form-container {
+    align-items: flex-start !important;
+    width: 100% !important;
+  }
+  
+  .newsletter-form {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  
+  .newsletter-input {
+    width: 100% !important;
+  }
+  
+  .newsletter-btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+  
+  .cookie-banner-container {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 1.5rem !important;
+    gap: 1.5rem !important;
+    height: auto !important;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  .cookie-banner-text {
+    flex: 1 1 auto !important;
+  }
+  
+  .cookie-banner-buttons {
+    width: 100% !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+  
+  .cookie-banner-buttons button {
+    flex: 1 1 auto !important;
+    min-width: 100px !important;
+    padding: 0.8rem 1rem !important;
+    text-align: center !important;
+  }
+}

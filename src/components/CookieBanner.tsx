@@ -85,6 +85,7 @@ export default function CookieBanner() {
       <AnimatePresence>
         {!showPreferences && (
           <motion.div
+            className="cookie-banner-container"
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 100, opacity: 0 }}
@@ -107,13 +108,13 @@ export default function CookieBanner() {
               flexWrap: "wrap"
             }}
           >
-            <div style={{ flex: '1 1 600px' }}>
+            <div className="cookie-banner-text" style={{ flex: '1 1 600px' }}>
               <h3 style={{ fontSize: "1.1rem", fontWeight: 700, color: "#0F172A", margin: "0 0 0.25rem 0" }}>We value your privacy</h3>
               <p style={{ fontSize: "0.9rem", color: "#5B6472", lineHeight: 1.5, margin: 0 }}>
                 We use cookies and similar technologies to enhance your browsing experience, serve personalized content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies in accordance with our Privacy Policy. Note that we still send basic anonymous pings to Google Analytics for site performance even if rejected, in compliance with Consent Mode v2.
               </p>
             </div>
-            <div style={{ display: "flex", gap: "1rem", flexShrink: 0 }}>
+            <div className="cookie-banner-buttons" style={{ display: "flex", gap: "1rem", flexShrink: 0 }}>
               <button
                 onClick={() => setShowPreferences(true)}
                 style={{ padding: "0.6rem 1.25rem", background: "transparent", color: "#4B61B8", fontWeight: 600, border: "1px solid rgba(75, 97, 184, 0.3)", borderRadius: "6px", cursor: "pointer", transition: "background 0.2s", fontSize: "0.9rem" }}

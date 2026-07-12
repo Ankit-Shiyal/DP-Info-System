@@ -1,0 +1,8 @@
+Acriotech Enterprise Whitepaper
+---------------------------------
+
+This is a placeholder file for the whitepaper download. 
+
+In a production environment, you would replace this file with the actual PDF document (e.g. 'architecture-guide.pdf') and update the download link in the Whitepapers page to point to that PDF.
+
+Thank you for downloading!

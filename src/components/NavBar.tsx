@@ -1,10 +1,30 @@
 "use client";
 
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
-import { ArrowRight, Layers } from "lucide-react";
+import { ArrowRight, Layers, Menu, X, ChevronDown, ChevronUp } from "lucide-react";
 import { useState, useRef } from "react";
 
 // --- Data ---
+const generateUrl = (menu: string, text: string) => {
+  const slug = text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+  const basePaths: Record<string, string> = {
+    Solutions: '/solutions',
+    Services: '/services',
+    Work: '/work',
+    Industries: '/industries',
+    Insights: '/insights',
+  };
+  return `${basePaths[menu]}/${slug}`;
+};
+
+const featuredLinks: Record<string, string> = {
+  Solutions: '/solutions',
+  Services: '/services',
+  Work: '/work/featured-projects',
+  Industries: '/industries',
+  Insights: '/insights/tech-trends',
+};
+
 const navData = {
   Solutions: {
     purpose: "What business problems do you solve?",
@@ -26,7 +46,7 @@ const navData = {
   },
   Work: {
     purpose: "Explore our engineered solutions.",
-    items: ["Case Studies", "Client Roster", "Open Source", "Architecture Patterns"],
+    items: ["Featured Projects", "Our Clients", "Open Source"],
     featured: {
       title: "Proven Engineering Excellence",
       desc: "Discover how we solve complex technical problems for industry-leading enterprise clients.",
@@ -44,11 +64,11 @@ const navData = {
   },
   Insights: {
     purpose: "Our content hub.",
-    items: ["Blog", "Engineering", "AI & Automation", "Cloud", "Case Studies", "Company News", "Events"],
+    items: ["Case Studies", "News & Press", "Research Reports", "Tech Trends", "Webinars"],
     featured: {
       title: "Technical Insights & Updates",
       desc: "Deep technical dives into software architecture, artificial intelligence, and enterprise technology.",
-      linkText: "Read the Blog"
+      linkText: "Explore Insights"
     }
   }
 };
@@ -56,6 +76,8 @@ const navData = {
 export default function NavBar() {
   const [hoveredNav, setHoveredNav] = useState<string | null>(null);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [expandedMobileMenus, setExpandedMobileMenus] = useState<string[]>([]);
   const menuTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   
   const { scrollY } = useScroll();
@@ -101,6 +123,7 @@ export default function NavBar() {
       onMouseLeave={handleMouseLeave}
     >
       <motion.div
+        className="keep-flex-row"
         style={{
           width: navWidth,
           padding: navPadding,
@@ -127,10 +150,14 @@ export default function NavBar() {
           </div>
         </a>
 
-        <nav style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+        <nav className="desktop-nav" style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
           {navItems.map((item) => {
-            // Special routing for About and Contact to their dedicated pages
             let linkHref = `/#${item.toLowerCase()}`;
+            if (item === 'Solutions') linkHref = '/solutions';
+            if (item === 'Services') linkHref = '/services';
+            if (item === 'Work') linkHref = '/work';
+            if (item === 'Industries') linkHref = '/industries';
+            if (item === 'Insights') linkHref = '/insights';
             if (item === 'About') linkHref = '/about-us';
             if (item === 'Contact') linkHref = '/contact-us';
 
@@ -151,10 +178,119 @@ export default function NavBar() {
             );
           })}
         </nav>
+
+        {/* Mobile Hamburger Button */}
+        <button 
+          className="mobile-menu-btn"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          style={{ background: 'transparent', border: 'none', cursor: 'pointer', color: '#0F172A', padding: '0.5rem' }}
+        >
+          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
       </motion.div>
 
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            style={{
+              position: 'fixed',
+              top: '76px', // Header height offset
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: '#FFFFFF',
+              padding: '1.5rem 2rem 6rem 2rem',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '1.5rem',
+              overflowY: 'auto',
+              zIndex: 99
+            }}
+          >
+            {navItems.map((item) => {
+              let linkHref = `/#${item.toLowerCase()}`;
+              if (item === 'Solutions') linkHref = '/solutions';
+              if (item === 'Services') linkHref = '/services';
+              if (item === 'Work') linkHref = '/work';
+              if (item === 'Industries') linkHref = '/industries';
+              if (item === 'Insights') linkHref = '/insights';
+              if (item === 'About') linkHref = '/about-us';
+              if (item === 'Contact') linkHref = '/contact-us';
+
+              const hasSubmenu = Object.keys(navData).includes(item);
+              const isExpanded = expandedMobileMenus.includes(item);
+
+              return (
+                <div key={item} style={{ display: 'flex', flexDirection: 'column', borderBottom: '1px solid #F1F5F9' }}>
+                  <div 
+                    className="keep-flex-row"
+                    style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', paddingBottom: '0.5rem' }}
+                  >
+                    <a 
+                      href={linkHref} 
+                      onClick={(e) => {
+                        if (hasSubmenu) {
+                          e.preventDefault();
+                          setExpandedMobileMenus(prev => 
+                            prev.includes(item) ? prev.filter(m => m !== item) : [...prev, item]
+                          );
+                        } else {
+                          setIsMobileMenuOpen(false);
+                        }
+                      }}
+                      style={{ fontSize: '1.2rem', fontWeight: 600, color: '#0F172A', textDecoration: 'none' }}
+                    >
+                      {item}
+                    </a>
+                    {hasSubmenu && (
+                      <button 
+                        onClick={() => setExpandedMobileMenus(prev => 
+                          prev.includes(item) ? prev.filter(m => m !== item) : [...prev, item]
+                        )}
+                        style={{ background: 'transparent', border: 'none', padding: '0.2rem', cursor: 'pointer', color: '#64748B' }}
+                      >
+                        {isExpanded ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                      </button>
+                    )}
+                  </div>
+                  
+                  {/* Mobile Submenu Expansion */}
+                  {hasSubmenu && isExpanded && (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', padding: '0.5rem 0 1rem 1rem', borderLeft: '2px solid #E2E8F0', marginLeft: '0.5rem', marginTop: '0.5rem' }}>
+                      {navData[item as keyof typeof navData].items.map((sublink) => (
+                        <a 
+                          key={sublink} 
+                          href={generateUrl(item, sublink)} 
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          style={{ fontSize: '0.95rem', fontWeight: 500, color: '#475569', textDecoration: 'none' }}
+                        >
+                          {sublink}
+                        </a>
+                      ))}
+                      {navData[item as keyof typeof navData].featured && (
+                        <a 
+                          href={featuredLinks[item]} 
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          style={{ fontSize: '0.95rem', fontWeight: 700, color: '#4B61B8', textDecoration: 'none', marginTop: '0.5rem' }}
+                        >
+                          {navData[item as keyof typeof navData].featured.linkText} &rarr;
+                        </a>
+                      )}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Mega Menu Dropdown */}
-      <div style={{ width: '100%', padding: '0 4rem', display: 'flex', justifyContent: 'center', position: 'absolute', top: '100%', left: 0, paddingTop: '12px', pointerEvents: activeMenu ? 'auto' : 'none' }}>
+      <div className="desktop-nav" style={{ width: '100%', padding: '0 4rem', display: 'flex', justifyContent: 'center', position: 'absolute', top: '100%', left: 0, paddingTop: '12px', pointerEvents: activeMenu ? 'auto' : 'none' }}>
         <AnimatePresence mode="wait">
           {activeMenu && navData[activeMenu as keyof typeof navData] && (
             <motion.div
@@ -189,7 +325,7 @@ export default function NavBar() {
                     gap: '1.5rem 3rem' 
                   }}>
                     {navData[activeMenu as keyof typeof navData].items.map((link, idx) => (
-                      <a key={idx} href="#" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1rem', fontWeight: 600, color: '#0F172A', transition: 'all 0.2s ease', cursor: 'pointer', padding: '0.75rem 1rem', borderRadius: '12px', margin: '-0.75rem -1rem', textDecoration: 'none' }} 
+                      <a key={idx} href={generateUrl(activeMenu, link)} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1rem', fontWeight: 600, color: '#0F172A', transition: 'all 0.2s ease', cursor: 'pointer', padding: '0.75rem 1rem', borderRadius: '12px', margin: '-0.75rem -1rem', textDecoration: 'none' }} 
                         onMouseEnter={(e) => { 
                           e.currentTarget.style.color = '#4B61B8'; 
                           e.currentTarget.style.background = 'rgba(75, 97, 184, 0.05)';
@@ -223,7 +359,7 @@ export default function NavBar() {
                     <p style={{ fontSize: '0.95rem', color: '#94A3B8', marginBottom: '2.5rem', lineHeight: 1.6 }}>
                       {navData[activeMenu as keyof typeof navData].featured?.desc}
                     </p>
-                    <a href="#" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.95rem', fontWeight: 600, color: '#7BAF35', transition: 'gap 0.2s ease', textDecoration: 'none' }}
+                    <a href={featuredLinks[activeMenu]} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.95rem', fontWeight: 600, color: '#7BAF35', transition: 'gap 0.2s ease', textDecoration: 'none' }}
                        onMouseEnter={(e) => e.currentTarget.style.gap = '1rem'}
                        onMouseLeave={(e) => e.currentTarget.style.gap = '0.5rem'}
                     >

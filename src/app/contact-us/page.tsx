@@ -2,7 +2,7 @@
 
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
-import { Mail, MapPin, ArrowRight, Briefcase, HeartHandshake, MessageSquare, CheckCircle2, Phone, Clock, LifeBuoy } from "lucide-react";
+import { Mail, MapPin, ArrowRight, Briefcase, HeartHandshake, MessageSquare, CheckCircle2, Phone, Clock, LifeBuoy, Building, Megaphone, TrendingUp, Users } from "lucide-react";
 import { useState } from "react";
 
 export default function ContactUs() {
@@ -67,17 +67,17 @@ export default function ContactUs() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)' }}>
             
             {/* Column 1: Careers */}
-            <div style={{ padding: '2rem 3rem 2rem 0' }}>
+            <div className="contact-col" style={{ padding: '2rem 3rem 2rem 0' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem' }}>
                 <Briefcase size={22} color="#0F172A" />
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0F172A' }}>Careers</h3>
               </div>
               <p style={{ color: '#475569', lineHeight: 1.7, marginBottom: '2rem', minHeight: '110px' }}>Interested in joining our engineering team? We are always looking for talented developers, cloud architects, and QA specialists who take pride in writing clean, reliable code.</p>
-              <a href="mailto:careers@acriotech.com" style={{ color: '#0F172A', fontWeight: 600, textDecoration: 'none', borderBottom: '2px solid #E2E8F0', paddingBottom: '0.25rem', display: 'inline-block' }}>careers@acriotech.com</a>
+              <a href="/company/careers" style={{ color: '#0F172A', fontWeight: 600, textDecoration: 'none', borderBottom: '2px solid #E2E8F0', paddingBottom: '0.25rem', display: 'inline-block' }}>View Open Roles &rarr;</a>
             </div>
 
             {/* Column 2: Social Responsibility */}
-            <div style={{ padding: '2rem 3rem', borderLeft: '1px solid #E2E8F0', borderRight: '1px solid #E2E8F0' }}>
+            <div className="contact-col" style={{ padding: '2rem 3rem', borderLeft: '1px solid #E2E8F0', borderRight: '1px solid #E2E8F0' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem' }}>
                 <HeartHandshake size={22} color="#0F172A" />
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0F172A' }}>Social Responsibility</h3>
@@ -87,7 +87,7 @@ export default function ContactUs() {
             </div>
 
             {/* Column 3: Feedback */}
-            <div style={{ padding: '2rem 0 2rem 3rem' }}>
+            <div className="contact-col" style={{ padding: '2rem 0 2rem 3rem' }}>
                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem' }}>
                 <MessageSquare size={22} color="#0F172A" />
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0F172A' }}>Feedback System</h3>
@@ -118,7 +118,7 @@ export default function ContactUs() {
               </ul>
             </div>
             
-            <div style={{ paddingLeft: '4rem', borderLeft: '1px solid #E2E8F0' }}>
+            <div className="contact-col" style={{ paddingLeft: '4rem', borderLeft: '1px solid #E2E8F0' }}>
               <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>Enterprise Inquiries</h3>
               <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.6, marginBottom: '2rem' }}>
                 Whether you need a dedicated development team or a complete digital overhaul, our enterprise consultants are available.
@@ -146,43 +146,44 @@ export default function ContactUs() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
               <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
                 <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: '#EFF6FF', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                  <Mail size={24} color="#3B82F6" />
+                  <Building size={24} color="#3B82F6" />
                 </div>
                 <div>
-                  <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.25rem' }}>Email Us</h3>
-                  <p style={{ color: '#475569', marginBottom: '0.5rem' }}>Our team will respond soon.</p>
-                  <a href="mailto:info@acriotech.com" style={{ color: '#3B82F6', fontWeight: 600, textDecoration: 'none' }}>info@acriotech.com</a>
+                  <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.25rem' }}>Enterprise Sales</h3>
+                  <p style={{ color: '#475569', marginBottom: '0.5rem' }}>Contact our business development team.</p>
+                  <a href="mailto:sales@acriotech.com" style={{ color: '#3B82F6', fontWeight: 600, textDecoration: 'none' }}>sales@acriotech.com</a>
                 </div>
               </div>
 
               <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
                 <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: '#F8FAFC', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                  <LifeBuoy size={24} color="#475569" />
+                  <Megaphone size={24} color="#475569" />
                 </div>
                 <div>
-                  <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.25rem' }}>Technical Support</h3>
-                  <p style={{ color: '#475569', marginBottom: '0.5rem' }}>For existing clients requiring assistance.</p>
-                  <a href="mailto:support@acriotech.com" style={{ color: '#475569', fontWeight: 600, textDecoration: 'none' }}>support@acriotech.com</a>
+                  <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.25rem' }}>Press & Media</h3>
+                  <p style={{ color: '#475569', marginBottom: '0.5rem' }}>For PR and media inquiries.</p>
+                  <a href="mailto:press@acriotech.com" style={{ color: '#475569', fontWeight: 600, textDecoration: 'none' }}>press@acriotech.com</a>
                 </div>
               </div>
 
+              <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
+                <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: '#FEF2F2', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <TrendingUp size={24} color="#EF4444" />
+                </div>
+                <div>
+                  <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.25rem' }}>Investor Relations</h3>
+                  <p style={{ color: '#475569', marginBottom: '0.5rem' }}>For shareholders and financial analysts.</p>
+                  <a href="mailto:investors@acriotech.com" style={{ color: '#EF4444', fontWeight: 600, textDecoration: 'none' }}>investors@acriotech.com</a>
+                </div>
+              </div>
+              
               <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
                 <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: '#FEF2F2', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   <MapPin size={24} color="#EF4444" />
                 </div>
                 <div>
                   <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.25rem' }}>Global Headquarters</h3>
-                  <p style={{ color: '#475569', lineHeight: 1.6 }}>14, Shiv Narayan Complex, Virani Circle,<br />Kaliyabid, Bhavnagar - 364002<br />Gujarat, India</p>
-                </div>
-              </div>
-              
-              <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
-                <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: '#FFF7ED', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                  <Clock size={24} color="#F97316" />
-                </div>
-                <div>
-                  <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.25rem' }}>Working Hours</h3>
-                  <p style={{ color: '#475569', lineHeight: 1.6 }}>Monday - Friday<br />9:00 AM - 6:30 PM (IST)</p>
+                  <p style={{ color: '#475569', lineHeight: 1.6 }}><strong>Acriotech Global Pvt. Ltd.</strong><br />14, Shiv Narayan Complex, Virani Circle,<br />Kaliyabid, Bhavnagar - 364002<br />Gujarat, India</p>
                 </div>
               </div>
             </div>

@@ -104,6 +104,98 @@ function EngineeringArchitecture() {
   );
 }
 
+// --- FAQ Component ---
+
+const faqs = [
+  { q: "What is your typical project timeline?", a: "Depending on the complexity, our initial discovery and architecture phase takes 2-4 weeks. Full deployment of MVP or v1.0 usually ranges from 3-6 months with iterative agile delivery." },
+  { q: "Do you provide ongoing support after deployment?", a: "Yes, we offer enterprise SLA support, proactive infrastructure monitoring, and continuous integration of new features as part of our long-term partnership models." },
+  { q: "How do you handle data security and compliance?", a: "We embed security at the architectural level (Zero-Trust principles) and ensure compliance with GDPR, HIPAA, SOC2, and other regional data protection regulations from day one." },
+  { q: "Can you scale an existing, legacy architecture?", a: "Absolutely. A significant portion of our work involves auditing legacy systems, decoupling monoliths into microservices, and migrating to scalable cloud infrastructures with zero downtime." },
+  { q: "What technologies do you specialize in?", a: "We specialize in modern tech stacks including React, Next.js, Node.js, Python, Rust, and Go. Our infrastructure expertise covers AWS, GCP, Azure, and Kubernetes for seamless orchestration." },
+  { q: "Do you offer custom API development?", a: "Yes. We design and deploy high-performance RESTful and GraphQL APIs, ensuring secure authentication, rate limiting, and robust documentation for seamless integration." },
+  { q: "How does your pricing model work?", a: "We offer both fixed-price project engagements for well-defined scopes and flexible retainer models for ongoing product development and architectural consulting." },
+  { q: "What is your approach to UI/UX design?", a: "We believe enterprise software shouldn't look like legacy software. Our design process combines rigorous user research with modern, accessible, and stunning visual design systems." },
+  { q: "Can you integrate AI or machine learning into our products?", a: "Absolutely. We build scalable AI data pipelines, integrate LLMs, and deploy predictive analytics models tailored to your specific business logic and datasets." },
+  { q: "Do you handle DevOps and CI/CD setup?", a: "Yes, setting up robust automated testing, deployment pipelines, and infrastructure-as-code (IaC) using Terraform or Ansible is a core part of our delivery process." }
+];
+
+function FAQAccordion() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggleFAQ = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  return (
+    <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      {faqs.map((faq, index) => {
+        const isOpen = openIndex === index;
+        return (
+          <div 
+            key={index} 
+            style={{ 
+              background: '#FFFFFF', 
+              borderRadius: '12px', 
+              border: '1px solid rgba(15,23,42,0.05)', 
+              boxShadow: '0 4px 20px rgba(15,23,42,0.02)', 
+              overflow: 'hidden',
+              transition: 'all 0.3s ease'
+            }}
+          >
+            <button 
+              onClick={() => toggleFAQ(index)}
+              style={{ 
+                width: '100%', 
+                padding: '1.5rem 2rem', 
+                display: 'flex', 
+                justifyContent: 'space-between', 
+                alignItems: 'center', 
+                background: 'transparent', 
+                border: 'none', 
+                cursor: 'pointer',
+                textAlign: 'left',
+                gap: '1.5rem'
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', flex: 1 }}>
+
+                <h3 style={{ fontSize: '1.15rem', fontWeight: 600, color: '#0F172A', margin: 0 }}>
+                  {faq.q}
+                </h3>
+              </div>
+              <div style={{ 
+                color: '#4B61B8', 
+                transform: isOpen ? 'rotate(180deg)' : 'rotate(0)', 
+                transition: 'transform 0.3s ease',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                minWidth: '24px'
+              }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </button>
+            <AnimatePresence>
+              {isOpen && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.3, ease: 'easeInOut' }}
+                >
+                  <div style={{ padding: '0 2rem 2rem 2rem' }}>
+                    <p style={{ fontSize: '1.05rem', color: '#5B6472', lineHeight: 1.6, margin: 0 }}>{faq.a}</p>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 // --- Main Page ---
 
 export default function Home() {
@@ -147,19 +239,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Statistics */}
-      <section className="section-padding" style={{ borderTop: '1px solid rgba(15,23,42,0.05)', borderBottom: '1px solid rgba(15,23,42,0.05)', background: 'rgba(255,255,255,0.3)' }}>
-        <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2rem', textAlign: 'center' }}>
+      {/* Enterprise Metrics */}
+      <section className="dark-section" style={{ padding: '5rem 0', background: '#0F172A', color: '#FFFFFF', position: 'relative', overflow: 'hidden' }}>
+        {/* Subtle background glow */}
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'radial-gradient(circle at center, rgba(75, 97, 184, 0.15) 0%, rgba(15, 23, 42, 0) 70%)', pointerEvents: 'none' }} />
+        
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0' }}>
              {[
-               { num: "250+", label: "Projects Delivered" },
-               { num: "98%", label: "Client Retention" },
-               { num: "12+", label: "Years of Experience" },
-               { num: "24×7", label: "Support" }
-             ].map((stat, i) => (
-               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: i * 0.1 }}>
-                 <div style={{ fontSize: '3.5rem', fontWeight: 700, color: '#0F172A', letterSpacing: '-0.03em', marginBottom: '0.5rem' }}>{stat.num}</div>
-                 <div style={{ fontSize: '0.9rem', color: '#5B6472', fontWeight: 500 }}>{stat.label}</div>
+               { num: "80+", label: "Production Systems", desc: "Mission-critical applications built, deployed, and actively managed." },
+               { num: "15M+", label: "Daily API Requests", desc: "High-throughput microservices engineered for secure, scalable operations." },
+               { num: "99.99%", label: "Uptime Guarantee", desc: "Fault-tolerant cloud environments designed for business continuity." },
+               { num: "40+", label: "Active Partnerships", desc: "Long-term engineering engagements with mid-market and enterprise leaders." }
+             ].map((stat, i, arr) => (
+               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: i * 0.1 }} style={{ padding: '2rem', borderRight: i < arr.length - 1 ? '1px solid rgba(255, 255, 255, 0.1)' : 'none', textAlign: 'center' }}>
+                 <div style={{ fontSize: '3.5rem', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.02em', marginBottom: '1rem' }}>{stat.num}</div>
+                 <div style={{ fontSize: '1rem', color: '#60A5FA', fontWeight: 700, marginBottom: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{stat.label}</div>
+                 <div style={{ fontSize: '0.9rem', color: '#94A3B8', lineHeight: 1.5, maxWidth: '240px', margin: '0 auto' }}>{stat.desc}</div>
                </motion.div>
              ))}
           </div>
@@ -249,68 +345,28 @@ export default function Home() {
                  {/* Clean visual representation */}
                  <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(135deg, rgba(75, 97, 184, 0.03) 0%, rgba(75, 97, 184, 0) 100%)' }}></div>
                  
-                 {/* Abstract UI Mockup */}
-                 <div className="mockup-1" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '340px', height: '220px', background: '#FFFFFF', border: '1px solid rgba(15,23,42,0.08)', borderRadius: '12px', boxShadow: '0 20px 40px -10px rgba(15,23,42,0.1)', display: 'flex', flexDirection: 'column', overflow: 'hidden', transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)' }}>
-                    {/* Mock Header */}
-                    <div style={{ height: '40px', borderBottom: '1px solid rgba(15,23,42,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 16px', background: '#F8FAFC' }}>
-                       <div style={{ display: 'flex', gap: '6px' }}>
-                         <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#E2E8F0' }}></div>
-                         <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#E2E8F0' }}></div>
-                         <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#E2E8F0' }}></div>
-                       </div>
-                       <div style={{ width: '20px', height: '20px', borderRadius: '50%', background: '#E2E8F0' }}></div>
-                    </div>
-                    {/* Mock Body */}
-                    <div style={{ flex: 1, display: 'flex' }}>
-                       {/* Sidebar */}
-                       <div style={{ width: '64px', borderRight: '1px solid rgba(15,23,42,0.05)', background: '#FFFFFF', padding: '16px 12px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                          <div style={{ width: '100%', height: '8px', background: '#4B61B8', borderRadius: '4px', opacity: 0.8 }}></div>
-                          <div style={{ width: '100%', height: '8px', background: '#F1F5F9', borderRadius: '4px' }}></div>
-                          <div style={{ width: '100%', height: '8px', background: '#F1F5F9', borderRadius: '4px' }}></div>
-                          <div style={{ width: '100%', height: '8px', background: '#F1F5F9', borderRadius: '4px' }}></div>
-                       </div>
-                       {/* Main Content */}
-                       <div style={{ flex: 1, padding: '16px', display: 'flex', flexDirection: 'column', gap: '16px', background: '#F8FAFC' }}>
-                          {/* Top Chart Area */}
-                          <div style={{ width: '100%', height: '60px', background: '#FFFFFF', borderRadius: '8px', border: '1px solid rgba(15,23,42,0.05)', padding: '12px', display: 'flex', alignItems: 'flex-end', gap: '6px' }}>
-                             {[40, 70, 45, 90, 60, 30, 80, 55, 100, 65].map((h, i) => (
-                               <div key={i} style={{ flex: 1, height: `${h}%`, background: i === 3 || i === 8 ? '#4B61B8' : '#E2E8F0', borderRadius: '2px 2px 0 0' }}></div>
-                             ))}
-                          </div>
-                          {/* Data Rows */}
-                          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                            {[1, 2].map(i => (
-                              <div key={i} style={{ width: '100%', height: '24px', background: '#FFFFFF', borderRadius: '6px', border: '1px solid rgba(15,23,42,0.05)', display: 'flex', alignItems: 'center', padding: '0 10px', gap: '10px' }}>
-                                <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#7BAF35' }}></div>
-                                <div style={{ width: '40px', height: '6px', background: '#E2E8F0', borderRadius: '3px' }}></div>
-                                <div style={{ flex: 1, height: '6px', background: '#F1F5F9', borderRadius: '3px' }}></div>
-                                <div style={{ width: '20px', height: '6px', background: '#E2E8F0', borderRadius: '3px' }}></div>
-                              </div>
-                            ))}
-                          </div>
-                       </div>
-                    </div>
-                 </div>
+                 {/* Real Image representation */}
+                 <img className="mockup-1" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80" alt="Cloud Infrastructure" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)' }} />
 
                  {/* Internal Card Info */}
                  <div style={{ position: 'absolute', top: '2rem', left: '2rem' }}>
                     <div style={{ padding: '0.5rem 1rem', background: '#FFFFFF', border: '1px solid rgba(15,23,42,0.05)', borderRadius: '8px', fontSize: '0.75rem', fontWeight: 600, color: '#0F172A', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
-                      FinTech
+                      Cloud Infrastructure
                     </div>
                  </div>
               </div>
 
               <div>
                 <div style={{ display: 'flex', gap: '1rem', color: '#5B6472', fontSize: '0.85rem', fontWeight: 500, marginBottom: '1.2rem' }}>
-                  <span>Next.js</span>
+                  <span>Kubernetes</span>
                   <span>•</span>
-                  <span>Python</span>
+                  <span>Terraform</span>
                   <span>•</span>
                   <span>AWS</span>
                 </div>
-                <h3 style={{ fontSize: '1.8rem', color: '#0F172A', fontWeight: 600, marginBottom: '1rem', letterSpacing: '-0.02em' }}>Global Ledger Platform</h3>
+                <h3 style={{ fontSize: '1.8rem', color: '#0F172A', fontWeight: 600, marginBottom: '1rem', letterSpacing: '-0.02em' }}>Distributed Cloud Architecture</h3>
                 <p style={{ fontSize: '1.05rem', color: '#5B6472', lineHeight: 1.6, margin: 0 }}>
-                  Engineered a distributed ledger system capable of zero-latency transactions across 14 global regions.
+                  Engineered a highly available, multi-region cloud infrastructure scaling automatically to handle over 15 million daily requests.
                 </p>
               </div>
             </motion.div>
@@ -334,83 +390,28 @@ export default function Home() {
                  {/* Clean visual representation */}
                  <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(135deg, rgba(123, 175, 53, 0.03) 0%, rgba(123, 175, 53, 0) 100%)' }}></div>
                  
-                 {/* Abstract Architecture Diagram */}
-                 <div className="mockup-2" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '340px', height: '220px', background: '#FFFFFF', border: '1px solid rgba(15,23,42,0.08)', borderRadius: '12px', boxShadow: '0 20px 40px -10px rgba(15,23,42,0.1)', display: 'flex', flexDirection: 'column', overflow: 'hidden', transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)' }}>
-                     {/* Window Header */}
-                     <div style={{ height: '32px', borderBottom: '1px solid rgba(15,23,42,0.05)', display: 'flex', alignItems: 'center', padding: '0 16px', background: '#F8FAFC' }}>
-                        <div style={{ width: '60px', height: '6px', background: '#E2E8F0', borderRadius: '3px' }}></div>
-                     </div>
-                     {/* Canvas */}
-                     <div style={{ flex: 1, position: 'relative', background: '#F8FAFC', overflow: 'hidden' }}>
-                        {/* Grid Background */}
-                        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundImage: 'radial-gradient(#E2E8F0 1px, transparent 1px)', backgroundSize: '16px 16px', opacity: 0.5 }}></div>
-                        
-                        {/* Nodes Layout */}
-                        <div style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                            {/* SVG Connection Lines */}
-                            <svg style={{ position: 'absolute', width: '100%', height: '100%', pointerEvents: 'none' }}>
-                              <path d="M 80 90 L 140 90" stroke="#CBD5E1" strokeWidth="2" strokeDasharray="4 4" fill="none" />
-                              <path d="M 190 90 L 250 90" stroke="#7BAF35" strokeWidth="2" fill="none" />
-                              <path d="M 165 65 L 165 40 L 250 40" stroke="#CBD5E1" strokeWidth="1.5" fill="none" />
-                            </svg>
-                            
-                            {/* Node 1: Input */}
-                            <div style={{ position: 'absolute', left: '50px', top: '70px', width: '40px', height: '40px', borderRadius: '8px', background: '#FFFFFF', border: '1px solid rgba(15,23,42,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 6px rgba(0,0,0,0.02)' }}>
-                               <div style={{ width: '16px', height: '16px', borderRadius: '4px', background: '#E2E8F0' }}></div>
-                            </div>
-                            
-                            {/* Node 2: Processor */}
-                            <div style={{ position: 'absolute', left: '140px', top: '65px', width: '50px', height: '50px', borderRadius: '12px', background: '#FFFFFF', border: '2px solid #4B61B8', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 8px 16px rgba(75, 97, 184, 0.1)' }}>
-                               <div style={{ width: '20px', height: '20px', borderRadius: '6px', background: 'rgba(75, 97, 184, 0.1)' }}></div>
-                            </div>
-                            
-                            {/* Node 3: Output */}
-                            <div style={{ position: 'absolute', left: '250px', top: '70px', width: '40px', height: '40px', borderRadius: '50%', background: '#FFFFFF', border: '2px solid #7BAF35', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 8px 16px rgba(123, 175, 53, 0.1)' }}>
-                               <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#7BAF35' }}></div>
-                            </div>
-
-                            {/* Node 4: Secondary Output */}
-                            <div style={{ position: 'absolute', left: '250px', top: '25px', width: '30px', height: '30px', borderRadius: '8px', background: '#FFFFFF', border: '1px solid rgba(15,23,42,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                               <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#E2E8F0' }}></div>
-                            </div>
-                            
-                            {/* Floating Labels */}
-                            <div style={{ position: 'absolute', left: '145px', top: '125px', fontSize: '9px', fontWeight: 700, color: '#4B61B8', background: '#FFFFFF', padding: '2px 6px', borderRadius: '4px', border: '1px solid rgba(75, 97, 184, 0.2)' }}>ML ENGINE</div>
-                        </div>
-                     </div>
-                 </div>
-                 
-                 {/* Floating data card */}
-                 <div style={{ position: 'absolute', top: '15%', right: '10%', background: '#FFFFFF', border: '1px solid rgba(15,23,42,0.05)', padding: '10px 14px', borderRadius: '8px', boxShadow: '0 10px 30px rgba(0,0,0,0.08)', display: 'flex', alignItems: 'center', gap: '8px', zIndex: 2 }}>
-                    <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#7BAF35', boxShadow: '0 0 0 3px rgba(123, 175, 53, 0.2)' }}></div>
-                    <div style={{ fontSize: '11px', fontWeight: 700, color: '#0F172A', letterSpacing: '0.02em' }}>99.999% Uptime</div>
-                 </div>
-                 
-                 {/* Secondary floating card */}
-                 <div style={{ position: 'absolute', bottom: '15%', left: '10%', background: '#FFFFFF', border: '1px solid rgba(15,23,42,0.05)', padding: '8px 12px', borderRadius: '6px', boxShadow: '0 4px 12px rgba(0,0,0,0.04)', display: 'flex', alignItems: 'center', gap: '6px', zIndex: 2 }}>
-                    <div style={{ fontSize: '10px', fontWeight: 600, color: '#5B6472' }}>Processing:</div>
-                    <div style={{ fontSize: '10px', fontWeight: 700, color: '#0F172A' }}>50M+ /day</div>
-                 </div>
+                 {/* Real Image representation */}
+                 <img className="mockup-2" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" alt="Cybersecurity Fabric" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)' }} />
 
                  {/* Internal Card Info */}
                  <div style={{ position: 'absolute', top: '2rem', left: '2rem' }}>
                     <div style={{ padding: '0.5rem 1rem', background: '#FFFFFF', border: '1px solid rgba(15,23,42,0.05)', borderRadius: '8px', fontSize: '0.75rem', fontWeight: 600, color: '#0F172A', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
-                      AI & Automation
+                      Cybersecurity
                     </div>
                  </div>
               </div>
 
               <div>
                 <div style={{ display: 'flex', gap: '1rem', color: '#5B6472', fontSize: '0.85rem', fontWeight: 500, marginBottom: '1.2rem' }}>
-                  <span>Python</span>
+                  <span>Rust</span>
                   <span>•</span>
-                  <span>Go</span>
+                  <span>WebAssembly</span>
                   <span>•</span>
-                  <span>Kubernetes</span>
+                  <span>eBPF</span>
                 </div>
-                <h3 style={{ fontSize: '1.8rem', color: '#0F172A', fontWeight: 600, marginBottom: '1rem', letterSpacing: '-0.02em' }}>Autonomous Operations Engine</h3>
+                <h3 style={{ fontSize: '1.8rem', color: '#0F172A', fontWeight: 600, marginBottom: '1rem', letterSpacing: '-0.02em' }}>Zero-Trust Network Fabric</h3>
                 <p style={{ fontSize: '1.05rem', color: '#5B6472', lineHeight: 1.6, margin: 0 }}>
-                  A distributed machine learning infrastructure designed to automate complex enterprise workflows and predict system anomalies in real-time.
+                  Architected a low-latency, kernel-level network security fabric providing real-time threat mitigation across thousands of enterprise nodes.
                 </p>
               </div>
             </motion.div>
@@ -440,12 +441,8 @@ export default function Home() {
               { id: "05", title: 'Deployment & QA', desc: 'Zero-downtime deployments with comprehensive load testing, security audits, and compliance checks.' },
               { id: "06", title: 'Scale & Support', desc: 'Proactive monitoring, performance optimization, and dedicated enterprise SLA support.' }
             ].map((step, index) => (
-              <motion.div 
+              <div 
                 key={step.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
                 style={{ 
                   background: '#FFFFFF', 
                   borderRadius: '16px', 
@@ -455,18 +452,7 @@ export default function Home() {
                   display: 'flex',
                   flexDirection: 'column',
                   position: 'relative',
-                  cursor: 'default',
-                  transition: 'all 0.3s ease'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-5px)';
-                  e.currentTarget.style.boxShadow = '0 20px 40px -10px rgba(15,23,42,0.06)';
-                  e.currentTarget.style.borderColor = 'rgba(75, 97, 184, 0.2)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 10px 30px -10px rgba(15,23,42,0.02)';
-                  e.currentTarget.style.borderColor = 'rgba(15,23,42,0.05)';
+                  cursor: 'default'
                 }}
               >
                 <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#4B61B8', marginBottom: '1.5rem', fontFamily: 'monospace', background: 'rgba(75, 97, 184, 0.05)', padding: '0.4rem 0.8rem', borderRadius: '6px', alignSelf: 'flex-start' }}>
@@ -476,13 +462,14 @@ export default function Home() {
                 <p style={{ fontSize: '0.95rem', color: '#5B6472', lineHeight: 1.6, margin: 0 }}>
                   {step.desc}
                 </p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Testimonials (Hidden for now) */}
+      {false && (
       <section className="section-padding" style={{ background: '#FFFFFF' }}>
          <div className="container">
             <div style={{ marginBottom: '5rem', textAlign: 'center' }}>
@@ -494,7 +481,27 @@ export default function Home() {
               {[
                 { quote: "Acriotech completely rebuilt our core processing engine. The architecture is flawless, and the stability is unmatched.", title: "VP of Engineering", company: "Global FinTech" },
                 { quote: "A true engineering partner. They didn't just write code; they architected a foundation for our next decade of growth.", title: "Chief Technology Officer", company: "Enterprise Logistics" },
-                { quote: "Their understanding of both complex cloud infrastructure and elegant UI design makes them a rare find.", title: "Director of Product", company: "SaaS Platform" }
+                { quote: "Their understanding of both complex cloud infrastructure and elegant UI design makes them a rare find.", title: "Director of Product", company: "SaaS Platform" },
+                { quote: "Acriotech delivered an incredible e-commerce upgrade that boosted our conversion rates by 30%.", title: "Tech Lead", company: "Thames Retail IT (UK)" },
+                { quote: "Their DevOps implementation drastically reduced our deployment time from days to hours.", title: "Head of Engineering", company: "Oakwood Logistics (UK)" },
+                { quote: "The custom SaaS dashboard they built is now the core of our operations.", title: "Product Manager", company: "Maple Sync (Canada)" },
+                { quote: "Excellent team. They understood our complex data requirements perfectly.", title: "Data Architect", company: "Northway Analytics (Canada)" },
+                { quote: "Flawless execution on our mobile application overhaul. Highly recommend.", title: "CTO", company: "Sydney Cloud Solutions (Australia)" },
+                { quote: "Their proactive communication and technical expertise made this project a breeze.", title: "Engineering Manager", company: "Coral Reef Tech (Australia)" },
+                { quote: "Acriotech acts like an extension of our internal team. Fantastic architecture skills.", title: "Founder", company: "Kiwi Web Services (New Zealand)" },
+                { quote: "They refactored our legacy system without any downtime. Pure wizards.", title: "Lead Developer", company: "Auckland Dynamics (New Zealand)" },
+                { quote: "German engineering standards met their match! The code quality is pristine.", title: "Software Director", company: "Berlin Automatik (Germany)" },
+                { quote: "A very reliable technical partner for our IoT infrastructure needs.", title: "VP of Product", company: "Munich Sensorics (Germany)" },
+                { quote: "The microservices migration was handled perfectly. Minimal friction, huge performance gains.", title: "Platform Architect", company: "Bristol Financial (UK)" },
+                { quote: "We were struggling with database scaling until Acriotech stepped in.", title: "Database Lead", company: "Toronto Data Co. (Canada)" },
+                { quote: "They transformed our clunky internal portal into a blazing fast React application.", title: "IT Director", company: "Vindhya Motors (India)" },
+                { quote: "Amazing work on the AI integration. It has saved us hundreds of man-hours.", title: "COO", company: "Kochi Tech Labs (India)" },
+                { quote: "A highly skilled team that delivers exactly what they promise, on time.", title: "Technical Lead", company: "Mumbai FinServ (India)" },
+                { quote: "Their cloud engineers optimized our AWS bill while improving performance.", title: "CTO", company: "Delhi Startup Hub (India)" },
+                { quote: "The mobile app they delivered is robust and handles peak traffic flawlessly.", title: "Engineering Head", company: "Bengaluru Logistics (India)" },
+                { quote: "Acriotech's attention to detail during the UI/UX phase was exceptional.", title: "Product Owner", company: "Pune Retail Tech (India)" },
+                { quote: "They modernized our entire stack in just three months. Truly impressive.", title: "VP of Engineering", company: "Hyderabad Cloud Systems (India)" },
+                { quote: "Great communication and even better code quality.", title: "Software Manager", company: "Chennai Analytics (India)" }
               ].map((t, i) => (
                 <div key={i} style={{ padding: '3rem', background: '#F8FAFC', borderRadius: '16px', border: '1px solid rgba(15,23,42,0.05)', position: 'relative', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                    {/* Large Quote Mark */}
@@ -517,6 +524,18 @@ export default function Home() {
               ))}
             </div>
          </div>
+      </section>
+      )}
+
+      {/* FAQ Section */}
+      <section className="section-padding" style={{ background: '#FFFFFF', borderBottom: '1px solid rgba(15,23,42,0.05)' }}>
+        <div className="container">
+          <div style={{ marginBottom: '4rem', textAlign: 'center' }}>
+            <div style={{ fontSize: '0.85rem', fontWeight: 600, color: '#5B6472', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1rem' }}>Questions & Answers</div>
+            <h2 style={{ fontSize: '3rem', letterSpacing: '-0.03em', color: '#0F172A', fontWeight: 700, margin: 0 }}>Frequently Asked Questions</h2>
+          </div>
+          <FAQAccordion />
+        </div>
       </section>
 
       {/* Final CTA */}

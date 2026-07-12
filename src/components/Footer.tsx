@@ -1,10 +1,47 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight, Mail, ChevronRight, Shield, Lock, Cloud, Code, MapPin } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
 
 export default function Footer() {
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [message, setMessage] = useState('');
+
+  const handleSubscribe = async () => {
+    if (!email || !email.includes('@')) {
+      setStatus('error');
+      setMessage('Please enter a valid email address.');
+      return;
+    }
+    
+    setStatus('loading');
+    setMessage('');
+    try {
+      const res = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      });
+      
+      const data = await res.json();
+      
+      if (res.ok) {
+        setStatus('success');
+        setMessage('Thank you for subscribing!');
+        setEmail('');
+      } else {
+        setStatus('error');
+        setMessage(data.error || 'Something went wrong. Please try again.');
+      }
+    } catch (err) {
+      setStatus('error');
+      setMessage('Failed to connect to server.');
+    }
+  };
+
   return (
     <footer style={{ background: '#F8FAFC', color: '#0F172A', position: 'relative', overflow: 'hidden', borderTop: '1px solid rgba(15,23,42,0.05)' }}>
       
@@ -43,20 +80,14 @@ export default function Footer() {
             </a>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-               <a href="mailto:Info@acriotech.com" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', fontSize: '1.05rem', fontWeight: 500, color: '#475569', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#0F172A'} onMouseLeave={(e) => e.currentTarget.style.color = '#475569'}>
-                  <Mail size={20} /> Info@acriotech.com
+               <a href="mailto:Sales@acriotech.com" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', fontSize: '1.05rem', fontWeight: 500, color: '#475569', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#0F172A'} onMouseLeave={(e) => e.currentTarget.style.color = '#475569'}>
+                  <Mail size={20} /> Sales@acriotech.com
                </a>
                
                {/* Social Links */}
                <div style={{ display: 'flex', gap: '1.2rem', alignItems: 'center', marginTop: '0.5rem' }}>
-                  <a href="#" style={{ color: '#475569', transition: 'color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#0F172A'} onMouseLeave={(e) => e.currentTarget.style.color = '#475569'}>
+                  <a href="https://www.linkedin.com/company/acrio-tech" target="_blank" rel="noopener noreferrer" style={{ color: '#475569', transition: 'color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#0F172A'} onMouseLeave={(e) => e.currentTarget.style.color = '#475569'}>
                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg> 
-                  </a>
-                  <a href="#" style={{ color: '#475569', transition: 'color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#0F172A'} onMouseLeave={(e) => e.currentTarget.style.color = '#475569'}>
-                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                  </a>
-                  <a href="#" style={{ color: '#475569', transition: 'color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#0F172A'} onMouseLeave={(e) => e.currentTarget.style.color = '#475569'}>
-                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg>
                   </a>
                </div>
             </div>
@@ -72,11 +103,17 @@ export default function Footer() {
               <div>
                 <h4 style={{ fontSize: '0.95rem', color: '#0F172A', fontWeight: 700, marginBottom: '2rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Solutions</h4>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1.2rem', fontSize: '0.95rem', fontWeight: 500 }}>
-                  {['Enterprise Software', 'AI Automation', 'Cloud Infrastructure', 'Digital Transformation', 'Data Engineering'].map((item) => (
-                    <li key={item}>
-                      <a href="#" style={{ color: '#475569', textDecoration: 'none', transition: 'color 0.2s', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }} onMouseEnter={(e) => e.currentTarget.style.color = '#4B61B8'} onMouseLeave={(e) => e.currentTarget.style.color = '#475569'}>
-                        {item} <ChevronRight size={14} color="#94A3B8" />
-                      </a>
+                  {[
+                    { label: 'Enterprise Software', href: '/solutions/enterprise-software' },
+                    { label: 'AI Automation', href: '/solutions/ai-intelligent-automation' },
+                    { label: 'Cloud Infrastructure', href: '/solutions/cloud-infrastructure' },
+                    { label: 'Digital Transformation', href: '/solutions/digital-transformation' },
+                    { label: 'Data Engineering', href: '/solutions/data-analytics' }
+                  ].map((item) => (
+                    <li key={item.label}>
+                      <Link href={item.href} style={{ color: '#475569', textDecoration: 'none', transition: 'color 0.2s', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }} onMouseEnter={(e) => e.currentTarget.style.color = '#4B61B8'} onMouseLeave={(e) => e.currentTarget.style.color = '#475569'}>
+                        {item.label} <ChevronRight size={14} color="#94A3B8" />
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -86,11 +123,18 @@ export default function Footer() {
               <div>
                 <h4 style={{ fontSize: '0.95rem', color: '#0F172A', fontWeight: 700, marginBottom: '2rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Services</h4>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1.2rem', fontSize: '0.95rem', fontWeight: 500 }}>
-                  {['Consulting', 'Software Engineering', 'UI/UX Design', 'Cloud & DevOps', 'Quality Assurance', 'Support & Maintenance'].map((item) => (
-                    <li key={item}>
-                      <a href="#" style={{ color: '#475569', textDecoration: 'none', transition: 'color 0.2s', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }} onMouseEnter={(e) => e.currentTarget.style.color = '#4B61B8'} onMouseLeave={(e) => e.currentTarget.style.color = '#475569'}>
-                        {item} <ChevronRight size={14} color="#94A3B8" />
-                      </a>
+                  {[
+                    { label: 'Consulting', href: '/services/software-consulting' },
+                    { label: 'Software Engineering', href: '/services/web-application-development' },
+                    { label: 'UI/UX Design', href: '/services/ui-ux-design' },
+                    { label: 'Cloud & DevOps', href: '/services/devops-ci-cd' },
+                    { label: 'Quality Assurance', href: '/services/qa-testing' },
+                    { label: 'Support & Maintenance', href: '/services/maintenance-support' }
+                  ].map((item) => (
+                    <li key={item.label}>
+                      <Link href={item.href} style={{ color: '#475569', textDecoration: 'none', transition: 'color 0.2s', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }} onMouseEnter={(e) => e.currentTarget.style.color = '#4B61B8'} onMouseLeave={(e) => e.currentTarget.style.color = '#475569'}>
+                        {item.label} <ChevronRight size={14} color="#94A3B8" />
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -100,11 +144,16 @@ export default function Footer() {
               <div>
                 <h4 style={{ fontSize: '0.95rem', color: '#0F172A', fontWeight: 700, marginBottom: '2rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Resources</h4>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1.2rem', fontSize: '0.95rem', fontWeight: 500 }}>
-                  {['Case Studies', 'Insights', 'Engineering Blog', 'Documentation', 'Technology Stack'].map((item) => (
-                    <li key={item}>
-                      <a href="#" style={{ color: '#475569', textDecoration: 'none', transition: 'color 0.2s', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }} onMouseEnter={(e) => e.currentTarget.style.color = '#4B61B8'} onMouseLeave={(e) => e.currentTarget.style.color = '#475569'}>
-                        {item} <ChevronRight size={14} color="#94A3B8" />
-                      </a>
+                  {[
+                    { label: 'Case Studies', href: '/work' },
+                    { label: 'Security & Compliance', href: '/security-compliance' },
+                    { label: 'Insights & News', href: '/insights' },
+                    { label: 'Industries', href: '/industries' }
+                  ].map((item) => (
+                    <li key={item.label}>
+                      <Link href={item.href} style={{ color: '#475569', textDecoration: 'none', transition: 'color 0.2s', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }} onMouseEnter={(e) => e.currentTarget.style.color = '#4B61B8'} onMouseLeave={(e) => e.currentTarget.style.color = '#475569'}>
+                        {item.label} <ChevronRight size={14} color="#94A3B8" />
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -114,11 +163,17 @@ export default function Footer() {
               <div>
                 <h4 style={{ fontSize: '0.95rem', color: '#0F172A', fontWeight: 700, marginBottom: '2rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Company</h4>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1.2rem', fontSize: '0.95rem', fontWeight: 500 }}>
-                  {['About Acriotech', 'Our Methodology', 'Careers', 'Partners', 'Contact Us'].map((item) => (
-                    <li key={item}>
-                      <a href={item === 'Contact Us' ? '/contact-us' : '#'} style={{ color: '#475569', textDecoration: 'none', transition: 'color 0.2s', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }} onMouseEnter={(e) => e.currentTarget.style.color = '#4B61B8'} onMouseLeave={(e) => e.currentTarget.style.color = '#475569'}>
-                        {item} <ChevronRight size={14} color="#94A3B8" />
-                      </a>
+                  {[
+                    { label: 'About Acriotech', href: '/about-us' },
+                    { label: 'Our Methodology', href: '/company/methodology' },
+                    { label: 'Careers', href: '/company/careers' },
+                    { label: 'Partners', href: '/company/partners' },
+                    { label: 'Contact Us', href: '/contact-us' }
+                  ].map((item) => (
+                    <li key={item.label}>
+                      <Link href={item.href} style={{ color: '#475569', textDecoration: 'none', transition: 'color 0.2s', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }} onMouseEnter={(e) => e.currentTarget.style.color = '#4B61B8'} onMouseLeave={(e) => e.currentTarget.style.color = '#475569'}>
+                        {item.label} <ChevronRight size={14} color="#94A3B8" />
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -126,21 +181,51 @@ export default function Footer() {
             </div>
 
             {/* Newsletter Box */}
-            <div style={{ marginTop: '3rem', padding: '2.5rem 2.5rem', background: '#FFFFFF', borderRadius: '16px', border: '1px solid rgba(15,23,42,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', boxShadow: '0 10px 30px rgba(0,0,0,0.02)' }}>
+            <div style={{ marginTop: '3rem', padding: '2.5rem 2.5rem', background: '#FFFFFF', borderRadius: '16px', border: '1px solid rgba(15,23,42,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', boxShadow: '0 10px 30px rgba(0,0,0,0.02)', flexWrap: 'wrap', gap: '1.5rem' }}>
                <div>
                   <h4 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#0F172A', margin: 0, marginBottom: '0.4rem' }}>Subscribe to Insights</h4>
                   <p style={{ fontSize: '0.95rem', color: '#64748B', margin: 0 }}>Latest engineering trends and company updates.</p>
                </div>
-               <div style={{ display: 'flex', gap: '0.5rem' }}>
-                  <input type="email" placeholder="Email address" style={{ padding: '0.85rem 1.2rem', borderRadius: '8px', border: '1px solid #E2E8F0', outline: 'none', width: '260px', fontSize: '0.95rem', background: '#F8FAFC' }} />
-                  <button style={{ padding: '0.85rem 1.8rem', borderRadius: '8px', background: '#0F172A', color: '#FFFFFF', border: 'none', fontWeight: 600, cursor: 'pointer', fontSize: '0.95rem', transition: 'background 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.background = '#4B61B8'} onMouseLeave={(e) => e.currentTarget.style.background = '#0F172A'}>Subscribe</button>
+               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
+                 <div style={{ display: 'flex', gap: '0.5rem' }}>
+                    <input 
+                      type="email" 
+                      placeholder="Email address" 
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      disabled={status === 'loading'}
+                      style={{ padding: '0.85rem 1.2rem', borderRadius: '8px', border: '1px solid #E2E8F0', outline: 'none', width: '260px', fontSize: '0.95rem', background: '#F8FAFC' }} 
+                    />
+                    <button 
+                      onClick={handleSubscribe}
+                      disabled={status === 'loading'}
+                      style={{ padding: '0.85rem 1.8rem', borderRadius: '8px', background: '#0F172A', color: '#FFFFFF', border: 'none', fontWeight: 600, cursor: status === 'loading' ? 'not-allowed' : 'pointer', fontSize: '0.95rem', transition: 'background 0.2s', opacity: status === 'loading' ? 0.7 : 1 }} 
+                      onMouseEnter={(e) => e.currentTarget.style.background = status === 'loading' ? '#0F172A' : '#4B61B8'} 
+                      onMouseLeave={(e) => e.currentTarget.style.background = '#0F172A'}
+                    >
+                      {status === 'loading' ? 'Sending...' : 'Subscribe'}
+                    </button>
+                 </div>
+                 {message && (
+                   <p style={{ 
+                     fontSize: '0.85rem', 
+                     marginTop: '0.5rem', 
+                     color: status === 'success' ? '#10B981' : '#EF4444', 
+                     fontWeight: 500,
+                     textAlign: 'right',
+                     width: '100%',
+                     margin: '0.5rem 0 0 0'
+                   }}>
+                     {message}
+                   </p>
+                 )}
                </div>
             </div>
           </div>
         </div>
 
         {/* Middle Band: Trust Badges */}
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '3rem 0', borderTop: '1px solid rgba(15,23,42,0.05)', borderBottom: '1px solid rgba(15,23,42,0.05)', flexWrap: 'wrap', gap: '0' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '3rem 0', borderTop: '1px solid rgba(15,23,42,0.05)', borderBottom: '1px solid rgba(15,23,42,0.05)', flexWrap: 'wrap', gap: '1.5rem' }}>
            {[
              { icon: <Shield size={28} color="#4B61B8" strokeWidth={1.5} />, line1: 'ISO', line2: 'Ready' },
              { icon: <Lock size={28} color="#22C55E" strokeWidth={1.5} />, line1: 'GDPR', line2: 'Compliant' },
@@ -157,7 +242,7 @@ export default function Footer() {
                   </div>
                </div>
                {idx < arr.length - 1 && (
-                 <div style={{ width: '1px', height: '40px', background: 'rgba(15,23,42,0.1)', margin: '0 3rem' }} />
+                 <div className="trust-divider" style={{ width: '1px', height: '40px', background: 'rgba(15,23,42,0.1)', margin: '0 3rem' }} />
                )}
              </React.Fragment>
            ))}
@@ -182,7 +267,7 @@ export default function Footer() {
           
           {/* Copyright */}
           <div style={{ fontSize: '0.85rem', color: '#64748B', fontWeight: 500, textAlign: 'center' }}>
-            © 2026 Acriotech Technologies Pvt. Ltd. All rights reserved.
+            © 2026 Acriotech Pvt. Ltd. All rights reserved.
           </div>
           
         </div>

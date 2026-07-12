@@ -149,7 +149,7 @@ export default function AboutUs() {
       </section>
 
       {/* Careers / Culture */}
-      <section style={{ padding: '6rem 0', background: '#0F172A', color: '#FFFFFF' }}>
+      <section className="dark-section" style={{ padding: '6rem 0', background: '#0F172A', color: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
           <h2 style={{ fontSize: '2.5rem', fontWeight: 700, color: '#FFFFFF', marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>Join our engineering team</h2>
           <p style={{ fontSize: '1.1rem', color: '#94A3B8', lineHeight: 1.8, marginBottom: '2.5rem', maxWidth: '700px', margin: '0 auto 2.5rem auto' }}>

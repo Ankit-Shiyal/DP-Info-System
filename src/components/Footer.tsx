@@ -53,11 +53,11 @@ export default function Footer() {
           {/* Left Column: Brand & Hero */}
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.5rem' }}>
-               <div style={{ position: 'relative', width: '35px', height: '35px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                 <img src="/custom-logo.svg" alt="Acriotech Logo Mark" style={{ width: '100%', height: '100%', objectFit: 'contain', transform: 'scale(1.2)' }} />
+               <div style={{ position: 'relative', width: '38px', height: '38px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                 <img src="/custom-logo.svg" alt="Acriotech Logo Mark" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                </div>
-               <div style={{ fontFamily: '"Nevera", sans-serif', fontSize: '1.6rem', fontWeight: 800, color: '#0F172A', letterSpacing: '0.02em', marginTop: '2px' }}>
-                 Acriotech
+               <div style={{ display: 'flex', alignItems: 'center', marginTop: '2px' }}>
+                 <img src="/acriotech-name-logo.png" alt="Acriotech" style={{ height: '18px', objectFit: 'contain' }} />
                </div>
             </div>
             

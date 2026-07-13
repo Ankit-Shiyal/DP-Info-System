@@ -82,8 +82,8 @@ export default function NavBar() {
   
   const { scrollY } = useScroll();
   
-  const navWidth = useTransform(scrollY, [0, 100], ["100%", "90%"]);
-  const navPadding = useTransform(scrollY, [0, 100], ["1.5rem 4rem", "1rem 3rem"]);
+  const navWidth = useTransform(scrollY, [0, 100], ["clamp(100%, 100vw, 100%)", "clamp(90%, 95vw, 100%)"]);
+  const navPadding = useTransform(scrollY, [0, 100], ["clamp(1.5rem, 1.5rem, 1.5rem) clamp(1.5rem, 5vw, 4rem)", "clamp(1rem, 1rem, 1rem) clamp(1rem, 3vw, 3rem)"]);
   // Keep background slightly opaque at all times so dark text is always visible
   const navBg = useTransform(scrollY, [0, 100], ["rgba(255, 255, 255, 0.85)", "rgba(255, 255, 255, 0.95)"]);
   const navBorder = useTransform(scrollY, [0, 100], ["rgba(255, 255, 255, 0.2)", "rgba(255, 255, 255, 0.8)"]);
@@ -194,99 +194,134 @@ export default function NavBar() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0, transition: { delay: 0.2 } }}
             style={{
               position: 'fixed',
-              top: '76px', // Header height offset
+              top: 0,
               left: 0,
               right: 0,
               bottom: 0,
-              background: '#FFFFFF',
-              padding: '1.5rem 2rem 6rem 2rem',
+              background: 'rgba(255, 255, 255, 0.9)',
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)',
+              zIndex: 90,
               display: 'flex',
               flexDirection: 'column',
-              gap: '1.5rem',
-              overflowY: 'auto',
-              zIndex: 99
+              padding: '100px 2rem 4rem 2rem',
+              overflowY: 'auto'
             }}
           >
-            {navItems.map((item) => {
-              let linkHref = `/#${item.toLowerCase()}`;
-              if (item === 'Solutions') linkHref = '/solutions';
-              if (item === 'Services') linkHref = '/services';
-              if (item === 'Work') linkHref = '/work';
-              if (item === 'Industries') linkHref = '/industries';
-              if (item === 'Insights') linkHref = '/insights';
-              if (item === 'About') linkHref = '/about-us';
-              if (item === 'Contact') linkHref = '/contact-us';
+            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+              {navItems.map((item, i) => {
+                let linkHref = `/#${item.toLowerCase()}`;
+                if (item === 'Solutions') linkHref = '/solutions';
+                if (item === 'Services') linkHref = '/services';
+                if (item === 'Work') linkHref = '/work';
+                if (item === 'Industries') linkHref = '/industries';
+                if (item === 'Insights') linkHref = '/insights';
+                if (item === 'About') linkHref = '/about-us';
+                if (item === 'Contact') linkHref = '/contact-us';
 
-              const hasSubmenu = Object.keys(navData).includes(item);
-              const isExpanded = expandedMobileMenus.includes(item);
+                const hasSubmenu = Object.keys(navData).includes(item);
+                const isExpanded = expandedMobileMenus.includes(item);
 
-              return (
-                <div key={item} style={{ display: 'flex', flexDirection: 'column', borderBottom: '1px solid #F1F5F9' }}>
-                  <div 
-                    className="keep-flex-row"
-                    style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', paddingBottom: '0.5rem' }}
+                return (
+                  <motion.div 
+                    key={item}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 + i * 0.05, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                    style={{ display: 'flex', flexDirection: 'column', borderBottom: '1px solid rgba(15,23,42,0.05)', paddingBottom: '1rem' }}
                   >
-                    <a 
-                      href={linkHref} 
-                      onClick={(e) => {
-                        if (hasSubmenu) {
-                          e.preventDefault();
-                          setExpandedMobileMenus(prev => 
-                            prev.includes(item) ? prev.filter(m => m !== item) : [...prev, item]
-                          );
-                        } else {
-                          setIsMobileMenuOpen(false);
-                        }
-                      }}
-                      style={{ fontSize: '1.2rem', fontWeight: 600, color: '#0F172A', textDecoration: 'none' }}
-                    >
-                      {item}
-                    </a>
-                    {hasSubmenu && (
-                      <button 
-                        aria-label="Toggle submenu"
-                        onClick={() => setExpandedMobileMenus(prev => 
-                          prev.includes(item) ? prev.filter(m => m !== item) : [...prev, item]
-                        )}
-                        style={{ background: 'transparent', border: 'none', padding: '0.2rem', cursor: 'pointer', color: '#64748B' }}
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                      <a 
+                        href={linkHref} 
+                        onClick={(e) => {
+                          if (hasSubmenu) {
+                            e.preventDefault();
+                            setExpandedMobileMenus(prev => 
+                              prev.includes(item) ? prev.filter(m => m !== item) : [...prev, item]
+                            );
+                          } else {
+                            setIsMobileMenuOpen(false);
+                          }
+                        }}
+                        style={{ fontSize: '1.8rem', fontWeight: 700, color: '#0F172A', textDecoration: 'none', letterSpacing: '-0.02em' }}
                       >
-                        {isExpanded ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
-                      </button>
-                    )}
-                  </div>
-                  
-                  {/* Mobile Submenu Expansion */}
-                  {hasSubmenu && isExpanded && (
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', padding: '0.5rem 0 1rem 1rem', borderLeft: '2px solid #E2E8F0', marginLeft: '0.5rem', marginTop: '0.5rem' }}>
-                      {navData[item as keyof typeof navData].items.map((sublink) => (
-                        <a 
-                          key={sublink} 
-                          href={generateUrl(item, sublink)} 
-                          onClick={() => setIsMobileMenuOpen(false)}
-                          style={{ fontSize: '0.95rem', fontWeight: 500, color: '#475569', textDecoration: 'none' }}
+                        {item}
+                      </a>
+                      {hasSubmenu && (
+                        <button 
+                          aria-label="Toggle submenu"
+                          onClick={() => setExpandedMobileMenus(prev => 
+                            prev.includes(item) ? prev.filter(m => m !== item) : [...prev, item]
+                          )}
+                          style={{ background: 'rgba(15,23,42,0.05)', border: 'none', padding: '0.5rem', borderRadius: '50%', cursor: 'pointer', color: '#0F172A', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                         >
-                          {sublink}
-                        </a>
-                      ))}
-                      {navData[item as keyof typeof navData].featured && (
-                        <a 
-                          href={featuredLinks[item]} 
-                          onClick={() => setIsMobileMenuOpen(false)}
-                          style={{ fontSize: '0.95rem', fontWeight: 700, color: '#4B61B8', textDecoration: 'none', marginTop: '0.5rem' }}
-                        >
-                          {navData[item as keyof typeof navData].featured.linkText} &rarr;
-                        </a>
+                          <motion.div animate={{ rotate: isExpanded ? 180 : 0 }}>
+                            <ChevronDown size={24} />
+                          </motion.div>
+                        </button>
                       )}
                     </div>
-                  )}
-                </div>
-              );
-            })}
+                    
+                    {/* Mobile Submenu Expansion */}
+                    <AnimatePresence>
+                      {hasSubmenu && isExpanded && (
+                        <motion.div 
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3, ease: 'easeInOut' }}
+                          style={{ overflow: 'hidden' }}
+                        >
+                          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem', paddingTop: '1.5rem', paddingLeft: '0.5rem' }}>
+                            {navData[item as keyof typeof navData].items.map((sublink, subIndex) => (
+                              <motion.a 
+                                key={sublink} 
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: subIndex * 0.05 }}
+                                href={generateUrl(item, sublink)} 
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                style={{ fontSize: '1.1rem', fontWeight: 500, color: '#475569', textDecoration: 'none' }}
+                              >
+                                {sublink}
+                              </motion.a>
+                            ))}
+                            {navData[item as keyof typeof navData].featured && (
+                              <motion.a 
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: navData[item as keyof typeof navData].items.length * 0.05 }}
+                                href={featuredLinks[item]} 
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontSize: '1.1rem', fontWeight: 700, color: '#4B61B8', textDecoration: 'none', marginTop: '0.5rem' }}
+                              >
+                                {navData[item as keyof typeof navData].featured.linkText} <ArrowRight size={16} />
+                              </motion.a>
+                            )}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
+                );
+              })}
+            </div>
+            
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              style={{ marginTop: '2rem', paddingTop: '2rem', borderTop: '1px solid rgba(15,23,42,0.05)' }}
+            >
+               <a href="/contact-us" onClick={() => setIsMobileMenuOpen(false)} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#0F172A', color: '#fff', padding: '1rem', borderRadius: '12px', fontSize: '1.1rem', fontWeight: 600, textDecoration: 'none', minHeight: '48px' }}>
+                  Let's Talk
+               </a>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

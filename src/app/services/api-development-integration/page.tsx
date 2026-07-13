@@ -12,9 +12,9 @@ export default function APIIntegration() {
       <NavBar />
 
       {/* Hero Section */}
-      <section style={{ paddingTop: '10rem', paddingBottom: '7rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
+      <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '7rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '5rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
             <div>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#FEF3C7', color: '#B45309', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
                 <Network size={16} /> Data Portability
@@ -62,9 +62,9 @@ export default function APIIntegration() {
       </section>
 
       {/* NEW SECTION 1: Contract-First Design (Methodology) */}
-      <section style={{ padding: '8rem 0', background: '#FFFFFF' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'center' }}>
+           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
              
              {/* Visual */}
              <div style={{ background: '#F8FAFC', padding: '3rem', borderRadius: '24px', border: '1px solid #E2E8F0' }}>
@@ -88,7 +88,7 @@ export default function APIIntegration() {
              </div>
 
              <div>
-                <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>Contract-First Engineering</h2>
+                <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>Contract-First Engineering</h2>
                 <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.7, marginBottom: '2rem' }}>
                   We write the OpenAPI (Swagger) or GraphQL schema before a single line of backend logic is coded. This creates a binding contract between front-end, back-end, and external partners.
                 </p>
@@ -108,10 +108,10 @@ export default function APIIntegration() {
       </section>
 
       {/* NEW SECTION 2: API Gateway Architecture (Tech) */}
-      <section className="dark-section" style={{ padding: '6rem 0', background: '#0F172A', color: '#FFFFFF' }}>
+      <section className="dark-section" style={{ padding: 'var(--spacing-section) 0', background: '#0F172A', color: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-             <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '1rem' }}>Secured at the Edge</h2>
+             <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#FFFFFF', marginBottom: '1rem' }}>Secured at the Edge</h2>
              <p style={{ fontSize: '1.1rem', color: '#94A3B8', maxWidth: '700px', margin: '0 auto' }}>We use enterprise API Gateways (like Kong or AWS API Gateway) to abstract security and routing away from your core microservices.</p>
           </div>
           
@@ -136,14 +136,14 @@ export default function APIIntegration() {
       </section>
 
       {/* NEW SECTION 3: Developer Experience/Docs (Outcomes) */}
-      <section style={{ padding: '6rem 0', background: '#FEF3C7' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#FEF3C7' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '3rem' }}>
               <div style={{ background: '#FFFFFF', width: '80px', height: '80px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)' }}>
                  <BookOpen size={36} color="#B45309" />
               </div>
               <div style={{ maxWidth: '600px' }}>
-                <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#78350F', marginBottom: '1rem' }}>Developer Experience matters.</h2>
+                <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#78350F', marginBottom: '1rem' }}>Developer Experience matters.</h2>
                 <p style={{ fontSize: '1.1rem', color: '#92400E', lineHeight: 1.7 }}>
                   An API is only as good as its documentation. We auto-generate interactive, beautiful documentation portals (like Stripe's) directly from the code annotations, ensuring they never fall out of date.
                 </p>

@@ -12,9 +12,9 @@ export default function DigitalTransformation() {
       <NavBar />
 
       {/* Hero Section */}
-      <section style={{ paddingTop: '10rem', paddingBottom: '6rem', background: '#312E81', color: '#FFFFFF' }}>
+      <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: 'var(--spacing-section)', background: '#312E81', color: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '4rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
             <div>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(255,255,255,0.1)', color: '#E0E7FF', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
                 <Compass size={16} /> Enterprise Modernization
@@ -52,10 +52,10 @@ export default function DigitalTransformation() {
       </section>
 
       {/* NEW SECTION 1: Transformation Roadmap (Methodology) */}
-      <section style={{ padding: '8rem 0', background: '#F8FAFC' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#F8FAFC' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-            <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', marginBottom: '1rem' }}>The Strategic Roadmap</h2>
+            <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1rem' }}>The Strategic Roadmap</h2>
             <p style={{ fontSize: '1.1rem', color: '#64748B' }}>Transformation fails when it attempts a "big bang" release. We execute in iterative, risk-managed phases.</p>
           </div>
 
@@ -63,7 +63,7 @@ export default function DigitalTransformation() {
              {/* Timeline Line */}
              <div style={{ position: 'absolute', left: '24px', top: '0', bottom: '0', width: '2px', background: '#E2E8F0', zIndex: 0 }}></div>
              
-             <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem', position: 'relative', zIndex: 1 }}>
+             <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-section-sm)', position: 'relative', zIndex: 1 }}>
                {[
                  { phase: "Assess & Align", title: "Technical & Cultural Audit", text: "We evaluate existing monolithic systems, data silos, and employee workflows to identify the highest friction points." },
                  { phase: "Pilot & Prove", title: "Vertical Slice Delivery", text: "We modernize one core business process end-to-end to prove the architecture and secure internal buy-in before scaling." },
@@ -85,14 +85,14 @@ export default function DigitalTransformation() {
       </section>
 
       {/* NEW SECTION 2: Change Management (Human Element) */}
-      <section style={{ padding: '6rem 0', background: '#FFFFFF' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
             <div>
               <div style={{ width: '64px', height: '64px', borderRadius: '16px', background: '#EEF2FF', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '2rem' }}>
                 <Users2 size={32} color="#4F46E5" />
               </div>
-              <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>The Human Element</h2>
+              <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>The Human Element</h2>
               <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.7, marginBottom: '2rem' }}>
                 The most elegant cloud architecture is useless if employees refuse to adopt it. We integrate change management directly into our engineering process.
               </p>
@@ -136,9 +136,9 @@ export default function DigitalTransformation() {
       </section>
 
       {/* NEW SECTION 3: Core Platform Shifts (Tech) */}
-      <section className="dark-section" style={{ padding: '6rem 0', background: '#0F172A', color: '#FFFFFF' }}>
+      <section className="dark-section" style={{ padding: 'var(--spacing-section) 0', background: '#0F172A', color: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
-           <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '1rem' }}>Core Technical Shifts</h2>
+           <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#FFFFFF', marginBottom: '1rem' }}>Core Technical Shifts</h2>
            <p style={{ fontSize: '1.1rem', color: '#94A3B8', maxWidth: '700px', margin: '0 auto 4rem auto' }}>We modernize the three pillars of enterprise technology simultaneously.</p>
            
            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>

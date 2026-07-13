@@ -108,16 +108,16 @@ export default function CookieBanner() {
               flexWrap: "wrap"
             }}
           >
-            <div className="cookie-banner-text" style={{ flex: '1 1 600px' }}>
+            <div className="cookie-banner-text" style={{ flex: '1 1 300px' }}>
               <h3 style={{ fontSize: "1.1rem", fontWeight: 700, color: "#0F172A", margin: "0 0 0.25rem 0" }}>We value your privacy</h3>
               <p style={{ fontSize: "0.9rem", color: "#5B6472", lineHeight: 1.5, margin: 0 }}>
                 We use cookies and similar technologies to enhance your browsing experience, serve personalized content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies in accordance with our Privacy Policy. Note that we still send basic anonymous pings to Google Analytics for site performance even if rejected, in compliance with Consent Mode v2.
               </p>
             </div>
-            <div className="cookie-banner-buttons" style={{ display: "flex", gap: "1rem", flexShrink: 0 }}>
+            <div className="cookie-banner-buttons" style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
               <button
                 onClick={() => setShowPreferences(true)}
-                style={{ padding: "0.6rem 1.25rem", background: "transparent", color: "#4B61B8", fontWeight: 600, border: "1px solid rgba(75, 97, 184, 0.3)", borderRadius: "6px", cursor: "pointer", transition: "background 0.2s", fontSize: "0.9rem" }}
+                style={{ padding: "0.6rem 1.25rem", minHeight: "48px", background: "transparent", color: "#4B61B8", fontWeight: 600, border: "1px solid rgba(75, 97, 184, 0.3)", borderRadius: "6px", cursor: "pointer", transition: "background 0.2s", fontSize: "0.9rem" }}
                 onMouseEnter={(e) => e.currentTarget.style.background = "rgba(75, 97, 184, 0.05)"}
                 onMouseLeave={(e) => e.currentTarget.style.background = "transparent"}
               >
@@ -125,7 +125,7 @@ export default function CookieBanner() {
               </button>
               <button
                 onClick={handleDeclineAll}
-                style={{ padding: "0.6rem 1.25rem", background: "#F1F5F9", color: "#0F172A", fontWeight: 600, border: "none", borderRadius: "6px", cursor: "pointer", transition: "background 0.2s", fontSize: "0.9rem" }}
+                style={{ padding: "0.6rem 1.25rem", minHeight: "48px", background: "#F1F5F9", color: "#0F172A", fontWeight: 600, border: "none", borderRadius: "6px", cursor: "pointer", transition: "background 0.2s", fontSize: "0.9rem" }}
                 onMouseEnter={(e) => e.currentTarget.style.background = "#E2E8F0"}
                 onMouseLeave={(e) => e.currentTarget.style.background = "#F1F5F9"}
               >
@@ -133,7 +133,7 @@ export default function CookieBanner() {
               </button>
               <button
                 onClick={handleAcceptAll}
-                style={{ padding: "0.6rem 1.25rem", background: "#4B61B8", color: "#FFFFFF", fontWeight: 600, border: "none", borderRadius: "6px", cursor: "pointer", transition: "background 0.2s", fontSize: "0.9rem" }}
+                style={{ padding: "0.6rem 1.25rem", minHeight: "48px", background: "#4B61B8", color: "#FFFFFF", fontWeight: 600, border: "none", borderRadius: "6px", cursor: "pointer", transition: "background 0.2s", fontSize: "0.9rem" }}
                 onMouseEnter={(e) => e.currentTarget.style.background = "#3A4D94"}
                 onMouseLeave={(e) => e.currentTarget.style.background = "#4B61B8"}
               >

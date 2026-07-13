@@ -12,9 +12,9 @@ export default function WebAppDevelopment() {
       <NavBar />
 
       {/* Hero Section */}
-      <section style={{ paddingTop: '10rem', paddingBottom: '7rem', background: '#FAFAFA', borderBottom: '1px solid #EAEAEA' }}>
+      <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '7rem', background: '#FAFAFA', borderBottom: '1px solid #EAEAEA' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '5rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
             <div>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#EFF6FF', color: '#1D4ED8', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
                 <Code size={16} /> Full-Stack Engineering
@@ -64,10 +64,10 @@ export default function WebAppDevelopment() {
       </section>
 
       {/* NEW SECTION 1: Front-end Architecture (Tech) */}
-      <section style={{ padding: '6rem 0', background: '#FFFFFF' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-             <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', marginBottom: '1rem' }}>Component-Driven Architecture</h2>
+             <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1rem' }}>Component-Driven Architecture</h2>
              <p style={{ fontSize: '1.1rem', color: '#64748B', maxWidth: '700px', margin: '0 auto' }}>We organize code by feature, not by technical type. This allows enterprise codebases to scale to millions of lines of code without becoming a tangled mess.</p>
           </div>
           
@@ -91,11 +91,11 @@ export default function WebAppDevelopment() {
       </section>
 
       {/* NEW SECTION 2: State Management (Methodology) */}
-      <section style={{ padding: '8rem 0', background: '#F8FAFC' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#F8FAFC' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'center' }}>
+           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
              <div>
-                <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>Mastering Application State</h2>
+                <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>Mastering Application State</h2>
                 <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.7, marginBottom: '2rem' }}>
                   The most common cause of bugs in modern web apps is mismanaged state. We strictly separate Server State (data from APIs) from Client State (UI toggles).
                 </p>
@@ -136,24 +136,24 @@ export default function WebAppDevelopment() {
       </section>
 
       {/* NEW SECTION 3: Web Vitals (Metrics) */}
-      <section className="dark-section" style={{ padding: '6rem 0', background: '#0F172A', color: '#FFFFFF' }}>
+      <section className="dark-section" style={{ padding: 'var(--spacing-section) 0', background: '#0F172A', color: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '1.5rem' }}>Core Web Vitals</h2>
+          <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#FFFFFF', marginBottom: '1.5rem' }}>Core Web Vitals</h2>
           <p style={{ fontSize: '1.1rem', color: '#94A3B8', maxWidth: '700px', margin: '0 auto 4rem auto' }}>Performance isn't just about SEO. It's about conversion. We engineer applications to pass Google's Core Web Vitals on mobile and desktop.</p>
           
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
             <div style={{ background: '#1E293B', padding: '2rem', borderRadius: '12px', border: '1px solid #334155' }}>
-               <div style={{ fontSize: '2.5rem', fontWeight: 800, color: '#10B981', marginBottom: '0.5rem' }}>&lt;2.5s</div>
+               <div style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#10B981', marginBottom: '0.5rem' }}>&lt;2.5s</div>
                <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#F8FAFC', marginBottom: '0.5rem' }}>LCP</div>
                <p style={{ color: '#64748B', fontSize: '0.85rem' }}>Largest Contentful Paint. Ensures the main content loads rapidly.</p>
             </div>
             <div style={{ background: '#1E293B', padding: '2rem', borderRadius: '12px', border: '1px solid #334155' }}>
-               <div style={{ fontSize: '2.5rem', fontWeight: 800, color: '#10B981', marginBottom: '0.5rem' }}>&lt;100ms</div>
+               <div style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#10B981', marginBottom: '0.5rem' }}>&lt;100ms</div>
                <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#F8FAFC', marginBottom: '0.5rem' }}>FID</div>
                <p style={{ color: '#64748B', fontSize: '0.85rem' }}>First Input Delay. The app responds instantly to user interaction.</p>
             </div>
             <div style={{ background: '#1E293B', padding: '2rem', borderRadius: '12px', border: '1px solid #334155' }}>
-               <div style={{ fontSize: '2.5rem', fontWeight: 800, color: '#10B981', marginBottom: '0.5rem' }}>&lt;0.1</div>
+               <div style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#10B981', marginBottom: '0.5rem' }}>&lt;0.1</div>
                <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#F8FAFC', marginBottom: '0.5rem' }}>CLS</div>
                <p style={{ color: '#64748B', fontSize: '0.85rem' }}>Cumulative Layout Shift. No annoying jumping content as the page loads.</p>
             </div>

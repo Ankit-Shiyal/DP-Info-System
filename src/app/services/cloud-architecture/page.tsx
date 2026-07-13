@@ -12,13 +12,13 @@ export default function CloudArchitecture() {
       <NavBar />
 
       {/* Hero Section */}
-      <section className="dark-section" style={{ paddingTop: '10rem', paddingBottom: '7rem', background: '#0F172A', color: '#FFFFFF' }}>
+      <section className="dark-section" style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '7rem', background: '#0F172A', color: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ maxWidth: '800px' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(255,255,255,0.1)', color: '#F8FAFC', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
               <Cloud size={16} color="#38BDF8" /> Infrastructure & Ops
             </div>
-            <h1 style={{ fontSize: '4.5rem', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+            <h1 style={{ fontSize: 'var(--font-hero)', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
               Cloud foundations shaped around <span style={{ color: '#38BDF8' }}>how you operate.</span>
             </h1>
             <p style={{ fontSize: '1.25rem', color: '#94A3B8', lineHeight: 1.6, marginBottom: '3rem' }}>
@@ -34,11 +34,11 @@ export default function CloudArchitecture() {
       </section>
 
       {/* NEW SECTION 1: Multi-Cloud vs Single-Cloud (Methodology) */}
-      <section style={{ padding: '8rem 0', background: '#FFFFFF' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
             <div>
-               <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>The Pragmatic Cloud Strategy</h2>
+               <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>The Pragmatic Cloud Strategy</h2>
                <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.7, marginBottom: '2rem' }}>
                  "Multi-cloud" is often an expensive distraction. We help organizations choose the right compute paradigm based on their actual team capability, not industry buzzwords.
                </p>
@@ -72,7 +72,7 @@ export default function CloudArchitecture() {
                </p>
                <div style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', padding: '1.5rem', borderRadius: '12px' }}>
                   <div style={{ fontSize: '0.8rem', color: '#64748B', textTransform: 'uppercase', fontWeight: 700, marginBottom: '0.5rem' }}>Average Cost Reduction</div>
-                  <div style={{ fontSize: '3rem', fontWeight: 800, color: '#16A34A' }}>34%</div>
+                  <div style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#16A34A' }}>34%</div>
                </div>
             </div>
           </div>
@@ -80,10 +80,10 @@ export default function CloudArchitecture() {
       </section>
 
       {/* NEW SECTION 2: Serverless vs Containers (Tech) */}
-      <section className="dark-section" style={{ padding: '6rem 0', background: '#0F172A', color: '#FFFFFF' }}>
+      <section className="dark-section" style={{ padding: 'var(--spacing-section) 0', background: '#0F172A', color: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-             <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '1rem' }}>Compute Selection Matrix</h2>
+             <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#FFFFFF', marginBottom: '1rem' }}>Compute Selection Matrix</h2>
              <p style={{ fontSize: '1.1rem', color: '#94A3B8', maxWidth: '700px', margin: '0 auto' }}>Matching the workload to the correct compute primitive.</p>
           </div>
           
@@ -107,14 +107,14 @@ export default function CloudArchitecture() {
       </section>
 
       {/* NEW SECTION 3: Disaster Recovery (Outcomes) */}
-      <section style={{ padding: '6rem 0', background: '#FFFBEB' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFBEB' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-           <div style={{ display: 'flex', alignItems: 'center', gap: '4rem' }}>
+           <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-section-sm)' }}>
               <div style={{ background: '#FEF3C7', width: '80px', height: '80px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, boxShadow: '0 10px 15px -3px rgba(0,0,0,0.05)' }}>
                  <DatabaseBackup size={36} color="#B45309" />
               </div>
               <div style={{ flex: 1 }}>
-                <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#78350F', marginBottom: '1rem' }}>Designing for Catastrophe</h2>
+                <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#78350F', marginBottom: '1rem' }}>Designing for Catastrophe</h2>
                 <p style={{ fontSize: '1.1rem', color: '#92400E', lineHeight: 1.7 }}>
                   Servers will die. Availability zones will go offline. We architect for failure by implementing active-active multi-region deployments, automated database failovers, and rigorous disaster recovery simulations (Game Days) to guarantee your Recovery Point Objective (RPO).
                 </p>

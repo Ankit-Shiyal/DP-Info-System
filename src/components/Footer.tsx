@@ -45,13 +45,13 @@ export default function Footer() {
   return (
     <footer style={{ background: '#F8FAFC', color: '#0F172A', position: 'relative', overflow: 'hidden', borderTop: '1px solid rgba(15,23,42,0.05)' }}>
       
-      <div className="container" style={{ position: 'relative', zIndex: 1, padding: '6rem 2rem 3rem 2rem', maxWidth: '1400px', margin: '0 auto' }}>
+      <div className="container" style={{ position: 'relative', zIndex: 1, padding: 'var(--spacing-section) 2rem 3rem 2rem', maxWidth: '1400px', margin: '0 auto' }}>
         
         {/* Top Section: Brand (Left) and Links (Right) */}
-        <div className="footer-top-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 2.5fr', gap: '4rem', marginBottom: '4rem' }}>
+        <div className="footer-top-grid" style={{ display: 'flex', flexWrap: 'wrap', gap: '4rem', marginBottom: '4rem' }}>
           
           {/* Left Column: Brand & Hero */}
-          <div>
+          <div style={{ flex: '1 1 300px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.5rem' }}>
                <div style={{ position: 'relative', width: '38px', height: '38px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                  <img src="/custom-logo.svg" alt="Acriotech Logo Mark" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
@@ -65,7 +65,7 @@ export default function Footer() {
               Engineering Software. Building Future.
             </p>
 
-            <h2 style={{ fontSize: '3.2rem', fontWeight: 800, lineHeight: 1.1, margin: 0, marginBottom: '1.2rem', color: '#0F172A', letterSpacing: '-0.03em' }}>
+            <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, lineHeight: 1.1, margin: 0, marginBottom: '1.2rem', color: '#0F172A', letterSpacing: '-0.03em' }}>
               Building<br />
               Software<br />
               <span style={{ color: '#4B61B8' }}>That Lasts.</span>
@@ -94,10 +94,10 @@ export default function Footer() {
           </div>
 
           {/* Right Section: Links & Newsletter */}
-          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: '2.5 1 600px', width: '100%' }}>
             
             {/* Links Grid */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2rem', paddingTop: '0.5rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 140px), 1fr))', gap: '2rem', paddingTop: '0.5rem' }}>
               
               {/* SOLUTIONS */}
               <div>
@@ -202,7 +202,7 @@ export default function Footer() {
                       className="newsletter-btn"
                       onClick={handleSubscribe}
                       disabled={status === 'loading'}
-                      style={{ padding: '0.85rem 1.8rem', borderRadius: '8px', background: '#0F172A', color: '#FFFFFF', border: 'none', fontWeight: 600, cursor: status === 'loading' ? 'not-allowed' : 'pointer', fontSize: '0.95rem', transition: 'background 0.2s', opacity: status === 'loading' ? 0.7 : 1 }} 
+                      style={{ padding: '0.85rem 1.8rem', minHeight: '48px', borderRadius: '8px', background: '#0F172A', color: '#FFFFFF', border: 'none', fontWeight: 600, cursor: status === 'loading' ? 'not-allowed' : 'pointer', fontSize: '0.95rem', transition: 'background 0.2s', opacity: status === 'loading' ? 0.7 : 1 }} 
                       onMouseEnter={(e) => e.currentTarget.style.background = status === 'loading' ? '#0F172A' : '#4B61B8'} 
                       onMouseLeave={(e) => e.currentTarget.style.background = '#0F172A'}
                     >

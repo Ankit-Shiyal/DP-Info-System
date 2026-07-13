@@ -44,12 +44,12 @@ export default function MethodologyPage() {
       <NavBar />
 
       {/* Hero Section */}
-      <section style={{ paddingTop: '10rem', paddingBottom: '7rem', background: '#0F172A', color: '#FFFFFF' }}>
+      <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '7rem', background: '#0F172A', color: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#1E293B', color: '#38BDF8', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 700, textTransform: 'uppercase', marginBottom: '2rem' }}>
             Our Methodology
           </div>
-          <h1 style={{ fontSize: '4.5rem', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+          <h1 style={{ fontSize: 'var(--font-hero)', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
             How we <span style={{ color: '#38BDF8' }}>build software.</span>
           </h1>
           <p style={{ fontSize: '1.25rem', color: '#94A3B8', lineHeight: 1.6, maxWidth: '700px' }}>
@@ -59,10 +59,10 @@ export default function MethodologyPage() {
       </section>
 
       {/* Process Grid */}
-      <section style={{ padding: '8rem 0', background: '#FAFAFA' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#FAFAFA' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '3rem', fontWeight: 800, color: '#0F172A', marginBottom: '1rem', letterSpacing: '-0.02em' }}>The Acriotech Lifecycle</h2>
+            <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1rem', letterSpacing: '-0.02em' }}>The Acriotech Lifecycle</h2>
             <p style={{ fontSize: '1.1rem', color: '#475569', maxWidth: '600px', margin: '0 auto' }}>From architectural design to production deployment, our process is optimized for speed without sacrificing stability.</p>
           </div>
           
@@ -86,9 +86,9 @@ export default function MethodologyPage() {
       </section>
 
       {/* CTA */}
-      <section style={{ padding: '6rem 0', background: '#0F172A', color: '#FFFFFF', textAlign: 'center' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#0F172A', color: '#FFFFFF', textAlign: 'center' }}>
         <div className="container" style={{ maxWidth: '800px', margin: '0 auto', padding: '0 2rem' }}>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: '1.5rem' }}>Ready to build something robust?</h2>
+          <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, marginBottom: '1.5rem' }}>Ready to build something robust?</h2>
           <p style={{ fontSize: '1.15rem', color: '#94A3B8', marginBottom: '3rem' }}>Let's discuss your architecture and how our methodology can accelerate your roadmap.</p>
           <Link href="/contact-us" style={{ background: '#38BDF8', color: '#0F172A', padding: '1rem 2.5rem', borderRadius: '8px', fontWeight: 700, fontSize: '1.1rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'transform 0.2s' }}>
             Start a Project <ArrowRight size={18} />

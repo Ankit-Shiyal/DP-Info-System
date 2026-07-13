@@ -12,12 +12,12 @@ export default function QATesting() {
       <NavBar />
 
       {/* Hero Section */}
-      <section style={{ paddingTop: '10rem', paddingBottom: '7rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
+      <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '7rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#FEF2F2', color: '#991B1B', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
             <Bug size={16} /> Quality Assurance
           </div>
-          <h1 style={{ fontSize: '4.5rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+          <h1 style={{ fontSize: 'var(--font-hero)', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
             Quality matched to the <br/><span style={{ color: '#DC2626' }}>cost of failure.</span>
           </h1>
           <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, marginBottom: '3rem', maxWidth: '800px', margin: '0 auto 3rem auto' }}>
@@ -32,11 +32,11 @@ export default function QATesting() {
       </section>
 
       {/* NEW SECTION 1: The Testing Pyramid (Methodology) */}
-      <section style={{ padding: '8rem 0', background: '#F8FAFC' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#F8FAFC' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
             <div>
-               <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>The Testing Pyramid</h2>
+               <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>The Testing Pyramid</h2>
                <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.7, marginBottom: '2rem' }}>
                  A heavy reliance on manual clicking or slow UI tests will cripple your deployment speed. We structure QA around the Testing Pyramid: hundreds of fast unit tests at the base, and a select few end-to-end tests at the top.
                </p>
@@ -73,10 +73,10 @@ export default function QATesting() {
       </section>
 
       {/* NEW SECTION 2: Automated End-to-End (Tech) */}
-      <section className="dark-section" style={{ padding: '6rem 0', background: '#0F172A', color: '#FFFFFF' }}>
+      <section className="dark-section" style={{ padding: 'var(--spacing-section) 0', background: '#0F172A', color: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-             <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '1rem' }}>Automated UI Testing</h2>
+             <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#FFFFFF', marginBottom: '1rem' }}>Automated UI Testing</h2>
              <p style={{ fontSize: '1.1rem', color: '#94A3B8', maxWidth: '700px', margin: '0 auto' }}>For critical user journeys (like checkout or user registration), we utilize modern headless browsers to simulate real user behavior across the full stack.</p>
           </div>
           
@@ -101,11 +101,11 @@ export default function QATesting() {
       </section>
 
       {/* NEW SECTION 3: Defect Resolution Time (Outcomes) */}
-      <section style={{ padding: '6rem 0', background: '#FFFFFF' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '4rem', alignItems: 'center' }}>
+           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
               <div>
-                <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>Making Defects Useful</h2>
+                <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>Making Defects Useful</h2>
                 <p style={{ fontSize: '1.1rem', color: '#64748B', lineHeight: 1.7 }}>
                   "It doesn't work" is not a bug report. A good QA process produces defects that engineers can actually fix. We drastically reduce Mean Time to Resolution (MTTR) by providing perfect context.
                 </p>

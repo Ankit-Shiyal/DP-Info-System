@@ -12,12 +12,12 @@ export default function EnterpriseSoftware() {
       <NavBar />
 
       {/* Hero Section */}
-      <section style={{ paddingTop: '10rem', paddingBottom: '7rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
+      <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '7rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#F1F5F9', color: '#0F172A', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
             <Building2 size={16} /> Enterprise Grade
           </div>
-          <h1 style={{ fontSize: '4.5rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+          <h1 style={{ fontSize: 'var(--font-hero)', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
             Software that bears the <br/><span style={{ color: '#D97706' }}>weight of your business.</span>
           </h1>
           <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, marginBottom: '3rem', maxWidth: '800px', margin: '0 auto 3rem auto' }}>
@@ -32,11 +32,11 @@ export default function EnterpriseSoftware() {
       </section>
 
       {/* NEW SECTION 1: System Integration (Tech Focus) */}
-      <section style={{ padding: '8rem 0', background: '#F8FAFC' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#F8FAFC' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
             <div>
-               <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>Complex System Integration</h2>
+               <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>Complex System Integration</h2>
                <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.7, marginBottom: '2rem' }}>Enterprise software rarely exists in a vacuum. It must communicate flawlessly with legacy mainframes, modern SaaS APIs, and third-party vendors without dropping a single packet.</p>
                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                  <div style={{ display: 'flex', gap: '1rem' }}>
@@ -84,11 +84,11 @@ export default function EnterpriseSoftware() {
       </section>
 
       {/* NEW SECTION 2: Enterprise Security Standards (Outcomes) */}
-      <section style={{ padding: '6rem 0', background: '#FFFFFF' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
              <ShieldAlert size={48} color="#0F172A" style={{ margin: '0 auto 1.5rem auto' }} />
-             <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', marginBottom: '1rem' }}>Built for the Auditor</h2>
+             <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1rem' }}>Built for the Auditor</h2>
              <p style={{ fontSize: '1.1rem', color: '#64748B', maxWidth: '600px', margin: '0 auto' }}>Compliance is baked into our CI/CD pipelines, not added as an afterthought.</p>
           </div>
           
@@ -109,11 +109,11 @@ export default function EnterpriseSoftware() {
       </section>
 
       {/* NEW SECTION 3: Support SLA (Methodology) */}
-      <section className="dark-section" style={{ padding: '6rem 0', background: '#0F172A', color: '#FFFFFF' }}>
+      <section className="dark-section" style={{ padding: 'var(--spacing-section) 0', background: '#0F172A', color: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '4rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-section-sm)' }}>
              <div style={{ flex: 1 }}>
-               <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '1.5rem' }}>Unwavering Support SLAs</h2>
+               <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#FFFFFF', marginBottom: '1.5rem' }}>Unwavering Support SLAs</h2>
                <p style={{ fontSize: '1.1rem', color: '#94A3B8', lineHeight: 1.7, marginBottom: '2rem' }}>Enterprise software requires enterprise backing. Our dedicated support teams provide guaranteed response times for critical severity incidents.</p>
                
                <div style={{ background: '#1E293B', borderRadius: '12px', border: '1px solid #334155', padding: '2rem' }}>

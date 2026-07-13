@@ -12,13 +12,13 @@ export default function BusinessProcessAutomation() {
       <NavBar />
 
       {/* Hero Section */}
-      <section className="dark-section" style={{ paddingTop: '10rem', paddingBottom: '6rem', background: '#0F172A', color: '#FFFFFF' }}>
+      <section className="dark-section" style={{ paddingTop: 'var(--spacing-section)', paddingBottom: 'var(--spacing-section)', background: '#0F172A', color: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ maxWidth: '800px' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(255,255,255,0.1)', color: '#F8FAFC', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
               <Settings size={16} color="#38BDF8" /> Process Engineering
             </div>
-            <h1 style={{ fontSize: '4.5rem', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+            <h1 style={{ fontSize: 'var(--font-hero)', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
               Orchestrate work at <span style={{ color: '#38BDF8' }}>scale.</span>
             </h1>
             <p style={{ fontSize: '1.25rem', color: '#94A3B8', lineHeight: 1.6, marginBottom: '3rem' }}>
@@ -34,7 +34,7 @@ export default function BusinessProcessAutomation() {
       </section>
 
       {/* Core Solutions Grid */}
-      <section style={{ padding: '6rem 0', background: '#FFFFFF' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
              {[
@@ -53,11 +53,11 @@ export default function BusinessProcessAutomation() {
       </section>
 
       {/* NEW SECTION 1: Process Mining (Methodology) */}
-      <section style={{ padding: '6rem 0', background: '#F1F5F9' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#F1F5F9' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
              <div>
-                <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>Process Mining Methodology</h2>
+                <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>Process Mining Methodology</h2>
                 <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.7, marginBottom: '2rem' }}>We don't automate broken processes. We use data-driven process mining to map how work actually happens across your organization, identifying bottlenecks before we write a single line of code.</p>
                 <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                   {[
@@ -88,9 +88,9 @@ export default function BusinessProcessAutomation() {
       </section>
 
       {/* NEW SECTION 2: Workflow Engine Architecture (Tech) */}
-      <section style={{ padding: '6rem 0', background: '#FFFFFF' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>Enterprise Tech Stack</h2>
+          <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>Enterprise Tech Stack</h2>
           <p style={{ fontSize: '1.1rem', color: '#64748B', marginBottom: '4rem' }}>We utilize industry-leading orchestration engines to ensure reliability, auditability, and scalability.</p>
           
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
@@ -111,21 +111,21 @@ export default function BusinessProcessAutomation() {
       </section>
 
       {/* NEW SECTION 3: ROI Timeline (Outcomes) */}
-      <section className="dark-section" style={{ padding: '6rem 0', background: '#0F172A', color: '#FFFFFF' }}>
+      <section className="dark-section" style={{ padding: 'var(--spacing-section) 0', background: '#0F172A', color: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-           <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '4rem', alignItems: 'center' }}>
+           <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
               <div>
-                <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '1.5rem' }}>Expected Outcomes</h2>
+                <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#FFFFFF', marginBottom: '1.5rem' }}>Expected Outcomes</h2>
                 <p style={{ color: '#94A3B8', lineHeight: 1.6 }}>Automation projects should pay for themselves within 6-9 months. We measure success strictly through recovered employee hours and error reduction rates.</p>
               </div>
               <div style={{ display: 'flex', gap: '2rem' }}>
                  <div style={{ flex: 1, background: '#1E293B', padding: '2.5rem', borderRadius: '16px' }}>
-                    <div style={{ fontSize: '3rem', fontWeight: 800, color: '#38BDF8', marginBottom: '1rem' }}>70%</div>
+                    <div style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#38BDF8', marginBottom: '1rem' }}>70%</div>
                     <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: '#F8FAFC', marginBottom: '0.5rem' }}>Reduction in Manual Entry</h4>
                     <p style={{ color: '#94A3B8', fontSize: '0.9rem' }}>Frees your team to focus on cognitive, high-value decision making.</p>
                  </div>
                  <div style={{ flex: 1, background: '#1E293B', padding: '2.5rem', borderRadius: '16px' }}>
-                    <div style={{ fontSize: '3rem', fontWeight: 800, color: '#34D399', marginBottom: '1rem' }}>99.9%</div>
+                    <div style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#34D399', marginBottom: '1rem' }}>99.9%</div>
                     <h4 style={{ fontSize: '1.1rem', fontWeight: 600, color: '#F8FAFC', marginBottom: '0.5rem' }}>Accuracy Rate</h4>
                     <p style={{ color: '#94A3B8', fontSize: '0.9rem' }}>Eliminates human error from repetitive copy-paste workflows.</p>
                  </div>

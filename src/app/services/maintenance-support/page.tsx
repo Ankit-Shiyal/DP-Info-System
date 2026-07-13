@@ -12,9 +12,9 @@ export default function MaintenanceSupport() {
       <NavBar />
 
       {/* Hero Section */}
-      <section style={{ paddingTop: '10rem', paddingBottom: '7rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
+      <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '7rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '5rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
             <div>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#F3F4F6', color: '#374151', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
                 <Wrench size={16} /> SLA & Operations
@@ -40,11 +40,11 @@ export default function MaintenanceSupport() {
                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
                  <div style={{ background: '#1E293B', padding: '1.5rem', borderRadius: '8px', border: '1px solid #334155' }}>
                    <div style={{ fontSize: '0.75rem', color: '#94A3B8', fontWeight: 600, textTransform: 'uppercase', marginBottom: '0.2rem' }}>P1 Response Time</div>
-                   <div style={{ fontSize: '1.8rem', fontWeight: 800, color: '#10B981' }}>&lt;15m</div>
+                   <div style={{ fontSize: 'var(--font-h3)', fontWeight: 800, color: '#10B981' }}>&lt;15m</div>
                  </div>
                  <div style={{ background: '#1E293B', padding: '1.5rem', borderRadius: '8px', border: '1px solid #334155' }}>
                    <div style={{ fontSize: '0.75rem', color: '#94A3B8', fontWeight: 600, textTransform: 'uppercase', marginBottom: '0.2rem' }}>Uptime Target</div>
-                   <div style={{ fontSize: '1.8rem', fontWeight: 800, color: '#10B981' }}>99.9%</div>
+                   <div style={{ fontSize: 'var(--font-h3)', fontWeight: 800, color: '#10B981' }}>99.9%</div>
                  </div>
                </div>
                <div style={{ background: '#1E293B', padding: '1.5rem', borderRadius: '8px', border: '1px solid #334155', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -60,9 +60,9 @@ export default function MaintenanceSupport() {
       </section>
 
       {/* NEW SECTION 1: Observability & Logging (Tech) */}
-      <section style={{ padding: '8rem 0', background: '#F8FAFC' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#F8FAFC' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'center' }}>
+           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
              
              {/* Visual */}
              <div style={{ background: '#FFFFFF', padding: '3rem', borderRadius: '24px', border: '1px solid #E2E8F0', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.05)' }}>
@@ -84,7 +84,7 @@ export default function MaintenanceSupport() {
              </div>
 
              <div>
-                <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>Telemetry & Observability</h2>
+                <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>Telemetry & Observability</h2>
                 <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.7, marginBottom: '2rem' }}>
                   You cannot fix what you cannot see. Before we assume maintenance of a legacy system, we implement strict observability standards.
                 </p>
@@ -104,10 +104,10 @@ export default function MaintenanceSupport() {
       </section>
 
       {/* NEW SECTION 2: Incident Response Flow (Process) */}
-      <section className="dark-section" style={{ padding: '6rem 0', background: '#0F172A', color: '#FFFFFF' }}>
+      <section className="dark-section" style={{ padding: 'var(--spacing-section) 0', background: '#0F172A', color: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-             <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '1rem' }}>The Incident Lifecycle</h2>
+             <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#FFFFFF', marginBottom: '1rem' }}>The Incident Lifecycle</h2>
              <p style={{ fontSize: '1.1rem', color: '#94A3B8', maxWidth: '700px', margin: '0 auto' }}>We clarify severity, ownership, and escalation paths so urgent problems do not become improvised negotiations.</p>
           </div>
           
@@ -131,9 +131,9 @@ export default function MaintenanceSupport() {
       </section>
 
       {/* NEW SECTION 3: System Upgrades (Methodology) */}
-      <section style={{ padding: '6rem 0', background: '#FFFFFF' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
-           <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>Continuous Modernization</h2>
+           <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>Continuous Modernization</h2>
            <p style={{ fontSize: '1.1rem', color: '#64748B', maxWidth: '700px', margin: '0 auto 4rem auto', lineHeight: 1.6 }}>
              Maintenance isn't just about keeping the lights on. It's about preventing the system from slowly decaying into legacy technical debt.
            </p>

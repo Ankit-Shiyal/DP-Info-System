@@ -11,9 +11,9 @@ import NavBar from "@/components/NavBar";
 
 function EngineeringArchitecture() {
   return (
-    <div style={{ position: 'relative', width: '100%', height: '600px' }}>
+    <div className="hero-architecture-wrapper" style={{ position: 'relative', width: '100%', minHeight: '400px', height: 'clamp(400px, 60vw, 600px)' }}>
       {/* Circuit Connections (Background) */}
-      <svg style={{ position: 'absolute', top: '10%', left: '0', width: '100%', height: '80%', zIndex: 0 }} viewBox="0 0 600 400">
+      <svg style={{ position: 'absolute', top: '10%', left: '0', width: '100%', height: '80%', zIndex: 0 }} viewBox="0 0 600 400" preserveAspectRatio="xMidYMid meet">
         <motion.path d="M 150 100 L 300 100 L 300 200 L 450 200" fill="none" stroke="#7BAF35" strokeWidth="1.5" strokeDasharray="1000" initial={{ strokeDashoffset: 1000 }} animate={{ strokeDashoffset: 0 }} transition={{ duration: 4, ease: "easeInOut" }} />
         <motion.path d="M 150 300 L 250 300 L 250 200" fill="none" stroke="#7BAF35" strokeWidth="1.5" strokeDasharray="1000" initial={{ strokeDashoffset: 1000 }} animate={{ strokeDashoffset: 0 }} transition={{ duration: 3, delay: 1, ease: "easeInOut" }} />
         <motion.path d="M 450 100 L 450 50 L 550 50" fill="none" stroke="#7BAF35" strokeWidth="1.5" strokeDasharray="1000" initial={{ strokeDashoffset: 1000 }} animate={{ strokeDashoffset: 0 }} transition={{ duration: 2, delay: 2, ease: "easeInOut" }} />
@@ -27,7 +27,7 @@ function EngineeringArchitecture() {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        style={{ position: 'absolute', top: '5%', left: '5%', width: '280px', background: '#0F172A', color: '#fff', padding: '1.2rem', zIndex: 2 }}
+        style={{ position: 'absolute', top: 'var(--hero-code-top)', left: 'var(--hero-code-left)', width: 'var(--hero-code-width)', background: '#0F172A', color: '#fff', padding: '1.2rem', zIndex: 2 }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '0.5rem' }}>
           <Terminal size={14} color="#7BAF35" /> <span style={{ fontSize: '0.75rem', color: '#8892B0' }}>api/v2/core.ts</span>
@@ -48,7 +48,7 @@ function EngineeringArchitecture() {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-        style={{ position: 'absolute', top: '40%', left: '40%', width: '300px', padding: '1.5rem', zIndex: 2 }}
+        style={{ position: 'absolute', top: 'var(--hero-db-top)', left: 'var(--hero-db-left)', right: 'var(--hero-db-right)', width: 'var(--hero-db-width)', padding: '1.5rem', zIndex: 2 }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
           <Cloud size={20} color="#4B61B8" />
@@ -70,7 +70,7 @@ function EngineeringArchitecture() {
       <motion.div
         animate={{ y: [0, -5, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        style={{ position: 'absolute', top: '15%', right: '5%', zIndex: 3 }}
+        style={{ position: 'absolute', top: 'var(--hero-ai-top)', left: 'var(--hero-ai-left)', right: 'var(--hero-ai-right)', zIndex: 3 }}
       >
         <div className="glass-panel" style={{ padding: '0.8rem 1.2rem', display: 'flex', alignItems: 'center', gap: '0.8rem', background: 'rgba(255,255,255,0.8)' }}>
            <Zap size={16} color="#7BAF35" />
@@ -81,7 +81,7 @@ function EngineeringArchitecture() {
       <motion.div
         animate={{ y: [0, 5, 0] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        style={{ position: 'absolute', bottom: '20%', left: '15%', zIndex: 3 }}
+        style={{ position: 'absolute', top: 'var(--hero-trust-top)', bottom: 'var(--hero-trust-bottom)', left: 'var(--hero-trust-left)', right: 'var(--hero-trust-right)', zIndex: 3 }}
       >
         <div className="glass-panel" style={{ padding: '0.8rem 1.2rem', display: 'flex', alignItems: 'center', gap: '0.8rem', background: 'rgba(255,255,255,0.8)' }}>
            <Shield size={16} color="#4B61B8" />
@@ -93,7 +93,7 @@ function EngineeringArchitecture() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
-        style={{ position: 'absolute', bottom: '5%', right: '20%', zIndex: 3 }}
+        style={{ position: 'absolute', bottom: 'var(--hero-deploy-bottom)', left: 'var(--hero-deploy-left)', right: 'var(--hero-deploy-right)', transform: 'var(--hero-deploy-transform)', zIndex: 3 }}
       >
         <div className="glass-panel" style={{ padding: '0.8rem 1.2rem', display: 'flex', alignItems: 'center', gap: '0.8rem', background: 'rgba(255,255,255,0.8)' }}>
            <Activity size={16} color="#7BAF35" />
@@ -211,11 +211,11 @@ export default function Home() {
       <NavBar />
 
       {/* Hero Section */}
-      <section className="section-padding" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', paddingTop: '140px' }}>
-        <div className="container" style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: '3rem', alignItems: 'center' }}>
-          <div style={{ paddingRight: '2rem' }}>
+      <section className="section-padding" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', paddingTop: 'clamp(100px, 15vh, 140px)' }}>
+        <div className="container hero-grid" style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: '3rem', alignItems: 'center' }}>
+          <div className="hero-text-container" style={{ paddingRight: '2rem' }}>
             <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: "easeOut" }}>
-              <h1 style={{ fontSize: '4.5rem', marginBottom: '1.5rem', fontWeight: 800 }}>
+              <h1 className="hero-title" style={{ fontSize: 'var(--font-hero)', marginBottom: '1.5rem', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-0.02em' }}>
                 Enterprise Software,<br />
                 <span style={{ color: '#5B6472', fontWeight: 500 }}>Built Without Compromise.</span>
               </h1>
@@ -244,19 +244,19 @@ export default function Home() {
       </section>
 
       {/* Enterprise Metrics */}
-      <section className="dark-section" style={{ padding: '5rem 0', background: '#0F172A', color: '#FFFFFF', position: 'relative', overflow: 'hidden' }}>
+      <section className="dark-section" style={{ padding: 'var(--spacing-section) 0', background: '#0F172A', color: '#FFFFFF', position: 'relative', overflow: 'hidden' }}>
         {/* Subtle background glow */}
         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'radial-gradient(circle at center, rgba(75, 97, 184, 0.15) 0%, rgba(15, 23, 42, 0) 70%)', pointerEvents: 'none' }} />
         
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0' }}>
+          <div className="metrics-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '0' }}>
              {[
                { num: "80+", label: "Production Systems", desc: "Mission-critical applications built, deployed, and actively managed." },
                { num: "15M+", label: "Daily API Requests", desc: "High-throughput microservices engineered for secure, scalable operations." },
                { num: "99.99%", label: "Uptime Guarantee", desc: "Fault-tolerant cloud environments designed for business continuity." },
                { num: "40+", label: "Active Partnerships", desc: "Long-term engineering engagements with mid-market and enterprise leaders." }
              ].map((stat, i, arr) => (
-               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: i * 0.1 }} style={{ padding: '2rem', borderRight: i < arr.length - 1 ? '1px solid rgba(255, 255, 255, 0.1)' : 'none', textAlign: 'center' }}>
+               <motion.div key={i} className="metric-card" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: i * 0.1 }} style={{ padding: '2rem', borderRight: i < arr.length - 1 ? '1px solid rgba(255, 255, 255, 0.1)' : 'none', textAlign: 'center' }}>
                  <div style={{ fontSize: '3.5rem', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.02em', marginBottom: '1rem' }}>{stat.num}</div>
                  <div style={{ fontSize: '1rem', color: '#60A5FA', fontWeight: 700, marginBottom: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{stat.label}</div>
                  <div style={{ fontSize: '0.9rem', color: '#94A3B8', lineHeight: 1.5, maxWidth: '240px', margin: '0 auto' }}>{stat.desc}</div>
@@ -269,9 +269,9 @@ export default function Home() {
       {/* Services Section (Asymmetric Bento) */}
       <section id="services" className="section-padding">
         <div className="container">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} style={{ marginBottom: '4rem', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+          <motion.div className="section-header-flex" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} style={{ marginBottom: 'var(--spacing-section-sm)', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
             <div>
-              <h2 style={{ fontSize: '3rem' }}>Core Capabilities</h2>
+              <h2 style={{ fontSize: 'var(--font-h2)', lineHeight: 1.1, letterSpacing: '-0.02em' }}>Core Capabilities</h2>
               <p style={{ fontSize: '1.1rem', maxWidth: '500px', marginTop: '1rem' }}>We solve complex engineering problems through specialized technical domains.</p>
             </div>
             <button className="btn-secondary" style={{ padding: '0.6rem 1.2rem', fontSize: '0.85rem' }}>View All Capabilities</button>
@@ -319,17 +319,17 @@ export default function Home() {
       {/* Portfolio Section */}
       <section id="portfolio" className="section-padding" style={{ background: '#FFFFFF', borderTop: '1px solid rgba(15,23,42,0.05)', borderBottom: '1px solid rgba(15,23,42,0.05)' }}>
         <div className="container">
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '5rem' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 'var(--spacing-section-sm)' }}>
             <div>
               <div style={{ fontSize: '0.85rem', fontWeight: 600, color: '#5B6472', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1rem' }}>Selected Work</div>
-              <h2 style={{ fontSize: '3.5rem', letterSpacing: '-0.03em', color: '#0F172A', fontWeight: 700, margin: 0, lineHeight: 1.1 }}>Architecture Excellence</h2>
+              <h2 style={{ fontSize: 'var(--font-h2)', letterSpacing: '-0.03em', color: '#0F172A', fontWeight: 700, margin: 0, lineHeight: 1.1 }}>Architecture Excellence</h2>
             </div>
             <a href="#" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontWeight: 500, color: '#0F172A', fontSize: '1rem', transition: 'opacity 0.2s ease' }} onMouseEnter={(e) => e.currentTarget.style.opacity = '0.7'} onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}>
               Explore Case Studies <ArrowRight size={16} />
             </a>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '3rem' }}>
+          <div className="case-study-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '3rem' }}>
             {/* Case Study 1 */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
@@ -426,17 +426,17 @@ export default function Home() {
       {/* Engineering Process */}
       <section className="section-padding" style={{ background: '#F8FAFC', borderBottom: '1px solid rgba(15,23,42,0.05)' }}>
         <div className="container">
-          <div style={{ marginBottom: '5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '2rem' }}>
+          <div style={{ marginBottom: 'var(--spacing-section-sm)', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '2rem' }}>
             <div>
               <div style={{ fontSize: '0.85rem', fontWeight: 600, color: '#5B6472', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1rem' }}>Methodology</div>
-              <h2 style={{ fontSize: '3.5rem', letterSpacing: '-0.03em', color: '#0F172A', fontWeight: 700, margin: 0, lineHeight: 1.1 }}>Engineering<br/>Workflow</h2>
+              <h2 className="workflow-title" style={{ fontSize: 'var(--font-h2)', letterSpacing: '-0.03em', color: '#0F172A', fontWeight: 700, margin: 0, lineHeight: 1.1 }}>Engineering<br/>Workflow</h2>
             </div>
             <p style={{ maxWidth: '400px', fontSize: '1.1rem', color: '#5B6472', lineHeight: 1.6, margin: 0, paddingBottom: '0.5rem' }}>
               A disciplined, systematic approach to building complex software systems that scale effortlessly.
             </p>
           </div>
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
+          <div className="workflow-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
             {[
               { id: "01", title: 'Discovery & Audit', desc: 'Deep technical analysis of existing systems, identifying bottlenecks and architectural requirements.' },
               { id: "02", title: 'System Architecture', desc: 'Designing resilient, scalable foundations mapping out data models, microservices, and infrastructure.' },
@@ -534,16 +534,16 @@ export default function Home() {
       {/* FAQ Section */}
       <section className="section-padding" style={{ background: '#FFFFFF', borderBottom: '1px solid rgba(15,23,42,0.05)' }}>
         <div className="container">
-          <div style={{ marginBottom: '4rem', textAlign: 'center' }}>
+          <div style={{ marginBottom: 'var(--spacing-section-sm)', textAlign: 'center' }}>
             <div style={{ fontSize: '0.85rem', fontWeight: 600, color: '#5B6472', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1rem' }}>Questions & Answers</div>
-            <h2 style={{ fontSize: '3rem', letterSpacing: '-0.03em', color: '#0F172A', fontWeight: 700, margin: 0 }}>Frequently Asked Questions</h2>
+            <h2 style={{ fontSize: 'var(--font-h2)', letterSpacing: '-0.03em', color: '#0F172A', fontWeight: 700, margin: 0, lineHeight: 1.1 }}>Frequently Asked Questions</h2>
           </div>
           <FAQAccordion />
         </div>
       </section>
 
       {/* Final CTA */}
-      <section className="dark-section" style={{ position: 'relative', padding: '14rem 0', overflow: 'hidden', background: '#0F172A', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+      <section className="dark-section" style={{ position: 'relative', padding: 'calc(var(--spacing-section) * 1.5) 0', overflow: 'hidden', background: '#0F172A', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
         
         {/* Advanced Aurora Background */}
         <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', overflow: 'hidden', pointerEvents: 'none', zIndex: 0 }}>
@@ -554,14 +554,14 @@ export default function Home() {
         <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, ease: "easeOut" }}>
             
-            <h2 style={{ fontSize: '5rem', marginBottom: '3rem', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-0.03em', color: '#FFFFFF' }}>
+            <h2 className="cta-title" style={{ fontSize: 'var(--font-hero)', marginBottom: '3rem', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-0.03em', color: '#FFFFFF' }}>
               Let's Build Software<br/>
               <span style={{ background: 'linear-gradient(135deg, #FFFFFF 0%, #94A3B8 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
                 That Stands The Test of Time.
               </span>
             </h2>
             
-            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', alignItems: 'center' }}>
+            <div className="cta-buttons-flex" style={{ display: 'flex', gap: '1rem', justifyContent: 'center', alignItems: 'center' }}>
                <button style={{ padding: '1rem 2.5rem', fontSize: '1.05rem', fontWeight: 600, color: '#0F172A', background: '#FFFFFF', border: 'none', borderRadius: '8px', cursor: 'pointer', boxShadow: '0 4px 14px 0 rgba(0,0,0,0.15)', transition: 'all 0.2s ease' }}
                  onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 6px 20px rgba(0,0,0,0.2)'; e.currentTarget.style.background = '#F8FAFC'; }}
                  onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 4px 14px 0 rgba(0,0,0,0.15)'; e.currentTarget.style.background = '#FFFFFF'; }}

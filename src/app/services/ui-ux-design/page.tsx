@@ -12,12 +12,12 @@ export default function UIUXDesign() {
       <NavBar />
 
       {/* Hero Section */}
-      <section style={{ paddingTop: '10rem', paddingBottom: '7rem', background: '#FAFAFA' }}>
+      <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '7rem', background: '#FAFAFA' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#FFF1F2', color: '#BE123C', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
             <Palette size={16} /> Human-Computer Interaction
           </div>
-          <h1 style={{ fontSize: '4.5rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+          <h1 style={{ fontSize: 'var(--font-hero)', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
             Interfaces that make complex <br/><span style={{ color: '#E11D48' }}>work easier to perform.</span>
           </h1>
           <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, marginBottom: '3rem', maxWidth: '800px', margin: '0 auto 3rem auto' }}>
@@ -32,10 +32,10 @@ export default function UIUXDesign() {
       </section>
 
       {/* NEW SECTION 1: The Double Diamond Process (Methodology) */}
-      <section style={{ padding: '8rem 0', background: '#FFFFFF' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-            <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', marginBottom: '1rem' }}>The Double Diamond</h2>
+            <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1rem' }}>The Double Diamond</h2>
             <p style={{ fontSize: '1.1rem', color: '#64748B', maxWidth: '600px', margin: '0 auto' }}>Our design process oscillates between divergent thinking (exploring many options) and convergent thinking (focusing on the best solution).</p>
           </div>
 
@@ -60,9 +60,9 @@ export default function UIUXDesign() {
       </section>
 
       {/* NEW SECTION 2: Design System (Tech Focus) */}
-      <section className="dark-section" style={{ padding: '6rem 0', background: '#0F172A', color: '#FFFFFF' }}>
+      <section className="dark-section" style={{ padding: 'var(--spacing-section) 0', background: '#0F172A', color: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'center' }}>
+           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
              
              {/* Visual Design System UI */}
              <div style={{ background: '#1E293B', padding: '3rem', borderRadius: '24px', border: '1px solid #334155' }}>
@@ -81,7 +81,7 @@ export default function UIUXDesign() {
              </div>
 
              <div>
-                <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '1.5rem' }}>Scalable Design Systems</h2>
+                <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#FFFFFF', marginBottom: '1.5rem' }}>Scalable Design Systems</h2>
                 <p style={{ fontSize: '1.1rem', color: '#94A3B8', lineHeight: 1.7, marginBottom: '2rem' }}>
                   We don't design isolated screens. We build comprehensive, token-based design systems in Figma that map 1:1 with React components.
                 </p>
@@ -101,25 +101,25 @@ export default function UIUXDesign() {
       </section>
 
       {/* NEW SECTION 3: Accessibility Standards (Outcomes) */}
-      <section style={{ padding: '6rem 0', background: '#FFFFFF' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
           <PenTool size={32} color="#8B5CF6" style={{ margin: '0 auto 1rem auto' }} />
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>Inclusive by Default</h2>
+          <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>Inclusive by Default</h2>
           <p style={{ fontSize: '1.1rem', color: '#64748B', maxWidth: '700px', margin: '0 auto 4rem auto' }}>Accessibility isn't an afterthought checklist. It is a fundamental requirement of enterprise software.</p>
           
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '4rem' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: 'var(--spacing-section-sm)' }}>
             <div style={{ textAlign: 'center' }}>
-               <div style={{ fontSize: '2rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.5rem' }}>WCAG 2.1 AA</div>
+               <div style={{ fontSize: 'var(--font-h3)', fontWeight: 800, color: '#0F172A', marginBottom: '0.5rem' }}>WCAG 2.1 AA</div>
                <div style={{ fontSize: '0.9rem', fontWeight: 600, color: '#64748B', textTransform: 'uppercase' }}>Compliance Target</div>
             </div>
             <div style={{ width: '1px', background: '#E2E8F0' }}></div>
             <div style={{ textAlign: 'center' }}>
-               <div style={{ fontSize: '2rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.5rem' }}>Keyboard-First</div>
+               <div style={{ fontSize: 'var(--font-h3)', fontWeight: 800, color: '#0F172A', marginBottom: '0.5rem' }}>Keyboard-First</div>
                <div style={{ fontSize: '0.9rem', fontWeight: 600, color: '#64748B', textTransform: 'uppercase' }}>Navigation Support</div>
             </div>
             <div style={{ width: '1px', background: '#E2E8F0' }}></div>
             <div style={{ textAlign: 'center' }}>
-               <div style={{ fontSize: '2rem', fontWeight: 800, color: '#0F172A', marginBottom: '0.5rem' }}>4.5:1</div>
+               <div style={{ fontSize: 'var(--font-h3)', fontWeight: 800, color: '#0F172A', marginBottom: '0.5rem' }}>4.5:1</div>
                <div style={{ fontSize: '0.9rem', fontWeight: 600, color: '#64748B', textTransform: 'uppercase' }}>Min Contrast Ratio</div>
             </div>
           </div>

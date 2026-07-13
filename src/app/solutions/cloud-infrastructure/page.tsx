@@ -12,12 +12,12 @@ export default function CloudInfrastructureSolution() {
       <NavBar />
 
       {/* Hero - Centered with large typography and architecture graphic */}
-      <section style={{ paddingTop: '10rem', paddingBottom: '4rem', textAlign: 'center', background: '#F8FAFC' }}>
+      <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '4rem', textAlign: 'center', background: '#F8FAFC' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#E0E7FF', color: '#4338CA', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 700, marginBottom: '2rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
             <Cloud size={16} /> Cloud & Infrastructure
           </div>
-          <h1 style={{ fontSize: '4.5rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+          <h1 style={{ fontSize: 'var(--font-hero)', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
             Foundation for <span style={{ color: '#4338CA' }}>scale.</span>
           </h1>
           <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, marginBottom: '3rem', maxWidth: '800px', margin: '0 auto 3rem auto' }}>
@@ -32,7 +32,7 @@ export default function CloudInfrastructureSolution() {
       </section>
 
       {/* Architectural Diagram Visual */}
-      <section style={{ paddingBottom: '6rem', background: '#F8FAFC', borderBottom: '1px solid #E2E8F0' }}>
+      <section style={{ paddingBottom: 'var(--spacing-section)', background: '#F8FAFC', borderBottom: '1px solid #E2E8F0' }}>
          <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
             <div style={{ background: '#0F172A', borderRadius: '24px', padding: '3rem', border: '1px solid #1E293B', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
                
@@ -59,18 +59,18 @@ export default function CloudInfrastructureSolution() {
       </section>
 
       {/* NEW SECTION 1: Migration Strategy / Methodology (Staggered Layout) */}
-      <section style={{ padding: '8rem 0', background: '#FFFFFF' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
           
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-            <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', marginBottom: '1rem' }}>The Path to Cloud Native</h2>
+            <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1rem' }}>The Path to Cloud Native</h2>
             <p style={{ fontSize: '1.1rem', color: '#64748B', maxWidth: '600px', margin: '0 auto' }}>Migrating to the cloud isn&apos;t just changing servers. It&apos;s changing how you operate. We handle the complexity so you can focus on product.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'center', marginBottom: '6rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-section-sm)', alignItems: 'center', marginBottom: '6rem' }}>
             <div>
               <div style={{ fontSize: '4rem', fontWeight: 900, color: '#EEF2FF', lineHeight: 1, marginBottom: '1rem' }}>01</div>
-              <h3 style={{ fontSize: '1.8rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>Audit & Infrastructure as Code (IaC)</h3>
+              <h3 style={{ fontSize: 'var(--font-h3)', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>Audit & Infrastructure as Code (IaC)</h3>
               <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.7 }}>We don&apos;t use click-ops. The first step in any modernization is capturing your entire infrastructure state in Terraform or Pulumi. This ensures every environment (dev, staging, prod) is perfectly reproducible and peer-reviewed via Git.</p>
             </div>
             <div style={{ background: '#0F172A', padding: '2rem', borderRadius: '16px', boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1)' }}>
@@ -96,10 +96,10 @@ export default function CloudInfrastructureSolution() {
             </div>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
             <div style={{ order: 2 }}>
               <div style={{ fontSize: '4rem', fontWeight: 900, color: '#EEF2FF', lineHeight: 1, marginBottom: '1rem' }}>02</div>
-              <h3 style={{ fontSize: '1.8rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>Container Orchestration</h3>
+              <h3 style={{ fontSize: 'var(--font-h3)', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>Container Orchestration</h3>
               <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.7 }}>We migrate legacy applications into isolated containers orchestrated by Kubernetes. This unlocks automatic self-healing, seamless scaling during traffic spikes, and granular resource allocation per service.</p>
             </div>
             <div style={{ order: 1, background: '#F8FAFC', padding: '3rem', borderRadius: '16px', border: '1px solid #E2E8F0', position: 'relative', overflow: 'hidden' }}>
@@ -124,11 +124,11 @@ export default function CloudInfrastructureSolution() {
       </section>
 
       {/* NEW SECTION 2: FinOps & Cost Optimization (Outcomes) */}
-      <section className="dark-section" style={{ padding: '6rem 0', background: '#0F172A', color: '#FFFFFF' }}>
+      <section className="dark-section" style={{ padding: 'var(--spacing-section) 0', background: '#0F172A', color: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '0.8fr 1.2fr', gap: '4rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '0.8fr 1.2fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
             <div>
-              <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '1.5rem' }}>FinOps & Cost Visibility</h2>
+              <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#FFFFFF', marginBottom: '1.5rem' }}>FinOps & Cost Visibility</h2>
               <p style={{ fontSize: '1.1rem', color: '#94A3B8', lineHeight: 1.7, marginBottom: '2rem' }}>
                 Cloud waste is the silent killer of margins. We implement aggressive resource tagging, automated instance rightsizing, and spot-instance orchestration to ensure you only pay for what you actually use.
               </p>
@@ -162,10 +162,10 @@ export default function CloudInfrastructureSolution() {
       </section>
 
       {/* NEW SECTION 3: Compliance & Security FAQs */}
-      <section style={{ padding: '6rem 0', background: '#F8FAFC' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#F8FAFC' }}>
         <div className="container" style={{ maxWidth: '800px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', marginBottom: '1rem' }}>Security & Compliance Posture</h2>
+            <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1rem' }}>Security & Compliance Posture</h2>
             <p style={{ fontSize: '1.1rem', color: '#64748B' }}>We build environments that satisfy auditors by default, relying on policy-as-code rather than manual checklists.</p>
           </div>
           

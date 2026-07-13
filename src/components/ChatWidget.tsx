@@ -243,15 +243,15 @@ export default function ChatWidget() {
                     </div>
                   ) : (
                     <form onSubmit={handleFormSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                      <div style={{ display: 'flex', gap: '12px' }}>
-                        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                      <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                        <div style={{ flex: '1 1 120px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
                           <label style={{ fontSize: '0.8rem', fontWeight: 600, color: '#475569' }}>First Name *</label>
                           <div style={{ position: 'relative' }}>
                             <User size={16} color="#94A3B8" style={{ position: 'absolute', left: '12px', top: '12px' }} />
                             <input required type="text" value={formData.firstName} onChange={e => setFormData({...formData, firstName: e.target.value})} style={{ width: '100%', padding: '10px 12px 10px 36px', borderRadius: '8px', border: '1px solid #E2E8F0', outline: 'none', fontSize: '0.9rem' }} />
                           </div>
                         </div>
-                        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                        <div style={{ flex: '1 1 120px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
                           <label style={{ fontSize: '0.8rem', fontWeight: 600, color: '#475569' }}>Last Name *</label>
                           <div style={{ position: 'relative' }}>
                             <User size={16} color="#94A3B8" style={{ position: 'absolute', left: '12px', top: '12px' }} />
@@ -268,15 +268,15 @@ export default function ChatWidget() {
                         </div>
                       </div>
 
-                      <div style={{ display: 'flex', gap: '12px' }}>
-                        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                      <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                        <div style={{ flex: '1 1 120px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
                           <label style={{ fontSize: '0.8rem', fontWeight: 600, color: '#475569' }}>Email *</label>
                           <div style={{ position: 'relative' }}>
                             <Mail size={16} color="#94A3B8" style={{ position: 'absolute', left: '12px', top: '12px' }} />
                             <input required type="email" value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} style={{ width: '100%', padding: '10px 12px 10px 36px', borderRadius: '8px', border: '1px solid #E2E8F0', outline: 'none', fontSize: '0.9rem' }} />
                           </div>
                         </div>
-                        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                        <div style={{ flex: '1 1 120px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
                           <label style={{ fontSize: '0.8rem', fontWeight: 600, color: '#475569' }}>Mobile *</label>
                           <div style={{ position: 'relative' }}>
                             <Phone size={16} color="#94A3B8" style={{ position: 'absolute', left: '12px', top: '12px' }} />

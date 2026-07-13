@@ -102,12 +102,12 @@ export default function CareersPage() {
       <NavBar />
 
       {/* Hero Section */}
-      <section style={{ paddingTop: '10rem', paddingBottom: '7rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
+      <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '7rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#FEF2F2', color: '#EF4444', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 700, textTransform: 'uppercase', marginBottom: '2rem' }}>
             <Users size={16} /> Join the team
           </div>
-          <h1 style={{ fontSize: '4.5rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+          <h1 style={{ fontSize: 'var(--font-hero)', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
             Build systems that <br/><span style={{ color: '#EF4444' }}>matter.</span>
           </h1>
           <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, maxWidth: '700px', margin: '0 auto' }}>
@@ -117,7 +117,7 @@ export default function CareersPage() {
       </section>
 
       {/* Benefits */}
-      <section style={{ padding: '6rem 0', background: '#0F172A', color: '#FFFFFF' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#0F172A', color: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '3rem' }}>
             {benefits.map((benefit, i) => (
@@ -134,19 +134,19 @@ export default function CareersPage() {
       </section>
 
       {/* Open Roles */}
-      <section style={{ padding: '8rem 0', background: '#FAFAFA' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#FAFAFA' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', marginBottom: '1rem' }}>Open Positions</h2>
+            <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1rem' }}>Open Positions</h2>
             <p style={{ fontSize: '1.1rem', color: '#475569' }}>Don't see a role that fits? Send your resume to <a href="mailto:careers@acriotech.com" style={{ color: '#EF4444', textDecoration: 'none', fontWeight: 600 }}>careers@acriotech.com</a></p>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
              {roles.map((role, i) => (
-               <div key={i} style={{ background: '#FFFFFF', padding: '2rem 3rem', borderRadius: '12px', border: '1px solid #E2E8F0', display: 'flex', alignItems: 'center', justifyContent: 'space-between', transition: 'box-shadow 0.2s' }} className="job-card">
+               <div key={i} style={{ background: '#FFFFFF', padding: 'clamp(1.5rem, 4vw, 2rem) clamp(1.5rem, 5vw, 3rem)', borderRadius: '12px', border: '1px solid #E2E8F0', display: 'flex', flexWrap: 'wrap', gap: '1.5rem', alignItems: 'center', justifyContent: 'space-between', transition: 'box-shadow 0.2s' }} className="job-card">
                   <div>
                     <h3 style={{ fontSize: '1.4rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.5rem' }}>{role.title}</h3>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', color: '#64748B', fontSize: '0.95rem' }}>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.5rem 1rem', color: '#64748B', fontSize: '0.95rem' }}>
                       <span style={{ fontWeight: 600 }}>{role.dept}</span>
                       <span>•</span>
                       <span>{role.location}</span>
@@ -156,7 +156,7 @@ export default function CareersPage() {
                   </div>
                   <button 
                     onClick={() => handleApplyClick(role.title)}
-                    style={{ background: '#F8FAFC', color: '#0F172A', border: '1px solid #E2E8F0', padding: '0.75rem 1.5rem', borderRadius: '8px', fontWeight: 600, cursor: 'pointer', transition: 'background 0.2s' }}
+                    style={{ background: '#F8FAFC', color: '#0F172A', border: '1px solid #E2E8F0', padding: '0.75rem 1.5rem', borderRadius: '8px', fontWeight: 600, cursor: 'pointer', transition: 'background 0.2s', whiteSpace: 'nowrap', flex: '0 0 auto' }}
                   >
                     Apply Now
                   </button>
@@ -200,12 +200,12 @@ export default function CareersPage() {
               ) : (
                 <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                   
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', flex: '1 1 200px' }}>
                       <label style={{ fontSize: '0.85rem', fontWeight: 600, color: '#475569' }}>First Name</label>
                       <input type="text" required value={formData.firstName} onChange={e => setFormData({...formData, firstName: e.target.value})} style={{ padding: '0.75rem', borderRadius: '8px', border: '1px solid #E2E8F0', fontSize: '0.95rem' }} />
                     </div>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', flex: '1 1 200px' }}>
                       <label style={{ fontSize: '0.85rem', fontWeight: 600, color: '#475569' }}>Last Name</label>
                       <input type="text" required value={formData.lastName} onChange={e => setFormData({...formData, lastName: e.target.value})} style={{ padding: '0.75rem', borderRadius: '8px', border: '1px solid #E2E8F0', fontSize: '0.95rem' }} />
                     </div>

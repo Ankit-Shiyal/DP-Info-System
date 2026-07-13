@@ -64,10 +64,10 @@ export default function ContactUs() {
       {/* Classic Department Routing Row (No boxes, no drop shadows) */}
       <section style={{ padding: '5rem 0', background: '#FAFAFA', borderBottom: '1px solid #E2E8F0' }}>
         <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
             
             {/* Column 1: Careers */}
-            <div className="contact-col" style={{ padding: '2rem 3rem 2rem 0' }}>
+            <div className="contact-col" style={{ padding: '2rem 3rem 2rem 0', flex: '1 1 300px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem' }}>
                 <Briefcase size={22} color="#0F172A" />
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0F172A' }}>Careers</h3>
@@ -77,7 +77,7 @@ export default function ContactUs() {
             </div>
 
             {/* Column 2: Social Responsibility */}
-            <div className="contact-col" style={{ padding: '2rem 3rem', borderLeft: '1px solid #E2E8F0', borderRight: '1px solid #E2E8F0' }}>
+            <div className="contact-col" style={{ padding: '2rem 3rem', borderLeft: '1px solid #E2E8F0', borderRight: '1px solid #E2E8F0', flex: '1 1 300px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem' }}>
                 <HeartHandshake size={22} color="#0F172A" />
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0F172A' }}>Social Responsibility</h3>
@@ -87,7 +87,7 @@ export default function ContactUs() {
             </div>
 
             {/* Column 3: Feedback */}
-            <div className="contact-col" style={{ padding: '2rem 0 2rem 3rem' }}>
+            <div className="contact-col" style={{ padding: '2rem 0 2rem 3rem', flex: '1 1 300px' }}>
                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem' }}>
                 <MessageSquare size={22} color="#0F172A" />
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0F172A' }}>Feedback System</h3>
@@ -103,8 +103,8 @@ export default function ContactUs() {
       {/* Classic How we can help Section */}
       <section style={{ padding: '6rem 0', background: '#FFFFFF', borderBottom: '1px solid #E2E8F0' }}>
         <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'flex-start' }}>
-            <div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4rem', alignItems: 'flex-start' }}>
+            <div style={{ flex: '1 1 400px' }}>
               <h2 style={{ fontSize: '2rem', fontWeight: 800, color: '#0F172A', marginBottom: '1rem' }}>Partner with Acriotech.</h2>
               <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.8, marginBottom: '2rem' }}>
                 We work with growing organisations to find new opportunities, reduce risks, and support long-term growth. Our engineering teams can help with the following:
@@ -118,7 +118,7 @@ export default function ContactUs() {
               </ul>
             </div>
             
-            <div className="contact-col" style={{ paddingLeft: '4rem', borderLeft: '1px solid #E2E8F0' }}>
+            <div className="contact-col" style={{ paddingLeft: '4rem', borderLeft: '1px solid #E2E8F0', flex: '1 1 400px' }}>
               <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>Enterprise Inquiries</h3>
               <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.6, marginBottom: '2rem' }}>
                 Whether you need a dedicated development team or a complete digital overhaul, our enterprise consultants are available.
@@ -140,10 +140,10 @@ export default function ContactUs() {
              <p style={{ fontSize: '1.1rem', color: '#475569' }}>Fill out the form below or visit us at our global headquarters.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '4rem', alignItems: 'flex-start' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4rem', alignItems: 'flex-start' }}>
             
             {/* Contact Information */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem', flex: '1 1 300px' }}>
               <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
                 <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: '#EFF6FF', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   <Building size={24} color="#3B82F6" />
@@ -189,10 +189,10 @@ export default function ContactUs() {
             </div>
 
             {/* Contact Form */}
-            <div style={{ background: '#FFFFFF', padding: '3rem', borderRadius: '24px', boxShadow: '0 20px 40px rgba(15, 23, 42, 0.05)', border: '1px solid #E2E8F0' }}>
+            <div style={{ background: '#FFFFFF', padding: 'clamp(1.5rem, 4vw, 3rem)', borderRadius: '24px', boxShadow: '0 20px 40px rgba(15, 23, 42, 0.05)', border: '1px solid #E2E8F0', flex: '1.5 1 400px', width: '100%' }}>
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', flex: '1 1 200px' }}>
                     <label style={{ fontSize: '0.9rem', fontWeight: 600, color: '#334155' }}>First Name *</label>
                     <input 
                       required
@@ -205,7 +205,7 @@ export default function ContactUs() {
                       onBlur={(e) => e.target.style.borderColor = '#CBD5E1'}
                     />
                   </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', flex: '1 1 200px' }}>
                     <label style={{ fontSize: '0.9rem', fontWeight: 600, color: '#334155' }}>Last Name *</label>
                     <input 
                       required

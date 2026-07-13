@@ -12,12 +12,12 @@ export default function SoftwareConsulting() {
       <NavBar />
 
       {/* Hero Section */}
-      <section style={{ paddingTop: '10rem', paddingBottom: '7rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
+      <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '7rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#F3F4F6', color: '#111827', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 700, marginBottom: '2rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
             <Lightbulb size={16} /> Strategic Advisory
           </div>
-          <h1 style={{ fontSize: '4.5rem', fontWeight: 800, color: '#111827', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+          <h1 style={{ fontSize: 'var(--font-hero)', fontWeight: 800, color: '#111827', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
             Senior technical judgment when the <span style={{ color: '#000000', textDecoration: 'underline', textDecorationColor: '#D1D5DB' }}>path is unclear.</span>
           </h1>
           <p style={{ fontSize: '1.25rem', color: '#4B5563', lineHeight: 1.7, marginBottom: '3rem', maxWidth: '800px' }}>
@@ -32,11 +32,11 @@ export default function SoftwareConsulting() {
       </section>
 
       {/* NEW SECTION 1: When to Engage Us (Criteria) */}
-      <section className="dark-section" style={{ padding: '6rem 0', background: '#111827', color: '#FFFFFF' }}>
+      <section className="dark-section" style={{ padding: 'var(--spacing-section) 0', background: '#111827', color: '#FFFFFF' }}>
          <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '5rem', alignItems: 'start' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 'var(--spacing-section-sm)', alignItems: 'start' }}>
                <div>
-                 <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '1.5rem' }}>The Catalyst</h2>
+                 <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#FFFFFF', marginBottom: '1.5rem' }}>The Catalyst</h2>
                  <p style={{ fontSize: '1.1rem', color: '#9CA3AF', lineHeight: 1.7 }}>Organizations typically bring our consulting practice in when the cost of making the wrong technical decision outweighs the cost of the project itself.</p>
                </div>
                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
@@ -58,11 +58,11 @@ export default function SoftwareConsulting() {
       </section>
 
       {/* NEW SECTION 2: The Consulting Process (Methodology) */}
-      <section style={{ padding: '8rem 0', background: '#F9FAFB' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#F9FAFB' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
           
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-            <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#111827', marginBottom: '1rem' }}>How We Consult</h2>
+            <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#111827', marginBottom: '1rem' }}>How We Consult</h2>
             <p style={{ fontSize: '1.1rem', color: '#4B5563', maxWidth: '600px', margin: '0 auto' }}>We don't deliver generic PowerPoint decks. We dig into codebases, conduct stakeholder interviews, and provide actionable architecture plans.</p>
           </div>
 
@@ -70,7 +70,7 @@ export default function SoftwareConsulting() {
              {/* Timeline Line */}
              <div style={{ position: 'absolute', left: '50%', top: '0', bottom: '0', width: '2px', background: '#E5E7EB', transform: 'translateX(-50%)', zIndex: 0 }}></div>
              
-             <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem', position: 'relative', zIndex: 1 }}>
+             <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-section-sm)', position: 'relative', zIndex: 1 }}>
                {[
                  { phase: "Week 1-2", align: "left", title: "Discovery & Audit", text: "We embed ourselves with your team. We review architecture diagrams, read actual source code, map CI/CD pipelines, and interview key engineering and business stakeholders to understand the true friction points." },
                  { phase: "Week 3-4", align: "right", title: "Options Engineering", text: "We formulate 2-3 distinct architectural or strategic paths forward. We model the tradeoffs for each path across four dimensions: Cost, Time-to-Market, Operational Risk, and Maintainability." },
@@ -94,9 +94,9 @@ export default function SoftwareConsulting() {
       </section>
 
       {/* NEW SECTION 3: Deliverables (Outcomes) */}
-      <section style={{ padding: '6rem 0', background: '#FFFFFF' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'center' }}>
+           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
              <div style={{ background: '#F3F4F6', padding: '3rem', borderRadius: '24px', border: '1px solid #E5E7EB' }}>
                <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#111827', marginBottom: '2rem' }}>The Output Artifacts</h3>
                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
@@ -116,7 +116,7 @@ export default function SoftwareConsulting() {
              </div>
              
              <div>
-                <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#111827', marginBottom: '1.5rem' }}>Leave behind usable artifacts.</h2>
+                <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#111827', marginBottom: '1.5rem' }}>Leave behind usable artifacts.</h2>
                 <p style={{ fontSize: '1.1rem', color: '#4B5563', lineHeight: 1.7, marginBottom: '2rem' }}>
                   A successful consulting engagement doesn't end with a presentation. It ends with a blueprint.
                 </p>

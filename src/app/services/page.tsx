@@ -27,13 +27,13 @@ export default function ServicesIndexPage() {
       <NavBar />
 
       {/* Hero Section */}
-      <section className="dark-section" style={{ paddingTop: '10rem', paddingBottom: '6rem', background: '#0F172A', color: '#FFFFFF' }}>
+      <section className="dark-section" style={{ paddingTop: 'var(--spacing-section)', paddingBottom: 'var(--spacing-section)', background: '#0F172A', color: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ maxWidth: '800px' }}>
             <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#38BDF8', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.5rem' }}>
               Services & Engineering Capability
             </div>
-            <h1 style={{ fontSize: '4.5rem', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+            <h1 style={{ fontSize: 'var(--font-hero)', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
               The disciplines behind <span style={{ color: '#38BDF8' }}>durable software.</span>
             </h1>
             <p style={{ fontSize: '1.25rem', color: '#94A3B8', lineHeight: 1.6, marginBottom: '3rem' }}>
@@ -44,10 +44,10 @@ export default function ServicesIndexPage() {
       </section>
 
       {/* Services Grid */}
-      <section style={{ padding: '8rem 0', background: '#F8FAFC' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#F8FAFC' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-             <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', marginBottom: '1rem' }}>End-to-End Capabilities</h2>
+             <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1rem' }}>End-to-End Capabilities</h2>
              <p style={{ fontSize: '1.1rem', color: '#64748B', maxWidth: '600px', margin: '0 auto' }}>From early-stage product discovery to post-launch cloud maintenance, we cover the full software lifecycle.</p>
           </div>
           
@@ -81,11 +81,11 @@ export default function ServicesIndexPage() {
       </section>
 
       {/* Philosophy Section */}
-      <section style={{ padding: '6rem 0', background: '#FFFFFF' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
             <div>
-              <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>Shape the right problem.</h2>
+              <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>Shape the right problem.</h2>
               <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.7, marginBottom: '2rem' }}>
                 Consulting and discovery turn a broad ambition into a testable product direction. We make assumptions visible before they become expensive scope.
               </p>
@@ -96,7 +96,7 @@ export default function ServicesIndexPage() {
               </ul>
             </div>
             <div style={{ background: '#0F172A', padding: '4rem', borderRadius: '24px' }}>
-              <div style={{ fontSize: '2rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+              <div style={{ fontSize: 'var(--font-h3)', fontWeight: 800, color: '#FFFFFF', marginBottom: '1.5rem', lineHeight: 1.3 }}>
                 "Build for the operating context. Design stays connected to the constraints that determine whether software is adopted."
               </div>
               <div style={{ color: '#94A3B8', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>— Acriotech Engineering Standard</div>

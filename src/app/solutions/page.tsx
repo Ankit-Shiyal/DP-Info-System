@@ -107,7 +107,7 @@ export default function SolutionsIndexPage() {
 
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <section className="dark-section solutions-hero-grid" style={{ paddingTop: '9rem', paddingBottom: '5rem', background: '#0F172A', color: '#FFFFFF' }}>
-        <div className="solutions-hero-inner" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 3rem', display: 'grid', gridTemplateColumns: 'minmax(0, 1.25fr) minmax(320px, 0.75fr)', gap: '5rem', alignItems: 'end' }}>
+        <div className="solutions-hero-inner" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 3rem', display: 'grid', gridTemplateColumns: 'minmax(0, 1.25fr) minmax(320px, 0.75fr)', gap: 'var(--spacing-section-sm)', alignItems: 'end' }}>
           <div style={{ maxWidth: '760px' }}>
             <div style={{ fontSize: '0.7rem', fontWeight: 700, color: '#7BAF35', textTransform: 'uppercase', letterSpacing: '0.14em', marginBottom: '1.5rem' }}>Engineering partner / Built for production</div>
             <h1 style={{ fontSize: 'clamp(2.8rem, 5vw, 4.5rem)', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.04em', marginBottom: '1.5rem', lineHeight: 1.02, maxWidth: '720px' }}>
@@ -153,12 +153,12 @@ export default function SolutionsIndexPage() {
       </section>
 
       {/* ── Capability map ────────────────────────────────────────────── */}
-      <section id="solutions" style={{ padding: '6rem 0', background: '#F8FAFC' }}>
+      <section id="solutions" style={{ padding: 'var(--spacing-section) 0', background: '#F8FAFC' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 3rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '0.7fr 1.3fr', gap: '5rem', alignItems: 'start', marginBottom: '3rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '0.7fr 1.3fr', gap: 'var(--spacing-section-sm)', alignItems: 'start', marginBottom: '3rem' }}>
             <div>
             <div style={{ fontSize: '0.72rem', fontWeight: 700, color: '#4B61B8', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '0.75rem' }}>CAPABILITY MAP</div>
-            <h2 style={{ fontSize: '2rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.025em', maxWidth: '580px', lineHeight: 1.25 }}>
+            <h2 style={{ fontSize: 'var(--font-h3)', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.025em', maxWidth: '580px', lineHeight: 1.25 }}>
               Eight capabilities. One accountable delivery model.
             </h2>
             </div>
@@ -187,9 +187,9 @@ export default function SolutionsIndexPage() {
       </section>
 
       {/* ── Why enterprise chooses us ─────────────────────────────────── */}
-      <section style={{ padding: '6rem 0', background: '#FFFFFF' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 3rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '6rem', alignItems: 'start' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 'var(--spacing-section-sm)', alignItems: 'start' }}>
             <div>
               <div style={{ fontSize: '0.72rem', fontWeight: 700, color: '#4B61B8', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '0.75rem' }}>DIFFERENTIATORS</div>
               <h2 style={{ fontSize: '1.9rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.025em', lineHeight: 1.25, marginBottom: '1.25rem' }}>
@@ -213,7 +213,7 @@ export default function SolutionsIndexPage() {
       </section>
 
       {/* ── Industries ───────────────────────────────────────────────── */}
-      <section className="dark-section" style={{ padding: '5rem 0', background: '#0F172A' }}>
+      <section className="dark-section" style={{ padding: 'var(--spacing-section) 0', background: '#0F172A' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 3rem' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2.5rem', flexWrap: 'wrap', gap: '1rem' }}>
             <div>
@@ -236,7 +236,7 @@ export default function SolutionsIndexPage() {
       </section>
 
       {/* ── Engagement model ─────────────────────────────────────────── */}
-      <section style={{ padding: '6rem 0', background: '#FFFFFF' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 3rem' }}>
           <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
             <div style={{ fontSize: '0.72rem', fontWeight: 700, color: '#4B61B8', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '0.75rem' }}>HOW WE ENGAGE</div>
@@ -262,10 +262,10 @@ export default function SolutionsIndexPage() {
       </section>
 
       {/* ── CTA ──────────────────────────────────────────────────────── */}
-      <section className="dark-section" style={{ padding: '5rem 0', background: '#0F172A', position: 'relative', overflow: 'hidden' }}>
+      <section className="dark-section" style={{ padding: 'var(--spacing-section) 0', background: '#0F172A', position: 'relative', overflow: 'hidden' }}>
         <div style={{ maxWidth: '700px', margin: '0 auto', padding: '0 3rem', textAlign: 'center', position: 'relative', zIndex: 1 }}>
           <div style={{ fontSize: '0.72rem', fontWeight: 700, color: '#7BAF35', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '1rem' }}>GET STARTED</div>
-          <h2 style={{ fontSize: '2rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '1rem', letterSpacing: '-0.025em', lineHeight: 1.25 }}>
+          <h2 style={{ fontSize: 'var(--font-h3)', fontWeight: 800, color: '#FFFFFF', marginBottom: '1rem', letterSpacing: '-0.025em', lineHeight: 1.25 }}>
             Not sure which capability fits your situation?
           </h2>
           <p style={{ fontSize: '1rem', color: '#94A3B8', lineHeight: 1.75, marginBottom: '2rem' }}>

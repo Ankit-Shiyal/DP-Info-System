@@ -12,9 +12,9 @@ export default function ProductDiscovery() {
       <NavBar />
 
       {/* Hero Section */}
-      <section style={{ paddingTop: '10rem', paddingBottom: '7rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
+      <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '7rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '5rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
             <div>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#FDF4FF', color: '#86198F', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
                 <Compass size={16} /> Research & Prototyping
@@ -56,10 +56,10 @@ export default function ProductDiscovery() {
       </section>
 
       {/* NEW SECTION 1: Alignment Workshop (Activities) */}
-      <section style={{ padding: '6rem 0', background: '#FFFFFF' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#111827', marginBottom: '1rem' }}>The Alignment Workshop</h2>
+            <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#111827', marginBottom: '1rem' }}>The Alignment Workshop</h2>
             <p style={{ fontSize: '1.1rem', color: '#6B7280', maxWidth: '700px', margin: '0 auto' }}>Product failures rarely happen because of bad code. They happen because Sales, Product, and Engineering were solving different problems. We fix that.</p>
           </div>
           
@@ -80,22 +80,22 @@ export default function ProductDiscovery() {
       </section>
 
       {/* NEW SECTION 2: User Research Methodology (Process) */}
-      <section className="dark-section" style={{ padding: '8rem 0', background: '#0F172A', color: '#FFFFFF' }}>
+      <section className="dark-section" style={{ padding: 'var(--spacing-section) 0', background: '#0F172A', color: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'center' }}>
+           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
              <div>
-                <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '1.5rem' }}>Evidence, Not Opinions</h2>
+                <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#FFFFFF', marginBottom: '1.5rem' }}>Evidence, Not Opinions</h2>
                 <p style={{ fontSize: '1.1rem', color: '#94A3B8', lineHeight: 1.7, marginBottom: '2rem' }}>
                   The highest paid person in the room shouldn't dictate product features. We rely on rigorous qualitative and quantitative user research to drive decisions.
                 </p>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
                   <div>
-                    <div style={{ fontSize: '2rem', fontWeight: 800, color: '#E879F9', marginBottom: '0.5rem' }}>Contextual</div>
+                    <div style={{ fontSize: 'var(--font-h3)', fontWeight: 800, color: '#E879F9', marginBottom: '0.5rem' }}>Contextual</div>
                     <h4 style={{ fontWeight: 700, fontSize: '1.1rem', color: '#F8FAFC', marginBottom: '0.5rem' }}>Inquiry</h4>
                     <p style={{ color: '#64748B', fontSize: '0.9rem' }}>Watching users perform tasks in their actual environment, rather than a sterile lab.</p>
                   </div>
                   <div>
-                    <div style={{ fontSize: '2rem', fontWeight: 800, color: '#38BDF8', marginBottom: '0.5rem' }}>A/B</div>
+                    <div style={{ fontSize: 'var(--font-h3)', fontWeight: 800, color: '#38BDF8', marginBottom: '0.5rem' }}>A/B</div>
                     <h4 style={{ fontWeight: 700, fontSize: '1.1rem', color: '#F8FAFC', marginBottom: '0.5rem' }}>Prototyping</h4>
                     <p style={{ color: '#64748B', fontSize: '0.9rem' }}>Testing high-fidelity Figma mockups before writing a single line of backend logic.</p>
                   </div>
@@ -117,14 +117,14 @@ export default function ProductDiscovery() {
       </section>
 
       {/* NEW SECTION 3: Discovery Artifacts (Outcomes) */}
-      <section style={{ padding: '6rem 0', background: '#FDF4FF' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#FDF4FF' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '4rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-section-sm)' }}>
              <div style={{ flexShrink: 0 }}>
                 <LayoutTemplate size={120} color="#D946EF" opacity={0.2} />
              </div>
              <div>
-               <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#4A044E', marginBottom: '1.5rem' }}>The Handoff</h2>
+               <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#4A044E', marginBottom: '1.5rem' }}>The Handoff</h2>
                <p style={{ fontSize: '1.1rem', color: '#701A75', lineHeight: 1.7, marginBottom: '2rem' }}>
                  At the end of a 2-4 week discovery phase, you don't just get a report. You get the exact artifacts your engineering team needs to begin sprint planning.
                </p>

@@ -12,9 +12,9 @@ export default function AIIntegration() {
       <NavBar />
 
       {/* Hero Section */}
-      <section className="dark-section" style={{ paddingTop: '10rem', paddingBottom: '7rem', background: '#0F172A', color: '#FFFFFF' }}>
+      <section className="dark-section" style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '7rem', background: '#0F172A', color: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '5rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
             <div>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#FFF1F2', color: '#E11D48', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
                 <Bot size={16} /> Pragmatic AI
@@ -72,11 +72,11 @@ export default function AIIntegration() {
       </section>
 
       {/* NEW SECTION 1: Retrieval-Augmented Generation (Tech) */}
-      <section style={{ padding: '8rem 0', background: '#FFFFFF' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'center' }}>
+           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
              <div>
-                <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>Retrieval-Augmented Generation (RAG)</h2>
+                <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>Retrieval-Augmented Generation (RAG)</h2>
                 <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.7, marginBottom: '2rem' }}>
                   Off-the-shelf AI models hallucinate because they lack your business context. We build RAG pipelines that force the AI to read your proprietary databases and documents before answering.
                 </p>
@@ -103,9 +103,9 @@ export default function AIIntegration() {
       </section>
 
       {/* NEW SECTION 2: Human-in-the-Loop (Methodology) */}
-      <section style={{ padding: '6rem 0', background: '#FDF2F8' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#FDF2F8' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#831843', marginBottom: '1.5rem' }}>Human-in-the-Loop Architecture</h2>
+          <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#831843', marginBottom: '1.5rem' }}>Human-in-the-Loop Architecture</h2>
           <p style={{ fontSize: '1.1rem', color: '#9D174D', maxWidth: '700px', margin: '0 auto 4rem auto', lineHeight: 1.6 }}>
             In highly regulated industries (Legal, Medical, Finance), AI cannot make final decisions autonomously. We engineer approval queues where AI acts as a drafter, and a human acts as the editor.
           </p>
@@ -121,7 +121,7 @@ export default function AIIntegration() {
       </section>
 
       {/* NEW SECTION 3: AI Security/Data Privacy (Outcomes) */}
-      <section style={{ padding: '6rem 0', background: '#FFFFFF' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '3rem' }}>
               <div style={{ padding: '2rem', background: '#F8FAFC', borderRadius: '16px', border: '1px solid #E2E8F0' }}>

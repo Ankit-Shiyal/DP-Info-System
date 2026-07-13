@@ -12,12 +12,12 @@ export default function MobileAppDevelopment() {
       <NavBar />
 
       {/* Hero Section */}
-      <section className="dark-section" style={{ paddingTop: '10rem', paddingBottom: '7rem', background: '#0F172A', color: '#FFFFFF' }}>
+      <section className="dark-section" style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '7rem', background: '#0F172A', color: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(255,255,255,0.1)', color: '#F8FAFC', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem', letterSpacing: '0.05em' }}>
             <Smartphone size={16} color="#A78BFA" /> iOS & Android Engineering
           </div>
-          <h1 style={{ fontSize: '4.5rem', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+          <h1 style={{ fontSize: 'var(--font-hero)', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
             Mobile experiences that respect <br/><span style={{ color: '#A78BFA' }}>context and connectivity.</span>
           </h1>
           <p style={{ fontSize: '1.25rem', color: '#94A3B8', lineHeight: 1.6, marginBottom: '3rem', maxWidth: '800px', margin: '0 auto 3rem auto' }}>
@@ -32,14 +32,14 @@ export default function MobileAppDevelopment() {
       </section>
 
       {/* NEW SECTION 1: Offline-First Architecture (Methodology) */}
-      <section style={{ padding: '8rem 0', background: '#F8FAFC' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#F8FAFC' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
             <div>
                <div style={{ width: '64px', height: '64px', borderRadius: '16px', background: '#EDE9FE', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '2rem' }}>
                   <WifiOff size={32} color="#8B5CF6" />
                </div>
-               <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>The Offline-First Mandate</h2>
+               <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>The Offline-First Mandate</h2>
                <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.7, marginBottom: '2rem' }}>
                  Mobile users ride subways, enter elevators, and work in remote warehouses. A spinning loader on a bad 3G connection is a failure of engineering.
                </p>
@@ -83,10 +83,10 @@ export default function MobileAppDevelopment() {
       </section>
 
       {/* NEW SECTION 2: Cross-Platform Strategy (Tech) */}
-      <section style={{ padding: '6rem 0', background: '#FFFFFF' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-             <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', marginBottom: '1rem' }}>One Codebase, Two Platforms</h2>
+             <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1rem' }}>One Codebase, Two Platforms</h2>
              <p style={{ fontSize: '1.1rem', color: '#64748B', maxWidth: '700px', margin: '0 auto' }}>Maintaining separate Swift and Kotlin teams is expensive. We use React Native to deliver native performance from a single JavaScript codebase.</p>
           </div>
           
@@ -107,7 +107,7 @@ export default function MobileAppDevelopment() {
       </section>
 
       {/* NEW SECTION 3: App Store Handoff (Process) */}
-      <section className="dark-section" style={{ padding: '6rem 0', background: '#0F172A', color: '#FFFFFF' }}>
+      <section className="dark-section" style={{ padding: 'var(--spacing-section) 0', background: '#0F172A', color: '#FFFFFF' }}>
          <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
             <div style={{ background: '#1E293B', borderRadius: '24px', padding: '4rem', border: '1px solid #334155' }}>
                <h2 style={{ fontSize: '2.2rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '1.5rem', textAlign: 'center' }}>The App Store Gauntlet</h2>

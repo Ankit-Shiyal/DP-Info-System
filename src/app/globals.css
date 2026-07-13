@@ -13,6 +13,44 @@
   
   --shadow-soft: 0 4px 20px -2px rgba(15, 23, 42, 0.04), 0 2px 8px -2px rgba(15, 23, 42, 0.02);
   --shadow-hover: 0 12px 30px -4px rgba(15, 23, 42, 0.06), 0 4px 12px -2px rgba(15, 23, 42, 0.03);
+
+  /* Fluid Typography Variables */
+  --font-hero: clamp(2.125rem, 4vw + 1.5rem, 4.5rem);
+  --font-h1: clamp(2rem, 3.5vw + 1.25rem, 3.5rem);
+  --font-h2: clamp(1.75rem, 3vw + 1rem, 3rem);
+  --font-h3: clamp(1.25rem, 2vw + 0.5rem, 2rem);
+  --font-h4: clamp(1.1rem, 1.5vw + 0.5rem, 1.5rem);
+  --font-body: clamp(1rem, 0.5vw + 0.8rem, 1.125rem);
+  
+  /* Fluid Spacing Variables */
+  --spacing-section: clamp(3rem, 6vw + 1rem, 7.5rem);
+  --spacing-section-sm: clamp(2rem, 4vw + 0.5rem, 4rem);
+  --spacing-element: clamp(1.5rem, 3vw, 2.5rem);
+  --spacing-gap: clamp(1rem, 2vw, 2rem);
+
+  /* Hero Illustration Variables */
+  --hero-code-top: 5%;
+  --hero-code-left: 5%;
+  --hero-code-width: 280px;
+  
+  --hero-db-top: 40%;
+  --hero-db-left: 40%;
+  --hero-db-right: auto;
+  --hero-db-width: 300px;
+  
+  --hero-ai-top: 15%;
+  --hero-ai-left: auto;
+  --hero-ai-right: 5%;
+  
+  --hero-trust-top: auto;
+  --hero-trust-bottom: 20%;
+  --hero-trust-left: 15%;
+  --hero-trust-right: auto;
+  
+  --hero-deploy-bottom: 5%;
+  --hero-deploy-left: auto;
+  --hero-deploy-right: 20%;
+  --hero-deploy-transform: none;
 }
 
 * {
@@ -245,6 +283,7 @@ p {
   align-items: center;
   justify-content: center;
   padding: 0.8rem 1.8rem;
+  min-height: 48px;
   background: linear-gradient(180deg, var(--primary-blue), #3A4B8F);
   color: #ffffff;
   border-radius: 8px; /* More structured, less pill-shaped */
@@ -274,6 +313,7 @@ p {
   align-items: center;
   justify-content: center;
   padding: 0.8rem 1.8rem;
+  min-height: 48px;
   background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(10px);
   color: var(--text-main);
@@ -474,63 +514,33 @@ p {
    GLOBAL MOBILE RESPONSIVENESS OVERRIDES
    ========================================================================== */
 @media (max-width: 860px) {
-  /* Override inline grid column definitions to collapse to 1 column */
-  [style*="grid-template-columns"] {
-    grid-template-columns: 1fr !important;
+  :root {
+    --hero-code-top: 0%;
+    --hero-code-left: 5%;
+    --hero-code-width: clamp(260px, 85vw, 280px);
+    
+    --hero-db-top: 28%;
+    --hero-db-left: auto;
+    --hero-db-right: 5%;
+    --hero-db-width: clamp(260px, 85vw, 280px);
+    
+    --hero-ai-top: 55%;
+    --hero-ai-left: 5%;
+    --hero-ai-right: auto;
+    
+    --hero-trust-top: 72%;
+    --hero-trust-bottom: auto;
+    --hero-trust-left: auto;
+    --hero-trust-right: 5%;
+    
+    --hero-deploy-bottom: 2%;
+    --hero-deploy-left: 50%;
+    --hero-deploy-right: auto;
+    --hero-deploy-transform: translateX(-50%);
   }
 
-  /* Specific exception if we need a 2-column grid on mobile (e.g., small stats) */
-  .mobile-grid-2 {
-    grid-template-columns: 1fr 1fr !important;
-  }
-
-  /* Override inline gaps that are too large for mobile */
-  [style*="gap: 4rem"], 
-  [style*="gap: 5rem"], 
-  [style*="gap: 6rem"],
-  [style*="gap: 8rem"] {
-    gap: 2rem !important;
-  }
-
-  /* Override structural flex containers that should stack on mobile */
-  [style*="display: flex"][style*="justify-content: space-between"] {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 1.5rem !important;
-  }
-
-  /* Keep specific flex containers horizontal (e.g. icons, buttons) */
-  .keep-flex-row,
-  .keep-flex-row[style*="display: flex"] {
-    flex-direction: row !important;
-    align-items: center !important;
-  }
-
-  /* Typography scale-down */
-  h1, [style*="font-size: 4.5rem"], [style*="font-size: 5rem"] {
-    font-size: clamp(2.5rem, 8vw, 3.5rem) !important;
-  }
-
-  h2, [style*="font-size: 3.5rem"], [style*="font-size: 3rem"] {
-    font-size: clamp(2rem, 6vw, 2.5rem) !important;
-  }
-  
-  [style*="font-size: 2.5rem"] {
-    font-size: 1.8rem !important;
-  }
-
-  /* Global section padding scale-down */
-  [style*="padding: 10rem"],
-  [style*="padding: 8rem"],
-  [style*="paddingTop: 12rem"],
-  [style*="padding-top: 12rem"] {
-    padding-top: 6rem !important;
-    padding-bottom: 4rem !important;
-  }
-  
-  [style*="padding: 6rem 0"],
-  [style*="padding: 5rem 0"] {
-    padding: 3rem 0 !important;
+  .hero-architecture-wrapper {
+    height: 700px !important;
   }
 
   /* Container adjustments */
@@ -627,5 +637,75 @@ p {
     min-width: 100px !important;
     padding: 0.8rem 1rem !important;
     text-align: center !important;
+  }
+  
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: center;
+  }
+  
+  .hero-text-container {
+    padding-right: 0 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-text-container > div {
+    justify-content: center !important;
+  }
+  
+  .hero-title {
+    font-size: 2.8rem !important;
+  }
+  
+  .metrics-grid {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+  }
+  
+  .metric-card {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding-bottom: 3rem !important;
+  }
+  
+  .metric-card:last-child {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+  }
+  
+  .section-header-flex {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1.5rem !important;
+  }
+  
+  .case-study-grid {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+  }
+  
+  .cta-buttons-flex {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  
+  .cta-buttons-flex button {
+    width: 100% !important;
+  }
+  
+  .cta-title {
+    font-size: 2.8rem !important;
+  }
+  
+  .workflow-title {
+    font-size: 2.5rem !important;
+  }
+  
+  .workflow-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
   }
 }

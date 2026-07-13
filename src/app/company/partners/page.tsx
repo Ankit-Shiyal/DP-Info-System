@@ -42,12 +42,12 @@ export default function PartnersPage() {
       <NavBar />
 
       {/* Hero Section */}
-      <section style={{ paddingTop: '10rem', paddingBottom: '7rem', background: '#FAFAFA', borderBottom: '1px solid #EAEAEA' }}>
+      <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '7rem', background: '#FAFAFA', borderBottom: '1px solid #EAEAEA' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#F1F5F9', color: '#475569', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 700, textTransform: 'uppercase', marginBottom: '2rem' }}>
             <Server size={16} /> Technology Partners
           </div>
-          <h1 style={{ fontSize: '4.5rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+          <h1 style={{ fontSize: 'var(--font-hero)', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
             We stand on the <br/><span style={{ color: '#64748B' }}>shoulders of giants.</span>
           </h1>
           <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, maxWidth: '700px', margin: '0 auto' }}>
@@ -57,7 +57,7 @@ export default function PartnersPage() {
       </section>
 
       {/* Partners Grid */}
-      <section style={{ padding: '8rem 0', background: '#FFFFFF' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '2rem' }}>
              {partners.map((partner, i) => (
@@ -86,9 +86,9 @@ export default function PartnersPage() {
       </section>
 
       {/* CTA */}
-      <section style={{ padding: '6rem 0', background: '#0F172A', color: '#FFFFFF', textAlign: 'center' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#0F172A', color: '#FFFFFF', textAlign: 'center' }}>
         <div className="container" style={{ maxWidth: '800px', margin: '0 auto', padding: '0 2rem' }}>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: '1.5rem' }}>Want to become a partner?</h2>
+          <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, marginBottom: '1.5rem' }}>Want to become a partner?</h2>
           <p style={{ fontSize: '1.15rem', color: '#94A3B8', marginBottom: '3rem' }}>We are always looking for cutting-edge infrastructure and SaaS tools to accelerate our clients' roadmaps.</p>
           <Link href="/contact-us" style={{ background: '#FFFFFF', color: '#0F172A', padding: '1rem 2.5rem', borderRadius: '8px', fontWeight: 700, fontSize: '1.1rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', transition: 'transform 0.2s' }}>
             Get in Touch <ArrowRight size={18} />

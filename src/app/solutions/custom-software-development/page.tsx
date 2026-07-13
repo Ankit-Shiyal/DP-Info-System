@@ -12,12 +12,12 @@ export default function CustomSoftwareDevelopment() {
       <NavBar />
 
       {/* Hero Section */}
-      <section style={{ paddingTop: '10rem', paddingBottom: '5rem', background: '#FFFFFF' }}>
+      <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: '5rem', background: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#F1F5F9', color: '#475569', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
             <Code2 size={16} /> Engineering & Delivery
           </div>
-          <h1 style={{ fontSize: '4.5rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
+          <h1 style={{ fontSize: 'var(--font-hero)', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.04em', lineHeight: 1.1, marginBottom: '1.5rem' }}>
             Software built for your exact <br/><span style={{ color: '#2563EB' }}>operational reality.</span>
           </h1>
           <p style={{ fontSize: '1.25rem', color: '#475569', lineHeight: 1.6, marginBottom: '3rem', maxWidth: '800px', margin: '0 auto 3rem auto' }}>
@@ -32,10 +32,10 @@ export default function CustomSoftwareDevelopment() {
       </section>
 
       {/* NEW SECTION 1: Delivery Lifecycle (Methodology) */}
-      <section style={{ padding: '6rem 0', background: '#F8FAFC', borderTop: '1px solid #E2E8F0', borderBottom: '1px solid #E2E8F0' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#F8FAFC', borderTop: '1px solid #E2E8F0', borderBottom: '1px solid #E2E8F0' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', marginBottom: '1rem' }}>How We Build</h2>
+            <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1rem' }}>How We Build</h2>
             <p style={{ fontSize: '1.1rem', color: '#64748B', maxWidth: '700px' }}>Agile delivery without the chaos. We combine rigorous product discovery with test-driven development to ensure predictability.</p>
           </div>
 
@@ -59,9 +59,9 @@ export default function CustomSoftwareDevelopment() {
       </section>
 
       {/* NEW SECTION 2: Domain-Driven Design (Tech Focus) */}
-      <section style={{ padding: '8rem 0', background: '#FFFFFF' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'center' }}>
+           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
              <div style={{ background: '#0F172A', padding: '3rem', borderRadius: '24px', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.25)' }}>
                <div style={{ fontSize: '0.85rem', color: '#94A3B8', fontFamily: 'monospace', marginBottom: '1rem' }}>// Domain Model Example</div>
                <pre style={{ margin: 0, color: '#A5B4FC', fontFamily: 'monospace', fontSize: '0.9rem', lineHeight: 1.6 }}>
@@ -77,7 +77,7 @@ export default function CustomSoftwareDevelopment() {
                </pre>
              </div>
              <div>
-                <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>Domain-Driven Architecture</h2>
+                <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>Domain-Driven Architecture</h2>
                 <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.7, marginBottom: '2rem' }}>
                   We build software that mirrors your actual business logic. By utilizing Domain-Driven Design (DDD), we create bounded contexts that prevent different parts of your application from becoming hopelessly entangled.
                 </p>
@@ -97,24 +97,24 @@ export default function CustomSoftwareDevelopment() {
       </section>
 
       {/* NEW SECTION 3: Maintainability Metrics (Outcomes) */}
-      <section className="dark-section" style={{ padding: '6rem 0', background: '#0F172A', color: '#FFFFFF' }}>
+      <section className="dark-section" style={{ padding: 'var(--spacing-section) 0', background: '#0F172A', color: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '1rem' }}>Engineered for Handover</h2>
+          <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#FFFFFF', marginBottom: '1rem' }}>Engineered for Handover</h2>
           <p style={{ fontSize: '1.1rem', color: '#94A3B8', maxWidth: '700px', margin: '0 auto 4rem auto' }}>We don't build systems to keep you dependent on us. We build them so your internal engineering team can easily take over.</p>
           
           <div style={{ display: 'flex', justifyContent: 'center', gap: '3rem' }}>
             <div style={{ textAlign: 'center' }}>
-               <div style={{ fontSize: '3.5rem', fontWeight: 800, color: '#3B82F6', marginBottom: '0.5rem' }}>&gt;85%</div>
+               <div style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#3B82F6', marginBottom: '0.5rem' }}>&gt;85%</div>
                <div style={{ fontSize: '1rem', fontWeight: 600, color: '#E2E8F0' }}>Test Coverage Guarantee</div>
             </div>
             <div style={{ width: '1px', background: '#334155' }}></div>
             <div style={{ textAlign: 'center' }}>
-               <div style={{ fontSize: '3.5rem', fontWeight: 800, color: '#3B82F6', marginBottom: '0.5rem' }}>100%</div>
+               <div style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#3B82F6', marginBottom: '0.5rem' }}>100%</div>
                <div style={{ fontSize: '1rem', fontWeight: 600, color: '#E2E8F0' }}>CI/CD Pipeline Automation</div>
             </div>
             <div style={{ width: '1px', background: '#334155' }}></div>
             <div style={{ textAlign: 'center' }}>
-               <div style={{ fontSize: '3.5rem', fontWeight: 800, color: '#3B82F6', marginBottom: '0.5rem' }}>0</div>
+               <div style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#3B82F6', marginBottom: '0.5rem' }}>0</div>
                <div style={{ fontSize: '1rem', fontWeight: 600, color: '#E2E8F0' }}>Proprietary Lock-in</div>
             </div>
           </div>

@@ -14,7 +14,7 @@ export default function DataAnalyticsSolution() {
       {/* Hero - Left Aligned with Analytical UI Graphic */}
       <section style={{ paddingTop: '9rem', paddingBottom: '7rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '5rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
             
             <div>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#F0FDF4', color: '#166534', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
@@ -44,7 +44,7 @@ export default function DataAnalyticsSolution() {
               </div>
               <div style={{ padding: '2rem' }}>
                  <div style={{ fontSize: '0.85rem', color: '#6B7280', fontWeight: 600, textTransform: 'uppercase', marginBottom: '0.5rem' }}>Total ARR</div>
-                 <div style={{ fontSize: '2.5rem', fontWeight: 800, color: '#111827', marginBottom: '2rem', display: 'flex', alignItems: 'baseline', gap: '1rem' }}>
+                 <div style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#111827', marginBottom: '2rem', display: 'flex', alignItems: 'baseline', gap: '1rem' }}>
                    $4.2M <span style={{ fontSize: '1rem', color: '#16A34A', display: 'flex', alignItems: 'center' }}>+18.4%</span>
                  </div>
                  {/* Faux Bar Chart */}
@@ -61,10 +61,10 @@ export default function DataAnalyticsSolution() {
       </section>
 
       {/* NEW SECTION 1: Analytics Maturity Model (Methodology) */}
-      <section style={{ padding: '6rem 0', background: '#F8FAFC' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#F8FAFC' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#111827', marginBottom: '1rem' }}>The Data Maturity Curve</h2>
+            <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#111827', marginBottom: '1rem' }}>The Data Maturity Curve</h2>
             <p style={{ fontSize: '1.1rem', color: '#64748B', maxWidth: '700px', margin: '0 auto' }}>We help organizations move from historical reporting (what happened) to prescriptive analytics (what should we do).</p>
           </div>
 
@@ -87,12 +87,12 @@ export default function DataAnalyticsSolution() {
       </section>
 
       {/* NEW SECTION 2: Data Pipeline Architecture (Tech Stack) */}
-      <section className="dark-section" style={{ padding: '8rem 0', background: '#0F172A', color: '#FFFFFF' }}>
+      <section className="dark-section" style={{ padding: 'var(--spacing-section) 0', background: '#0F172A', color: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           
-          <div style={{ display: 'grid', gridTemplateColumns: '0.8fr 1.2fr', gap: '6rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '0.8fr 1.2fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
             <div>
-              <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '1.5rem' }}>Modern Data Stack Architecture</h2>
+              <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#FFFFFF', marginBottom: '1.5rem' }}>Modern Data Stack Architecture</h2>
               <p style={{ fontSize: '1.1rem', color: '#94A3B8', lineHeight: 1.7, marginBottom: '2rem' }}>
                 Legacy monolithic databases can&apos;t scale for analytical workloads. We implement the Modern Data Stack (MDS)—separating storage, compute, and transformation—to deliver lightning-fast queries across petabytes of data.
               </p>
@@ -154,10 +154,10 @@ export default function DataAnalyticsSolution() {
       </section>
 
       {/* NEW SECTION 3: Business Value KPIs (Outcomes) */}
-      <section style={{ padding: '6rem 0', background: '#FFFFFF' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
            <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-             <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#111827', marginBottom: '1rem' }}>Measurable Business Value</h2>
+             <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#111827', marginBottom: '1rem' }}>Measurable Business Value</h2>
              <p style={{ fontSize: '1.1rem', color: '#6B7280', maxWidth: '600px', margin: '0 auto' }}>Data projects fail when they lack business alignment. We engineer pipelines specifically to move these core KPIs.</p>
            </div>
            

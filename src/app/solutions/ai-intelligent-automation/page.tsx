@@ -12,8 +12,8 @@ export default function AIAutomationSolution() {
       <NavBar />
 
       {/* Hero - Clean Enterprise Split */}
-      <section style={{ paddingTop: '10rem', paddingBottom: '6rem', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
-        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem', display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '4rem', alignItems: 'center' }}>
+      <section style={{ paddingTop: 'var(--spacing-section)', paddingBottom: 'var(--spacing-section)', background: '#FFFFFF', borderBottom: '1px solid #EAEAEA' }}>
+        <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem', display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
           <div>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#F3F4F6', color: '#374151', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '2rem' }}>
               <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#2563EB' }}></span>
@@ -66,10 +66,10 @@ export default function AIAutomationSolution() {
       </section>
 
       {/* Core Capabilities - Bento Box Design */}
-      <section style={{ padding: '6rem 0', background: '#F9FAFB' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#F9FAFB' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ textAlign: 'center', marginBottom: '4rem', maxWidth: '700px', margin: '0 auto 4rem auto' }}>
-            <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#111827', marginBottom: '1rem' }}>Capabilities mapped to outcomes.</h2>
+            <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#111827', marginBottom: '1rem' }}>Capabilities mapped to outcomes.</h2>
             <p style={{ fontSize: '1.125rem', color: '#6B7280' }}>We replace manual, error-prone workflows with deterministic AI systems that integrate directly into your existing infrastructure.</p>
           </div>
 
@@ -97,7 +97,7 @@ export default function AIAutomationSolution() {
               <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#FFFFFF', marginBottom: '1rem' }}>Predictive Forecasting</h3>
               <p style={{ color: '#9CA3AF', lineHeight: 1.6, marginBottom: '2rem' }}>Time-series models trained on your historical datasets to forecast demand, predict revenue, and optimize capacity planning.</p>
               <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1.5rem' }}>
-                 <div style={{ fontSize: '2.5rem', fontWeight: 800, color: '#60A5FA', lineHeight: 1 }}>90-Day</div>
+                 <div style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#60A5FA', lineHeight: 1 }}>90-Day</div>
                  <div style={{ fontSize: '0.85rem', color: '#9CA3AF', textTransform: 'uppercase', letterSpacing: '0.05em', marginTop: '0.25rem' }}>Prediction Windows</div>
               </div>
             </div>
@@ -125,11 +125,11 @@ export default function AIAutomationSolution() {
       </section>
 
       {/* NEW SECTION 1: Deep-Dive Methodology */}
-      <section id="methodology" style={{ padding: '6rem 0', background: '#FFFFFF', borderTop: '1px solid #EAEAEA' }}>
+      <section id="methodology" style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF', borderTop: '1px solid #EAEAEA' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
             <div>
-              <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#111827', marginBottom: '1.5rem' }}>Our AI Deployment Methodology</h2>
+              <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#111827', marginBottom: '1.5rem' }}>Our AI Deployment Methodology</h2>
               <p style={{ fontSize: '1.1rem', color: '#4B5563', lineHeight: 1.7, marginBottom: '2rem' }}>
                 Building models is easy. Getting them to operate safely in an enterprise environment is hard. We follow a strict 4-phase deployment standard to ensure zero operational surprises.
               </p>
@@ -179,11 +179,11 @@ export default function AIAutomationSolution() {
       </section>
 
       {/* NEW SECTION 2: Industry Specific Implementations */}
-      <section className="dark-section" style={{ padding: '6rem 0', background: '#111827', color: '#FFFFFF' }}>
+      <section className="dark-section" style={{ padding: 'var(--spacing-section) 0', background: '#111827', color: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '4rem' }}>
             <div style={{ maxWidth: '600px' }}>
-              <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '1rem' }}>Industry Implementations</h2>
+              <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#FFFFFF', marginBottom: '1rem' }}>Industry Implementations</h2>
               <p style={{ color: '#9CA3AF', fontSize: '1.1rem', lineHeight: 1.6 }}>We tune our base models to understand the unique lexicons, compliance requirements, and risk tolerances of specific sectors.</p>
             </div>
           </div>
@@ -205,11 +205,11 @@ export default function AIAutomationSolution() {
       </section>
 
       {/* NEW SECTION 3: Tech Stack & Security */}
-      <section style={{ padding: '6rem 0', background: '#FFFFFF' }}>
+      <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
            <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
              <Lock size={40} color="#111827" style={{ margin: '0 auto 1.5rem auto' }} />
-             <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#111827', marginBottom: '1rem' }}>Enterprise Tech Stack & Security</h2>
+             <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#111827', marginBottom: '1rem' }}>Enterprise Tech Stack & Security</h2>
              <p style={{ fontSize: '1.1rem', color: '#6B7280', maxWidth: '600px', margin: '0 auto' }}>Your data is your IP. Our models are trained and hosted within your secure environments, guaranteeing absolute privacy.</p>
            </div>
            

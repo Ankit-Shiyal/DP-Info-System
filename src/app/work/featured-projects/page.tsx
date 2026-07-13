@@ -62,7 +62,7 @@ export default function FeaturedProjectsPage() {
 
       <section style={{ padding: '6rem 0', background: '#FAFAFA' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
+           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '3rem' }}>
              {projects.map((proj, i) => (
                <div key={i} style={{ background: '#FFFFFF', borderRadius: '24px', border: '1px solid #E2E8F0', overflow: 'hidden', display: 'flex', flexDirection: 'column', transition: 'transform 0.2s, box-shadow 0.2s', cursor: 'pointer' }} className="project-card">
                  <div style={{ height: '300px', background: '#1E293B', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>

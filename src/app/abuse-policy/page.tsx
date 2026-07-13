@@ -75,7 +75,7 @@ export default function AbusePolicy() {
         <div>
           <h2 style={{ fontSize: '1.6rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>3. Consequences of Policy Violations</h2>
           <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, marginBottom: '1rem' }}>Upon detection or credible report of an abuse policy violation, Acriotech may take one or more of the following actions, depending on the severity, whether it is a first or repeat offense, and whether the violation was intentional:</p>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '1rem' }}>
             {[
               { severity: 'Minor Violations', actions: 'Written warning, requirement to acknowledge policy, temporary throttling of API access.' },
               { severity: 'Moderate Violations', actions: 'Immediate suspension of the affected service or feature pending review. No refund for suspended period.' },

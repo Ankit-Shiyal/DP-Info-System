@@ -87,7 +87,7 @@ export default function DigitalTransformation() {
       {/* NEW SECTION 2: Change Management (Human Element) */}
       <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
             <div>
               <div style={{ width: '64px', height: '64px', borderRadius: '16px', background: '#EEF2FF', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '2rem' }}>
                 <Users2 size={32} color="#4F46E5" />
@@ -141,7 +141,7 @@ export default function DigitalTransformation() {
            <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#FFFFFF', marginBottom: '1rem' }}>Core Technical Shifts</h2>
            <p style={{ fontSize: '1.1rem', color: '#94A3B8', maxWidth: '700px', margin: '0 auto 4rem auto' }}>We modernize the three pillars of enterprise technology simultaneously.</p>
            
-           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
+           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem' }}>
              <div style={{ background: '#1E293B', padding: '3rem 2rem', borderRadius: '16px', border: '1px solid #334155' }}>
                <DatabaseZap size={32} color="#818CF8" style={{ margin: '0 auto 1.5rem auto' }} />
                <h4 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '1rem' }}>Data Modernization</h4>

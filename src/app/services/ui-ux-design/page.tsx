@@ -39,7 +39,7 @@ export default function UIUXDesign() {
             <p style={{ fontSize: '1.1rem', color: '#64748B', maxWidth: '600px', margin: '0 auto' }}>Our design process oscillates between divergent thinking (exploring many options) and convergent thinking (focusing on the best solution).</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: '2rem' }}>
             {[
               { icon: Split, title: "1. Discover", type: "Divergent", text: "Researching the problem space broadly. User interviews, competitive analysis, and ethnographic observation." },
               { icon: MousePointerClick, title: "2. Define", type: "Convergent", text: "Synthesizing research into clear problem statements, personas, and user journey maps." },
@@ -62,7 +62,7 @@ export default function UIUXDesign() {
       {/* NEW SECTION 2: Design System (Tech Focus) */}
       <section className="dark-section" style={{ padding: 'var(--spacing-section) 0', background: '#0F172A', color: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
+           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
              
              {/* Visual Design System UI */}
              <div style={{ background: '#1E293B', padding: '3rem', borderRadius: '24px', border: '1px solid #334155' }}>
@@ -85,7 +85,7 @@ export default function UIUXDesign() {
                 <p style={{ fontSize: '1.1rem', color: '#94A3B8', lineHeight: 1.7, marginBottom: '2rem' }}>
                   We don't design isolated screens. We build comprehensive, token-based design systems in Figma that map 1:1 with React components.
                 </p>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem' }}>
                   <div>
                     <h4 style={{ fontWeight: 700, fontSize: '1.1rem', color: '#F8FAFC', marginBottom: '0.5rem' }}>Consistency</h4>
                     <p style={{ color: '#64748B', fontSize: '0.95rem' }}>Ensure your app looks identical on iOS, Android, and Web.</p>

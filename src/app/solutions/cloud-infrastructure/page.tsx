@@ -34,7 +34,7 @@ export default function CloudInfrastructureSolution() {
       {/* Architectural Diagram Visual */}
       <section style={{ paddingBottom: 'var(--spacing-section)', background: '#F8FAFC', borderBottom: '1px solid #E2E8F0' }}>
          <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
-            <div style={{ background: '#0F172A', borderRadius: '24px', padding: '3rem', border: '1px solid #1E293B', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
+            <div style={{ background: '#0F172A', borderRadius: '24px', padding: '3rem', border: '1px solid #1E293B', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem' }}>
                
                <div style={{ background: 'rgba(255,255,255,0.05)', padding: '2rem', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.1)' }}>
                   <Server size={32} color="#818CF8" style={{ marginBottom: '1rem' }} />
@@ -67,7 +67,7 @@ export default function CloudInfrastructureSolution() {
             <p style={{ fontSize: '1.1rem', color: '#64748B', maxWidth: '600px', margin: '0 auto' }}>Migrating to the cloud isn&apos;t just changing servers. It&apos;s changing how you operate. We handle the complexity so you can focus on product.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-section-sm)', alignItems: 'center', marginBottom: '6rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'var(--spacing-section-sm)', alignItems: 'center', marginBottom: '6rem' }}>
             <div>
               <div style={{ fontSize: '4rem', fontWeight: 900, color: '#EEF2FF', lineHeight: 1, marginBottom: '1rem' }}>01</div>
               <h3 style={{ fontSize: 'var(--font-h3)', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>Audit & Infrastructure as Code (IaC)</h3>
@@ -96,7 +96,7 @@ export default function CloudInfrastructureSolution() {
             </div>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
             <div style={{ order: 2 }}>
               <div style={{ fontSize: '4rem', fontWeight: 900, color: '#EEF2FF', lineHeight: 1, marginBottom: '1rem' }}>02</div>
               <h3 style={{ fontSize: 'var(--font-h3)', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>Container Orchestration</h3>

@@ -22,7 +22,7 @@ export default function GDPRCompliance() {
         <div>
           <h2 style={{ fontSize: '1.6rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>What is Personal Data?</h2>
           <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, marginBottom: '1rem' }}>Personal data is any information that relates to an identified or identifiable natural person. GDPR covers a broad spectrum, including:</p>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '1rem' }}>
             {['Name & Email', 'IP Addresses', 'Phone Numbers', 'Location Data', 'Biometric Data', 'Financial Records', 'Health Information', 'Political Opinions', 'Genetic Data'].map((item) => (
               <div key={item} style={{ padding: '0.75rem 1rem', background: '#F8FAFC', borderRadius: '8px', border: '1px solid #E2E8F0', fontSize: '0.9rem', fontWeight: 600, color: '#475569', textAlign: 'center' }}>{item}</div>
             ))}

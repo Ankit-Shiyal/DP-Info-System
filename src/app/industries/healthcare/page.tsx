@@ -65,7 +65,7 @@ export default function HealthcareIndustry() {
       {/* NEW SECTION 1: Clinical Workflows (Methodology) */}
       <section style={{ padding: '8rem 0', background: '#F8FAFC' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'center' }}>
+           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '6rem', alignItems: 'center' }}>
              
              {/* Visual */}
              <div style={{ background: '#FFFFFF', padding: '3rem', borderRadius: '24px', border: '1px solid #E2E8F0', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.05)' }}>
@@ -93,7 +93,7 @@ export default function HealthcareIndustry() {
                 <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.7, marginBottom: '2rem' }}>
                   Doctors and nurses are overwhelmed by screens, clicks, and alerts. We design health tech interfaces that optimize for cognitive load, pushing relevant data to the provider only when action is required.
                 </p>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem' }}>
                   <div>
                     <h4 style={{ fontWeight: 700, fontSize: '1.1rem', color: '#0F172A', marginBottom: '0.5rem' }}>Fewer Clicks</h4>
                     <p style={{ color: '#64748B', fontSize: '0.95rem' }}>Streamlining charting and data entry to prevent physician burnout.</p>
@@ -116,7 +116,7 @@ export default function HealthcareIndustry() {
              <p style={{ fontSize: '1.1rem', color: '#94A3B8', maxWidth: '700px', margin: '0 auto' }}>Health tech that cannot communicate with Epic or Cerner is useless. We engineer deep EHR integrations.</p>
           </div>
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '1.5rem' }}>
              <div style={{ padding: '2rem', border: '1px solid #334155', borderRadius: '12px', background: '#1E293B', textAlign: 'center' }}>
                 <Database size={32} color="#0891B2" style={{ margin: '0 auto 1rem auto' }} />
                 <h4 style={{ fontWeight: 700, fontSize: '1.1rem', marginBottom: '0.5rem' }}>HL7 v2 & v3</h4>

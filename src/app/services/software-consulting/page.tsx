@@ -34,12 +34,12 @@ export default function SoftwareConsulting() {
       {/* NEW SECTION 1: When to Engage Us (Criteria) */}
       <section className="dark-section" style={{ padding: 'var(--spacing-section) 0', background: '#111827', color: '#FFFFFF' }}>
          <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 'var(--spacing-section-sm)', alignItems: 'start' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'var(--spacing-section-sm)', alignItems: 'start' }}>
                <div>
                  <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#FFFFFF', marginBottom: '1.5rem' }}>The Catalyst</h2>
                  <p style={{ fontSize: '1.1rem', color: '#9CA3AF', lineHeight: 1.7 }}>Organizations typically bring our consulting practice in when the cost of making the wrong technical decision outweighs the cost of the project itself.</p>
                </div>
-               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem' }}>
                  {[
                    { icon: Layers, title: "Platform Stagnation", text: "Your engineering team is moving too slowly, burdened by technical debt they can't afford to fix." },
                    { icon: Navigation, title: "Technology Selection", text: "You need unbiased, vendor-neutral advice on whether to build, buy, or assemble your next core system." },
@@ -96,7 +96,7 @@ export default function SoftwareConsulting() {
       {/* NEW SECTION 3: Deliverables (Outcomes) */}
       <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
+           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
              <div style={{ background: '#F3F4F6', padding: '3rem', borderRadius: '24px', border: '1px solid #E5E7EB' }}>
                <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#111827', marginBottom: '2rem' }}>The Output Artifacts</h3>
                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>

@@ -68,7 +68,7 @@ export default function DataAnalyticsSolution() {
             <p style={{ fontSize: '1.1rem', color: '#64748B', maxWidth: '700px', margin: '0 auto' }}>We help organizations move from historical reporting (what happened) to prescriptive analytics (what should we do).</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: '2rem' }}>
             {[
               { level: "Phase 1", title: "Descriptive", desc: "Data consolidation, cleaning, and historical BI dashboards. 'What happened?'" },
               { level: "Phase 2", title: "Diagnostic", desc: "Deep drill-downs, anomaly detection, and root-cause analysis. 'Why did it happen?'" },
@@ -120,7 +120,7 @@ export default function DataAnalyticsSolution() {
             
             {/* Dark Mode Architecture Diagram */}
             <div style={{ background: '#1E293B', padding: '3rem', borderRadius: '24px', border: '1px solid #334155' }}>
-               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', textAlign: 'center' }}>
+               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '1rem', textAlign: 'center' }}>
                  
                  {/* Sources */}
                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
@@ -161,7 +161,7 @@ export default function DataAnalyticsSolution() {
              <p style={{ fontSize: '1.1rem', color: '#6B7280', maxWidth: '600px', margin: '0 auto' }}>Data projects fail when they lack business alignment. We engineer pipelines specifically to move these core KPIs.</p>
            </div>
            
-           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '3rem' }}>
+           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '3rem' }}>
              {[
                { icon: LineChart, val: "CAC / LTV", title: "Customer Acquisition Insights", text: "Attribute revenue accurately across multi-touch marketing campaigns to optimize ad spend." },
                { icon: Search, val: "Net Retention", title: "Churn Prediction", text: "Identify at-risk accounts based on product usage telemetry 60 days before they cancel." },

@@ -72,7 +72,7 @@ export default function CookiePolicy() {
                   </span>
                 </div>
                 <p style={{ fontSize: '0.95rem', color: '#475569', lineHeight: 1.7, marginBottom: '1rem' }}>{item.desc}</p>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem', fontSize: '0.85rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '0.5rem', fontSize: '0.85rem' }}>
                   <div>
                     <span style={{ fontWeight: 600, color: '#0F172A' }}>Examples: </span>
                     <span style={{ color: '#64748B' }}>{item.examples.join(', ')}</span>

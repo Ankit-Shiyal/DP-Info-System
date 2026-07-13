@@ -66,7 +66,7 @@ export default function LegacySystemModernization() {
              <p style={{ fontSize: '1.1rem', color: '#64748B', maxWidth: '700px', margin: '0 auto' }}>We never advocate for a complete "rip and replace." It's too risky. Instead, we use the Strangler Pattern to systematically dismantle the monolith.</p>
           </div>
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem' }}>
              <div style={{ padding: '2rem', background: '#F8FAFC', borderRadius: '12px', border: '1px solid #E2E8F0' }}>
                <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#DC2626', marginBottom: '1rem' }}>Phase 1</div>
                <h4 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0F172A', marginBottom: '0.5rem' }}>The Facade</h4>
@@ -89,7 +89,7 @@ export default function LegacySystemModernization() {
       {/* NEW SECTION 2: Refactoring vs Replatforming (Tech Options) */}
       <section className="dark-section" style={{ padding: 'var(--spacing-section) 0', background: '#0F172A', color: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
             <div>
                <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#FFFFFF', marginBottom: '1.5rem' }}>Choosing the Right Path</h2>
                <p style={{ fontSize: '1.1rem', color: '#94A3B8', lineHeight: 1.7, marginBottom: '2rem' }}>Not all technical debt is created equal. We analyze your codebase to determine the most cost-effective modernization strategy.</p>
@@ -142,7 +142,7 @@ export default function LegacySystemModernization() {
            <p style={{ fontSize: '1.1rem', color: '#991B1B', maxWidth: '700px', margin: '0 auto 3rem auto', lineHeight: 1.6 }}>
              Your business cannot afford to go offline during a migration. By utilizing Blue/Green deployment strategies and real-time database replication, we guarantee cutovers that your end-users won't even notice.
            </p>
-           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', maxWidth: '600px', margin: '0 auto' }}>
+           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem', maxWidth: '600px', margin: '0 auto' }}>
               <div style={{ background: '#FFFFFF', padding: '2rem', borderRadius: '12px', border: '1px solid #FCA5A5' }}>
                  <div style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#B91C1C', marginBottom: '0.5rem' }}>100%</div>
                  <div style={{ fontSize: '0.9rem', fontWeight: 700, color: '#7F1D1D', textTransform: 'uppercase' }}>Data Integrity Maintained</div>

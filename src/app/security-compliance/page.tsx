@@ -19,7 +19,7 @@ export default function SecurityCompliance() {
           <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8 }}>Our security program is aligned with the <strong>NIST Cybersecurity Framework (CSF 2.0)</strong>, covering five core functions: Identify, Protect, Detect, Respond, and Recover. This is not a checkbox exercise — these functions drive our actual engineering and operational processes day-to-day.</p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '1.5rem' }}>
           {[
             { label: 'SOC 2 Type II', desc: 'Annual third-party audit verifying security, availability, and confidentiality controls.' },
             { label: 'ISO/IEC 27001:2013', desc: 'Internationally certified Information Security Management System (ISMS).' },

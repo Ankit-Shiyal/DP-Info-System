@@ -189,7 +189,7 @@ export default function SolutionsIndexPage() {
       {/* ── Why enterprise chooses us ─────────────────────────────────── */}
       <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 3rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 'var(--spacing-section-sm)', alignItems: 'start' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'var(--spacing-section-sm)', alignItems: 'start' }}>
             <div>
               <div style={{ fontSize: '0.72rem', fontWeight: 700, color: '#4B61B8', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '0.75rem' }}>DIFFERENTIATORS</div>
               <h2 style={{ fontSize: '1.9rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.025em', lineHeight: 1.25, marginBottom: '1.25rem' }}>
@@ -199,7 +199,7 @@ export default function SolutionsIndexPage() {
                 We earn trust through clear architecture, senior delivery ownership, and systems that can be operated after handover.
               </p>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '1.25rem' }}>
               {differentiators.map((d, i) => (
                 <div key={i} style={{ padding: '1.75rem', background: '#F8FAFC', borderRadius: '8px', border: '1px solid #F1F5F9' }}>
                   <div style={{ width: '28px', height: '3px', background: '#4B61B8', borderRadius: '2px', marginBottom: '1rem' }} />
@@ -224,7 +224,7 @@ export default function SolutionsIndexPage() {
               Discuss your industry <ArrowRight size={15} />
             </a>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1px', background: 'rgba(255,255,255,0.06)' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: '1px', background: 'rgba(255,255,255,0.06)' }}>
             {industries.map((ind, i) => (
               <div key={i} style={{ padding: '1.5rem 1.75rem', background: '#0F172A' }}>
                 <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#7BAF35', marginBottom: '0.75rem' }} />
@@ -242,7 +242,7 @@ export default function SolutionsIndexPage() {
             <div style={{ fontSize: '0.72rem', fontWeight: 700, color: '#4B61B8', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '0.75rem' }}>HOW WE ENGAGE</div>
             <h2 style={{ fontSize: '1.9rem', fontWeight: 800, color: '#0F172A', letterSpacing: '-0.025em' }}>Three engagement models. One standard of quality.</h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem' }}>
             {[
               { label: 'Project Delivery', title: 'Fixed-scope, fixed-timeline', desc: 'Defined deliverables, milestones, and acceptance criteria. Best for greenfield builds, platform rewrites, and integration projects with clear boundaries.', badge: 'Most Common' },
               { label: 'Engineering Pod', title: 'Embedded team, ongoing delivery', desc: 'A dedicated cross-functional team — 2–8 engineers — integrated into your organization. Full standup, sprint cycle, and code review ownership. Best for product companies scaling fast.', badge: 'Recommended' },

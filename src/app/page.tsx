@@ -481,7 +481,7 @@ export default function Home() {
               <h2 style={{ fontSize: '3rem', letterSpacing: '-0.03em', color: '#0F172A', fontWeight: 700, margin: 0 }}>Trusted by Engineering Leaders</h2>
             </div>
             
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem' }}>
               {[
                 { quote: "Acriotech completely rebuilt our core processing engine. The architecture is flawless, and the stability is unmatched.", title: "VP of Engineering", company: "Global FinTech" },
                 { quote: "A true engineering partner. They didn't just write code; they architected a foundation for our next decade of growth.", title: "Chief Technology Officer", company: "Enterprise Logistics" },

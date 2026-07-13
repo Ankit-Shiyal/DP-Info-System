@@ -80,7 +80,7 @@ export default function PrivacyPolicy() {
         <div>
           <h2 style={{ fontSize: '1.6rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>5. Your Rights as a Data Subject</h2>
           <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, marginBottom: '1rem' }}>Depending on your jurisdiction, you have the following rights regarding your personal data. To exercise any of these rights, contact our DPO at <a href="mailto:privacy@acriotech.com" style={{ color: '#4B61B8' }}>privacy@acriotech.com</a>. We will respond within 30 days.</p>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '1rem' }}>
             {[
               { right: 'Right of Access', desc: 'Request a copy of all personal data we hold about you.' },
               { right: 'Right to Rectification', desc: 'Request correction of inaccurate or incomplete personal data.' },

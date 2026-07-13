@@ -37,7 +37,7 @@ export default function MaintenanceSupport() {
                <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#F8FAFC', marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                  <HeartHandshake size={18} color="#94A3B8" /> Support Metrics
                </h4>
-               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
+               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '1.5rem', marginBottom: '1.5rem' }}>
                  <div style={{ background: '#1E293B', padding: '1.5rem', borderRadius: '8px', border: '1px solid #334155' }}>
                    <div style={{ fontSize: '0.75rem', color: '#94A3B8', fontWeight: 600, textTransform: 'uppercase', marginBottom: '0.2rem' }}>P1 Response Time</div>
                    <div style={{ fontSize: 'var(--font-h3)', fontWeight: 800, color: '#10B981' }}>&lt;15m</div>
@@ -62,7 +62,7 @@ export default function MaintenanceSupport() {
       {/* NEW SECTION 1: Observability & Logging (Tech) */}
       <section style={{ padding: 'var(--spacing-section) 0', background: '#F8FAFC' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
+           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
              
              {/* Visual */}
              <div style={{ background: '#FFFFFF', padding: '3rem', borderRadius: '24px', border: '1px solid #E2E8F0', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.05)' }}>
@@ -88,7 +88,7 @@ export default function MaintenanceSupport() {
                 <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.7, marginBottom: '2rem' }}>
                   You cannot fix what you cannot see. Before we assume maintenance of a legacy system, we implement strict observability standards.
                 </p>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem' }}>
                   <div>
                     <h4 style={{ fontWeight: 700, fontSize: '1.1rem', color: '#0F172A', marginBottom: '0.5rem' }}>Structured Logging</h4>
                     <p style={{ color: '#64748B', fontSize: '0.95rem' }}>Moving from grep-ing text files to queryable JSON logs in Datadog or ELK.</p>
@@ -138,7 +138,7 @@ export default function MaintenanceSupport() {
              Maintenance isn't just about keeping the lights on. It's about preventing the system from slowly decaying into legacy technical debt.
            </p>
            
-           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
+           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem' }}>
              <div style={{ background: '#F8FAFC', padding: '2.5rem', borderRadius: '16px', border: '1px solid #E2E8F0' }}>
                <h4 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>Dependency Management</h4>
                <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: 1.6 }}>Proactively updating frameworks (React, Node, Go) before they reach End-of-Life status.</p>

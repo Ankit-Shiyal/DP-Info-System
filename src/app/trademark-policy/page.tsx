@@ -16,7 +16,7 @@ export default function TrademarkPolicy() {
         <div>
           <h2 style={{ fontSize: '1.6rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>1. Our Trademarks</h2>
           <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, marginBottom: '1rem' }}>The following are registered and unregistered trademarks of Acriotech Pvt. Ltd.:</p>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '1rem' }}>
             {['Acriotech™ (wordmark)', '"Acrio Tech Global"', 'The Acriotech Logo (stylized "A")', 'Acriotech color palette', 'Product brand names', 'Domain names (acriotech.com, etc.)'].map((item) => (
               <div key={item} style={{ padding: '1rem', background: '#F8FAFC', borderRadius: '10px', border: '1px solid #E2E8F0', fontSize: '0.9rem', color: '#475569', fontWeight: 600 }}>
                 {item}
@@ -68,7 +68,7 @@ export default function TrademarkPolicy() {
         <div>
           <h2 style={{ fontSize: '1.6rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>5. Brand Usage Guidelines Summary</h2>
           <p style={{ fontSize: '1.05rem', color: '#475569', lineHeight: 1.8, marginBottom: '1rem' }}>When using Acriotech trademarks under permitted circumstances, observe the following guidelines:</p>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '1rem' }}>
             <div style={{ padding: '1.5rem', background: '#F0FDF4', borderRadius: '12px', border: '1px solid #BBF7D0' }}>
               <div style={{ fontWeight: 700, color: '#166534', marginBottom: '0.75rem' }}>✓ DO</div>
               <ul style={{ fontSize: '0.9rem', color: '#475569', lineHeight: 1.8, paddingLeft: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>

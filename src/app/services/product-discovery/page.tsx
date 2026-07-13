@@ -63,7 +63,7 @@ export default function ProductDiscovery() {
             <p style={{ fontSize: '1.1rem', color: '#6B7280', maxWidth: '700px', margin: '0 auto' }}>Product failures rarely happen because of bad code. They happen because Sales, Product, and Engineering were solving different problems. We fix that.</p>
           </div>
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem' }}>
              {[
                { icon: Users2, title: "Stakeholder Interviews", desc: "We interview key personnel across departments to uncover hidden constraints and misaligned objectives." },
                { icon: Map, title: "Service Mapping", desc: "Visually mapping the entire customer journey, including offline processes that software must account for." },
@@ -82,13 +82,13 @@ export default function ProductDiscovery() {
       {/* NEW SECTION 2: User Research Methodology (Process) */}
       <section className="dark-section" style={{ padding: 'var(--spacing-section) 0', background: '#0F172A', color: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
+           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
              <div>
                 <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#FFFFFF', marginBottom: '1.5rem' }}>Evidence, Not Opinions</h2>
                 <p style={{ fontSize: '1.1rem', color: '#94A3B8', lineHeight: 1.7, marginBottom: '2rem' }}>
                   The highest paid person in the room shouldn't dictate product features. We rely on rigorous qualitative and quantitative user research to drive decisions.
                 </p>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem' }}>
                   <div>
                     <div style={{ fontSize: 'var(--font-h3)', fontWeight: 800, color: '#E879F9', marginBottom: '0.5rem' }}>Contextual</div>
                     <h4 style={{ fontWeight: 700, fontSize: '1.1rem', color: '#F8FAFC', marginBottom: '0.5rem' }}>Inquiry</h4>

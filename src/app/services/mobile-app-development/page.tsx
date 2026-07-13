@@ -34,7 +34,7 @@ export default function MobileAppDevelopment() {
       {/* NEW SECTION 1: Offline-First Architecture (Methodology) */}
       <section style={{ padding: 'var(--spacing-section) 0', background: '#F8FAFC' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
             <div>
                <div style={{ width: '64px', height: '64px', borderRadius: '16px', background: '#EDE9FE', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '2rem' }}>
                   <WifiOff size={32} color="#8B5CF6" />
@@ -90,7 +90,7 @@ export default function MobileAppDevelopment() {
              <p style={{ fontSize: '1.1rem', color: '#64748B', maxWidth: '700px', margin: '0 auto' }}>Maintaining separate Swift and Kotlin teams is expensive. We use React Native to deliver native performance from a single JavaScript codebase.</p>
           </div>
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem' }}>
             {[
               { icon: Cpu, title: "Native UI Components", desc: "React Native doesn't use webviews. It compiles down to actual native iOS and Android UI elements." },
               { icon: Layers, title: "Shared Business Logic", desc: "95% of your code is shared between platforms, drastically reducing QA and development time." },

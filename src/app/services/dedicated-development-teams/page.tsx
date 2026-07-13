@@ -72,7 +72,7 @@ export default function DedicatedTeams() {
             <p style={{ fontSize: '1.1rem', color: '#64748B', maxWidth: '700px', margin: '0 auto' }}>Team shape follows product risk. We assemble custom pods containing the exact mix of engineering, design, and management required.</p>
           </div>
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem' }}>
              {[
                { icon: Code, role: "Senior Engineers", desc: "Full-stack, Backend, or Mobile specialists who write clean, tested, and maintainable code." },
                { icon: Briefcase, role: "Delivery Lead", desc: "A technical project manager who shields engineers from meetings and ensures sprint velocity." },
@@ -91,13 +91,13 @@ export default function DedicatedTeams() {
       {/* NEW SECTION 2: Agile Ceremonies (Process) */}
       <section className="dark-section" style={{ padding: 'var(--spacing-section) 0', background: '#0F172A', color: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
+           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
              <div>
                 <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#FFFFFF', marginBottom: '1.5rem' }}>The Operating Rhythm</h2>
                 <p style={{ fontSize: '1.1rem', color: '#94A3B8', lineHeight: 1.7, marginBottom: '2rem' }}>
                   A successful distributed team requires radical transparency. We enforce a strict operating rhythm that keeps your internal stakeholders fully aware of our progress.
                 </p>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem' }}>
                   <div>
                     <h4 style={{ fontWeight: 700, fontSize: '1.1rem', color: '#F8FAFC', marginBottom: '0.5rem' }}>Sprint Reviews</h4>
                     <p style={{ color: '#64748B', fontSize: '0.95rem' }}>Live demonstrations of working software at the end of every two-week cycle.</p>

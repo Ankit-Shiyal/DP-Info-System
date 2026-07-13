@@ -127,7 +127,7 @@ export default function AIAutomationSolution() {
       {/* NEW SECTION 1: Deep-Dive Methodology */}
       <section id="methodology" style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF', borderTop: '1px solid #EAEAEA' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
             <div>
               <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#111827', marginBottom: '1.5rem' }}>Our AI Deployment Methodology</h2>
               <p style={{ fontSize: '1.1rem', color: '#4B5563', lineHeight: 1.7, marginBottom: '2rem' }}>
@@ -188,7 +188,7 @@ export default function AIAutomationSolution() {
             </div>
           </div>
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem' }}>
             {[
               { ind: "Financial Services", title: "KYC & Compliance Automation", text: "Automating document verification, risk scoring, and anomalous transaction detection with 99.4% precision thresholds to satisfy regulatory audits." },
               { ind: "Healthcare", title: "Clinical Note Extraction", text: "Secure NLP pipelines that extract billing codes and diagnoses from unstructured physician notes, strictly governed under HIPAA constraints." },
@@ -213,7 +213,7 @@ export default function AIAutomationSolution() {
              <p style={{ fontSize: '1.1rem', color: '#6B7280', maxWidth: '600px', margin: '0 auto' }}>Your data is your IP. Our models are trained and hosted within your secure environments, guaranteeing absolute privacy.</p>
            </div>
            
-           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1px', background: '#E5E7EB', border: '1px solid #E5E7EB', borderRadius: '16px', overflow: 'hidden' }}>
+           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: '1px', background: '#E5E7EB', border: '1px solid #E5E7EB', borderRadius: '16px', overflow: 'hidden' }}>
              {[
                { cat: "Frameworks", items: ["TensorFlow Extended", "PyTorch", "Scikit-Learn", "Hugging Face"] },
                { cat: "MLOps", items: ["Kubeflow", "MLflow", "Apache Airflow", "Seldon Core"] },

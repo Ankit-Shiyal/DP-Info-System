@@ -25,7 +25,7 @@ export default function AboutUs() {
       {/* Traditional Alternating Content Section (Our Story) */}
       <section style={{ padding: '6rem 0' }}>
         <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '4rem', alignItems: 'center' }}>
             
             {/* Image Side */}
             <div style={{ position: 'relative', height: '500px', borderRadius: '16px', overflow: 'hidden', backgroundColor: '#E2E8F0' }}>
@@ -63,7 +63,7 @@ export default function AboutUs() {
             <p style={{ fontSize: '1.1rem', color: '#475569' }}>The principles that guide our projects and client relationships.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '3rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '3rem' }}>
             
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <div style={{ width: '40px', height: '40px', background: '#DBEAFE', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.5rem' }}>
@@ -107,7 +107,7 @@ export default function AboutUs() {
             <p style={{ fontSize: '1.1rem', color: '#475569' }}>Guided by experienced technical operators and software architects.</p>
           </div>
           
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '4rem', alignItems: 'center' }}>
              <div>
               <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#0F172A', marginBottom: '1rem' }}>Built by engineers, for enterprise.</h3>
               <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.8, marginBottom: '1.5rem' }}>

@@ -59,7 +59,7 @@ export default function CaseStudiesPage() {
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
            <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
               {cases.map((cs, i) => (
-                <div key={i} style={{ background: '#FFFFFF', borderRadius: '24px', border: '1px solid #E2E8F0', padding: '4rem', display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: '4rem', alignItems: 'center', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.05)' }}>
+                <div key={i} style={{ background: '#FFFFFF', borderRadius: '24px', border: '1px solid #E2E8F0', padding: '4rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '4rem', alignItems: 'center', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.05)' }}>
                    <div>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
                         <span style={{ fontSize: '0.9rem', fontWeight: 700, color: '#64748B', textTransform: 'uppercase' }}>{cs.industry}</span>

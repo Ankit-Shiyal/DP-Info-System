@@ -68,7 +68,7 @@ export default function DevOpsCICD() {
       {/* NEW SECTION 1: Infrastructure as Code (Tech) */}
       <section style={{ padding: 'var(--spacing-section) 0', background: '#F8FAFC' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
+           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
              
              {/* Visual */}
              <div style={{ background: '#FFFFFF', padding: '3rem', borderRadius: '24px', border: '1px solid #E2E8F0', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.05)' }}>
@@ -98,7 +98,7 @@ export default function DevOpsCICD() {
                 <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.7, marginBottom: '2rem' }}>
                   Clicking through AWS consoles is a recipe for configuration drift and security breaches. We codify 100% of your infrastructure using Terraform or Pulumi.
                 </p>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem' }}>
                   <div>
                     <h4 style={{ fontWeight: 700, fontSize: '1.1rem', color: '#0F172A', marginBottom: '0.5rem' }}>Environment Parity</h4>
                     <p style={{ color: '#64748B', fontSize: '0.95rem' }}>Staging is a perfect replica of Production because they are spun up from the exact same code.</p>
@@ -149,7 +149,7 @@ export default function DevOpsCICD() {
              We don't guess if a DevOps transformation was successful. We measure it using the industry-standard DORA (DevOps Research and Assessment) metrics.
            </p>
            
-           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1px', background: '#E2E8F0', border: '1px solid #E2E8F0', borderRadius: '16px', overflow: 'hidden' }}>
+           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: '1px', background: '#E2E8F0', border: '1px solid #E2E8F0', borderRadius: '16px', overflow: 'hidden' }}>
              {[
                { title: "Deployment Frequency", goal: "Multiple times per day", metric: "Velocity" },
                { title: "Lead Time for Changes", goal: "Under 1 hour", metric: "Velocity" },

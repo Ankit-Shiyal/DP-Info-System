@@ -39,7 +39,7 @@ export default function CustomSoftwareDevelopment() {
             <p style={{ fontSize: '1.1rem', color: '#64748B', maxWidth: '700px' }}>Agile delivery without the chaos. We combine rigorous product discovery with test-driven development to ensure predictability.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: '2rem' }}>
             {[
               { icon: Search, title: "1. Discovery & Design", desc: "We map out user journeys, define the domain model, and create high-fidelity interactive prototypes before coding begins." },
               { icon: Layout, title: "2. Architecture Definition", desc: "Selecting the right database schemas, API boundaries, and cloud infrastructure to ensure long-term scalability." },
@@ -61,7 +61,7 @@ export default function CustomSoftwareDevelopment() {
       {/* NEW SECTION 2: Domain-Driven Design (Tech Focus) */}
       <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
+           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
              <div style={{ background: '#0F172A', padding: '3rem', borderRadius: '24px', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.25)' }}>
                <div style={{ fontSize: '0.85rem', color: '#94A3B8', fontFamily: 'monospace', marginBottom: '1rem' }}>// Domain Model Example</div>
                <pre style={{ margin: 0, color: '#A5B4FC', fontFamily: 'monospace', fontSize: '0.9rem', lineHeight: 1.6 }}>
@@ -81,7 +81,7 @@ export default function CustomSoftwareDevelopment() {
                 <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.7, marginBottom: '2rem' }}>
                   We build software that mirrors your actual business logic. By utilizing Domain-Driven Design (DDD), we create bounded contexts that prevent different parts of your application from becoming hopelessly entangled.
                 </p>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem' }}>
                   <div>
                     <h4 style={{ fontWeight: 700, fontSize: '1.1rem', color: '#0F172A', marginBottom: '0.5rem' }}>Clean Codebases</h4>
                     <p style={{ color: '#64748B', fontSize: '0.95rem' }}>Business logic is isolated from UI components and database queries.</p>

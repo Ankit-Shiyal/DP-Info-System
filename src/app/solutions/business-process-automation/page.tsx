@@ -36,7 +36,7 @@ export default function BusinessProcessAutomation() {
       {/* Core Solutions Grid */}
       <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2rem' }}>
              {[
                { icon: Repeat, title: "RPA Integration", desc: "Deploy headless bots to interact with legacy systems (AS/400, SAP) where APIs don't exist." },
                { icon: Layers, title: "Workflow Orchestration", desc: "Connect SaaS tools via iPaaS or custom middleware. E.g., Salesforce to Jira to NetSuite." },
@@ -55,7 +55,7 @@ export default function BusinessProcessAutomation() {
       {/* NEW SECTION 1: Process Mining (Methodology) */}
       <section style={{ padding: 'var(--spacing-section) 0', background: '#F1F5F9' }}>
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'var(--spacing-section-sm)', alignItems: 'center' }}>
              <div>
                 <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>Process Mining Methodology</h2>
                 <p style={{ fontSize: '1.1rem', color: '#475569', lineHeight: 1.7, marginBottom: '2rem' }}>We don't automate broken processes. We use data-driven process mining to map how work actually happens across your organization, identifying bottlenecks before we write a single line of code.</p>
@@ -93,7 +93,7 @@ export default function BusinessProcessAutomation() {
           <h2 style={{ fontSize: 'var(--font-h2)', fontWeight: 800, color: '#0F172A', marginBottom: '1.5rem' }}>Enterprise Tech Stack</h2>
           <p style={{ fontSize: '1.1rem', color: '#64748B', marginBottom: '4rem' }}>We utilize industry-leading orchestration engines to ensure reliability, auditability, and scalability.</p>
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '1.5rem' }}>
              <div style={{ padding: '2rem', border: '1px solid #E2E8F0', borderRadius: '12px' }}>
                 <h4 style={{ fontWeight: 700, fontSize: '1.1rem', marginBottom: '0.5rem' }}>RPA Platforms</h4>
                 <p style={{ color: '#64748B', fontSize: '0.9rem' }}>UiPath, Automation Anywhere, Blue Prism</p>

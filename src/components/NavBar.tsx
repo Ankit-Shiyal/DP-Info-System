@@ -409,6 +409,27 @@ export default function NavBar() {
           )}
         </AnimatePresence>
       </div>
+
+      {/* SEO Links Block (Visually hidden, explicitly for search engine crawlers to discover all deep links) */}
+      <div style={{ position: 'absolute', width: '1px', height: '1px', padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', whiteSpace: 'nowrap', borderWidth: 0 }}>
+        {Object.entries(navData).map(([menu, data]) => (
+          <div key={`seo-${menu}`}>
+            <h2>{menu}</h2>
+            <ul>
+              {data.items.map((link) => (
+                <li key={`seo-link-${link}`}>
+                  <a href={generateUrl(menu, link)}>{link}</a>
+                </li>
+              ))}
+              {data.featured && (
+                <li>
+                  <a href={featuredLinks[menu]}>{data.featured.linkText}</a>
+                </li>
+              )}
+            </ul>
+          </div>
+        ))}
+      </div>
     </motion.header>
   );
 }

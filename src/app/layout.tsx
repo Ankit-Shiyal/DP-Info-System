@@ -112,6 +112,12 @@ export default function RootLayout({
           src="https://www.googletagmanager.com/gtag/js?id=G-NVERY94FZL"
           strategy="afterInteractive"
         />
+        {/* Load Ahrefs Analytics */}
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="0VjxtvAV5Spo9/ii75o6Ag"
+          strategy="afterInteractive"
+        />
         <Script
           id="gtag-init"
           strategy="afterInteractive"

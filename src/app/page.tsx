@@ -6,9 +6,9 @@ import {
   Smartphone, Terminal, CircleCheck, Play, ArrowUpRight, Cloud, Activity,
   Lock, Users, MonitorSmartphone, ChevronRight, BarChart3, Globe, Clock,
   CheckCircle2, GitBranch, Cpu, Workflow, LineChart, Box, Search,
-  ChevronDown, Star, Bot, Container, Rocket, Award, MessageCircle,
+  ChevronDown, Star, Bot, Container, Rocket, Award,
 } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 
@@ -75,116 +75,6 @@ function FAQAccordion() {
           </div>
         );
       })}
-    </div>
-  );
-}
-
-// ─── Testimonial Data ──────────────────────────────────────────────
-const testimonials = [
-  {
-    quote: "Acriotech transformed our legacy infrastructure into a modern, cloud-native platform. The engineering team's depth and professionalism are outstanding.",
-    author: "Vikram Mehta",
-    role: "CTO, Fintech Enterprise",
-    initials: "VM",
-  },
-  {
-    quote: "Their ability to scale our platform from thousands to millions of daily requests without any downtime was remarkable. A true engineering partner.",
-    author: "Sarah Chen",
-    role: "VP Engineering, HealthTech",
-    initials: "SC",
-  },
-  {
-    quote: "The AI pipeline they designed for us processes petabytes of data with incredible speed. Acriotech doesn't just build software — they build the future.",
-    author: "Raj Patel",
-    role: "Director of Technology, Retail Corp",
-    initials: "RP",
-  },
-  {
-    quote: "From discovery to deployment, their methodology is flawless. Our uptime has been 99.99% since migrating to their infrastructure.",
-    author: "Emily Torres",
-    role: "Head of Platform, SaaS Company",
-    initials: "ET",
-  },
-];
-
-// ─── Testimonial Carousel ──────────────────────────────────────────
-function TestimonialCarousel() {
-  const [active, setActive] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActive((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <div style={{ position: 'relative', overflow: 'hidden' }}>
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginBottom: '2.5rem' }}>
-        {testimonials.map((t, i) => (
-          <div
-            key={i}
-            onClick={() => setActive(i)}
-            style={{
-              cursor: 'pointer',
-              width: '52px', height: '52px',
-              borderRadius: '50%',
-              background: active === i
-                ? 'linear-gradient(135deg, #2563EB, #06B6D4)'
-                : '#F1F5F9',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              border: active === i ? '2px solid #FFFFFF' : '2px solid transparent',
-              outline: active === i ? '3px solid rgba(37,99,235,0.2)' : 'none',
-              transition: 'all 0.3s ease',
-            }}
-          >
-            <span style={{ fontSize: '0.85rem', fontWeight: 700, color: active === i ? '#FFFFFF' : '#64748B' }}>
-              {t.initials}
-            </span>
-          </div>
-        ))}
-      </div>
-      <div style={{ minHeight: '180px', position: 'relative' }}>
-        <div
-          style={{
-            background: 'rgba(255,255,255,0.7)',
-            backdropFilter: 'blur(20px)',
-            WebkitBackdropFilter: 'blur(20px)',
-            borderRadius: '24px',
-            border: '1px solid rgba(226,232,240,0.6)',
-            padding: '2.5rem',
-            textAlign: 'center',
-            maxWidth: '680px',
-            margin: '0 auto',
-            boxShadow: '0 20px 60px rgba(37,99,235,0.04)',
-          }}
-        >
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" style={{ margin: '0 auto 1.25rem', opacity: 0.15 }}>
-            <path d="M10 16H4L8 8H14L10 16ZM22 16H16L20 8H26L22 16Z" fill="#0F172A" />
-          </svg>
-          <p style={{ fontSize: '1rem', color: '#334155', lineHeight: 1.7, marginBottom: '1.5rem', fontStyle: 'italic' }}>
-            &ldquo;{testimonials[active].quote}&rdquo;
-          </p>
-          <div>
-            <span style={{ fontSize: '0.95rem', fontWeight: 700, color: '#0F172A' }}>{testimonials[active].author}</span>
-            <span style={{ fontSize: '0.8rem', color: '#94A3B8', marginLeft: '0.75rem' }}>{testimonials[active].role}</span>
-          </div>
-        </div>
-      </div>
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '0.4rem', marginTop: '1.5rem' }}>
-        {testimonials.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setActive(i)}
-            style={{
-              width: i === active ? '24px' : '6px', height: '6px',
-              borderRadius: '3px',
-              background: i === active ? '#2563EB' : '#CBD5E1',
-              border: 'none', cursor: 'pointer', transition: 'all 0.3s ease', padding: 0,
-            }}
-          />
-        ))}
-      </div>
     </div>
   );
 }
@@ -1628,28 +1518,6 @@ export default function Home() {
         </div>
         <div className="container">
           <TechGrid />
-        </div>
-      </section>
-
-      {/* ─── TESTIMONIALS ─── */}
-      <section style={{ padding: 'var(--spacing-section) 0', background: '#FFFFFF', position: 'relative' }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <div style={{
-              display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
-              fontSize: '0.7rem', fontWeight: 700, color: '#2563EB',
-              textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '0.75rem',
-              background: 'rgba(37,99,235,0.06)', padding: '0.3rem 0.85rem 0.3rem 0.55rem',
-              borderRadius: '100px', border: '1px solid rgba(37,99,235,0.08)',
-            }}>
-              <MessageCircle size={12} color="#2563EB" />
-              Client Stories
-            </div>
-            <h2 style={{ fontSize: 'var(--font-h2)', letterSpacing: '-0.03em', color: '#0F172A', fontWeight: 800 }}>
-              Trusted by Engineering Leaders
-            </h2>
-          </div>
-          <TestimonialCarousel />
         </div>
       </section>
 
